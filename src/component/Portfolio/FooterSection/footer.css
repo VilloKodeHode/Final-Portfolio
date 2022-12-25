@@ -1,0 +1,66 @@
+footer {
+  display: grid;
+  grid-template-areas:
+    "contact clicker    navigate"
+    "logo    lifeCycle  cvlinks";
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 3em 0;
+  margin-top: 2em;
+  z-index: 100;
+  background-color: #3273ff96;
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+footer img {
+  height: 50px;
+  margin: 0.5em;
+}
+
+.footer-contact {
+  grid-area: contact;
+}
+
+.footer-logo {
+  grid-area: logo;
+}
+
+.footer-clicker {
+  grid-area: clicker;
+}
+
+.lifeCycle {
+  grid-area: lifeCycle;
+}
+
+.footer-navigate {
+  grid-area: navigate;
+}
+
+footer ul {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: left; */
+  list-style-type: none;
+  font-weight: 600;
+  font-size: 18px;
+  padding-inline-start: 0;
+}
+
+footer li {
+  margin: 0.3em;
+  /* transform-origin: center; */
+}
+
+footer a {
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-size: 0.8rem;
+  color: #0b0b0c;
+  /* padding: 3px; */
+  /* border-radius: 8px; */
+}
+footer a:active {
+  color: #0a0064;
+}
