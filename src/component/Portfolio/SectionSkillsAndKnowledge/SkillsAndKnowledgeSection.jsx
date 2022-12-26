@@ -139,7 +139,7 @@ function SkillsAndKnowledgeSection() {
             projectName="PokeAPI"
             src={"./src/assets/PokeAPI.png"}
             description="Første API'en jeg har lagd"
-            hrefCode="https://github.com/VilloKodeHode/CSS-art"
+            hrefCode="https://github.com/VilloKodeHode/use-effect/blob/master/src/component/FetchData.jsx"
           />
         </div>
       </section>

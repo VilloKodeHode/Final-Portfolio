@@ -30,7 +30,6 @@ function PokemonCard(props) {
             />
           </a>
           <p className="mt-2 border-y-2 border-red-600">
-            {" "}
             # {pokemonDetails.id}
           </p>
           {/* <p>base experience: {pokemonDetails.base_experience}</p> */}

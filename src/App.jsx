@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
 import UseEffect from "./component/UseEffect";
-import FetchData from "./component/FetchData";
+import FetchData from "./component/PokeAPI/FetchData";
 import ConsumingContext from "./component/ConsumingContext";
 import NavBar from "./component/NavBar/NavBar";
 import PokeAPI from "./routes/PokeAPI/PokeAPI";
