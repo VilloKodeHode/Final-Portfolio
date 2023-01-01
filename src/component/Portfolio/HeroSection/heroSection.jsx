@@ -9,10 +9,10 @@ import "../../Portfolio/CvWithEffectsAndLink/CvEffectsAndLink.css";
 function HeroSection() {
   return (
     <>
-      <header className="m-h-screen pt-36 grid grid-rows-2 grid-cols-2 px-8">
+      <header className="m-h-screen pt-18 grid grid-rows-2 grid-cols-2 text-slate-100">
         <article className="m-auto">
-          <h1 id="home">
-            <span className="text-red-600 text-7xl">Joakim Villo</span>
+          <h1 className="py-4" id="home">
+            <span className="text-blue-300 text-7xl">Joakim Villo</span>
           </h1>
           <p>
             For tiden går jeg på kurs om Front-End-Development og bruker
@@ -21,8 +21,8 @@ function HeroSection() {
             lære mer!
           </p>
         </article>
-        <div className="flex justify-center h-fit">
-          <img className="h-80" src={"./src/assets/JVlogo.png"} />
+        <div className="flex m-auto justify-center h-fit">
+          <img className="h-60 rounded-full" src={"./src/assets/JVlogo.png"} />
         </div>
         <div className="wrapper cv-wrapper">
           <Cv

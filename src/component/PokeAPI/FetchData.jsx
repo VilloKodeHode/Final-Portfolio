@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import PokemonCard from "./PokemonCard";
 
-const API_ENDPOINT = "https://pokeapi.co/api/v2/pokemon/?limit=1154";
+const pokemonData = "https://pokeapi.co/api/v2/pokemon/?limit=151";
 
 function FetchData() {
   const [data, setData] = useState(null);
@@ -9,7 +9,7 @@ function FetchData() {
   useEffect(() => {
     //Do fetch logic here
     async function getData() {
-      const response = await fetch(API_ENDPOINT);
+      const response = await fetch(pokemonData);
       const data = await response.json();
       setData(data);
       console.log(data);

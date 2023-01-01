@@ -15,16 +15,17 @@ div.pitch {
   z-index: 100;
   /* transition: cubic-bezier(0.075, 0.82, 0.165, 1); */
   position: fixed;
-  padding: 4em;
+  padding: 3em;
   /* height: 80%; */
   top: 20%;
   bottom: 20%;
   left: 50%;
   right: 10%;
   margin: auto;
-  background-color: #ecebebe0;
-  color: rgb(0, 0, 0);
+  background-color: black;
+  color: white;
   border-radius: 15px;
+  border: solid white 4px;
   backdrop-filter: blur(2px);
   /* border: #070b5e7a 1px solid; */
 }
@@ -34,7 +35,7 @@ div.pitch {
   width: 50%; */
 }
 
-.pitch span {
+/* .pitch span {
   color: rgb(253, 120, 120);
   text-shadow: 1px 1px black;
-}
+} */

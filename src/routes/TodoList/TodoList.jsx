@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function AboutPage() {
+function TodoList() {
   const [todoList, setTodoList] = useState([]);
   const [newTask, setNewTask] = useState("");
 
@@ -34,7 +34,7 @@ function AboutPage() {
 
   return (
     <div>
-      <h1>About Page</h1>
+      <h1>Todo List</h1>
 
       <div className="addTask">
         <input onChange={handleChange} />
@@ -58,4 +58,4 @@ function AboutPage() {
   );
 }
 
-export default AboutPage;
+export default TodoList;

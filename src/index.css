@@ -22,7 +22,7 @@ a {
   text-decoration: inherit;
 }
 a:hover {
-  color: #242cca;
+  color: #87a0f1;
 }
 
 body {
@@ -31,12 +31,14 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #000000;
+  /*   
   background-image: linear-gradient(
     rgb(78, 78, 78) 10%,
     rgb(70, 70, 70) 20%,
     rgb(75, 74, 74) 50%,
     rgb(46, 46, 46) 70%
-  );
+  ); */
 }
 
 h1 {
@@ -65,11 +67,11 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
+    color: #000000;
     background-color: #ffffff;
   }
   a:hover {
-    color: #ffa074;
+    color: #7005ad;
   }
   button {
     background-color: #6d6d6d;

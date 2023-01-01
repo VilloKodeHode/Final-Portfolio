@@ -13,8 +13,8 @@ export function PitchText(props) {
   const { title, text } = props;
   return (
     <>
-      <p>
-        <span>{title}</span>
+      <p className="p-2">
+        <span className="text-blue-600">{title}</span>
         <br />
         {text}
       </p>

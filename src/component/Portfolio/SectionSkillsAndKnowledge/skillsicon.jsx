@@ -1,7 +1,7 @@
 export function KnowledgeIcon(props) {
   const { src, alt } = props;
   return (
-    <figure className="p-3 m-2">
+    <figure className="p-3 m-4">
       <img className="h-12" src={src} alt={alt} />
     </figure>
   );
@@ -16,7 +16,7 @@ export function KnowledgeIconLinked(props) {
       href={href}
       target="_blank"
     >
-      <figure className="p-3 m-2 border duration-500 ease-out rounded-full">
+      <figure className="p-3 m-4 border duration-500 ease-out rounded-full">
         <img className="h-12" src={src} alt={alt} />
       </figure>
     </a>
@@ -26,10 +26,10 @@ export function KnowledgeIconLinked(props) {
 export function MySkills(props) {
   const { title, src, description } = props;
   return (
-    <figure className="border w-64 p-8 m-4">
+    <figure className="border w-52 p-2 m-10 rounded">
       <h3>{title}</h3>
-      <img className="h-36 m-auto" src={src} />
-      <p>{description}</p>
+      <img className="h-20 m-auto" src={src} />
+      <p className="text-xs py-2">{description}</p>
     </figure>
   );
 }

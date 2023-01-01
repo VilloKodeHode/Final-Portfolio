@@ -1,7 +1,7 @@
 function FooterSection() {
   return (
     <>
-      <footer className="footer p-10 bg-base-200 text-base-content">
+      <footer className="footer p-8 bg-black text-white">
         <div>
           <span className="footer-title">Contact information</span>
           <div className="flex">
@@ -29,6 +29,7 @@ function FooterSection() {
           <a className="link link-hover">Marketing</a>
           <a className="link link-hover">Advertisement</a> */}
         </div>
+        <img className="h-32" src="src\assets\Joakim-head.png" />
         {/* <div>
           <span className="footer-title">Company</span>
           <a className="link link-hover">About us</a>
@@ -36,7 +37,7 @@ function FooterSection() {
           <a className="link link-hover">Jobs</a>
           <a className="link link-hover">Press kit</a>
         </div> */}
-        <div>
+        {/* <div>
           <span className="footer-title">Portfolio navigation</span>
           <a className="link link-hover" href="#top">
             Home
@@ -47,9 +48,9 @@ function FooterSection() {
           <a className="link link-hover" href="#projects">
             Projects
           </a>
-        </div>
+        </div> */}
       </footer>
-      <footer className="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
+      <footer className="footer px-10 py-4 border-t bg-base-200 text-black border-base-300">
         <div className="items-center grid-flow-col">
           <svg
             width="24"

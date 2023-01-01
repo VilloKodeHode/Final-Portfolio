@@ -14,13 +14,17 @@ import PortfolioNavBar from "../../component/Portfolio/NavBar/portfolioNavBar";
 import HeroSection from "../../component/Portfolio/HeroSection/heroSection";
 import SkillsAndKnowledgeSection from "../../component/Portfolio/SectionSkillsAndKnowledge/SkillsAndKnowledgeSection";
 import FooterSection from "../../component/Portfolio/FooterSection/FooterSection";
+import ProjectSection from "../../component/Portfolio/ProjectSection/Projects";
 
 function PorfolioPage() {
   return (
-    <div className="bg-slate-50" id="top">
+    <div className="bg-black border-8 border-white" id="top">
       <PortfolioNavBar />
       <HeroSection />
-      <SkillsAndKnowledgeSection />
+      <main className="text-slate-100" id="main">
+        <SkillsAndKnowledgeSection />
+        <ProjectSection />
+      </main>
       <FooterSection />
     </div>
   );
