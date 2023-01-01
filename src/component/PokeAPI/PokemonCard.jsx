@@ -9,9 +9,6 @@ function PokemonCard(props) {
       const response = await fetch(props.url);
       const data = await response.json();
       setPokemonDetails(data);
-      // const Abilities = pokemonDetails.abilities.map(
-      //   (ability) => ability.ability.name
-      // );
       console.log(pokemonDetails);
     }
     getData();
@@ -41,12 +38,8 @@ function PokemonCard(props) {
                 .map((ability) => ability.ability.name)
                 .join(", ")}
             </p>
+            <p className="w-fit m-auto">{pokemonDetails.species.url}</p>
           </p>
-          {/* 
-.map()
-<br> er ett HTML element
-les JSX
-{string}<br></br> */}
         </div>
       )}
     </div>
