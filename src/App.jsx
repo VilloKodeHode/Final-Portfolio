@@ -10,19 +10,40 @@ import PokeAPI from "./routes/PokeAPI/PokeAPI";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 //Contexts
-import ExampleContext from "./component/content/ExampleContext";
+// import ExampleContext from "./component/content/ExampleContext";
+
+//Routes
+import LandingPage from "./routes/LandingPage";
+import AboutPage from "./routes/About/About";
+import ContactPage from "./routes/Contact/ContactPage";
+import PortfolioPage from "./routes/PorfolioPage/PortfolioPage";
+import Qualifications from "./routes/Qualifications/QualificationsPage";
+import ProjectPage from "./routes/Projects/ProjectPage";
 
 function App() {
   // const [count, setCount] = useState(0);
 
   return (
-    <ExampleContext.Provider value="Some other value">
-      <div className="App">
-        <UseEffect />
-        <FetchData />
-        <ConsumingContext />
-      </div>
-    </ExampleContext.Provider>
+    <Router>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/About" element={<AboutPage />} />
+        <Route path="/Qualifications" element={<Qualifications />} />
+        <Route path="/Projects" element={<ProjectPage />} />
+        <Route path="/Contact" element={<ContactPage />} />
+        <Route path="/PokeAPI" element={<PokeAPI />} />
+        <Route path="/Portfolio" element={<PortfolioPage />} />
+        <Route
+          path="*"
+          element={
+            <div className=" w-full h-full bg-black">
+              <img className="mt-20" src="https://http.cat/404" />
+            </div>
+          }
+        />
+      </Routes>
+    </Router>
   );
 }
 
