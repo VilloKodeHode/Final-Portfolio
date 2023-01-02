@@ -39,10 +39,7 @@ function SkillsAndKnowledgeSection() {
           />
         </div>
         <div className="flex justify-center flex-wrap">
-          <KnowledgeIcon
-            src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_tailwind_icon_130128.png"
-            alt="Tailwind"
-          />
+          <KnowledgeIcon src="src\assets\Tailwind.png" alt="Tailwind" />
           <KnowledgeIcon
             src="https://raw.githubusercontent.com/saadeghi/files/main/daisyui/logo.svg"
             alt="DaisyUI"
