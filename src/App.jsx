@@ -7,7 +7,7 @@ import NavBar from "./component/NavBar/NavBar";
 import PokeAPI from "./routes/PokeAPI/PokeAPI";
 
 //Libraries
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 //Contexts
 // import ExampleContext from "./component/content/ExampleContext";
@@ -27,14 +27,14 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/About" element={<AboutPage />} />
-        <Route path="/Qualifications" element={<Qualifications />} />
-        <Route path="/Projects" element={<ProjectPage />} />
-        <Route path="/Contact" element={<ContactPage />} />
-        <Route path="/PokeAPI" element={<PokeAPI />} />
-        <Route path="/Portfolio" element={<PortfolioPage />} />
-        <Route path="/TestPage" element={<TestPage />} />
+        <Route exact path="/" element={<LandingPage />} />
+        <Route exact path="/About" element={<AboutPage />} />
+        <Route exact path="/Qualifications" element={<Qualifications />} />
+        <Route exact path="/Projects" element={<ProjectPage />} />
+        <Route exact path="/Contact" element={<ContactPage />} />
+        <Route exact path="/PokeAPI" element={<PokeAPI />} />
+        <Route exact path="/Portfolio" element={<PortfolioPage />} />
+        <Route exact path="/TestPage" element={<TestPage />} />
         <Route
           path="*"
           element={
