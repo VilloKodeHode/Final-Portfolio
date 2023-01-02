@@ -7,7 +7,7 @@ import NavBar from "./component/NavBar/NavBar";
 import PokeAPI from "./routes/PokeAPI/PokeAPI";
 
 //Libraries
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 //Contexts
 // import ExampleContext from "./component/content/ExampleContext";
@@ -19,13 +19,13 @@ import ContactPage from "./routes/Contact/ContactPage";
 import PortfolioPage from "./routes/PorfolioPage/PortfolioPage";
 import Qualifications from "./routes/Qualifications/QualificationsPage";
 import ProjectPage from "./routes/Projects/ProjectPage";
+import TestPage from "./routes/TestPage";
 
 function App() {
   // const [count, setCount] = useState(0);
 
   return (
     <Router>
-      <NavBar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/About" element={<AboutPage />} />
@@ -34,6 +34,7 @@ function App() {
         <Route path="/Contact" element={<ContactPage />} />
         <Route path="/PokeAPI" element={<PokeAPI />} />
         <Route path="/Portfolio" element={<PortfolioPage />} />
+        <Route path="/TestPage" element={<TestPage />} />
         <Route
           path="*"
           element={

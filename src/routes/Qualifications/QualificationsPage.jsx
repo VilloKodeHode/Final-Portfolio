@@ -1,10 +1,14 @@
+import NavBar from "../../component/NavBar/NavBar";
 import SkillsAndKnowledgeSection from "../../component/Portfolio/SectionSkillsAndKnowledge/SkillsAndKnowledgeSection";
 
 function Qualifications() {
   return (
-    <div className="text-slate-100" id="main">
-      <SkillsAndKnowledgeSection />
-    </div>
+    <>
+      <NavBar />
+      <div className="text-slate-100" id="main">
+        <SkillsAndKnowledgeSection />
+      </div>
+    </>
   );
 }
 

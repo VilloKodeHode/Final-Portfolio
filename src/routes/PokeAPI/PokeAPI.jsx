@@ -1,12 +1,16 @@
 import FetchData from "../../component/PokeAPI/FetchData";
 import ConsumingContext from "../../component/ConsumingContext";
 import UseEffect from "../../component/UseEffect";
+import NavBar from "../../component/NavBar/NavBar";
 
 function PokeAPI() {
   return (
-    <div className="App mt-40">
-      <FetchData />
-    </div>
+    <>
+      <NavBar />
+      <div className="App mt-40">
+        <FetchData />
+      </div>
+    </>
   );
 }
 

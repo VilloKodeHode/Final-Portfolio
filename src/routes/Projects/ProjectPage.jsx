@@ -1,7 +1,13 @@
+import NavBar from "../../component/NavBar/NavBar";
 import ProjectSection from "../../component/Portfolio/ProjectSection/Projects";
 
 function ProjectPage() {
-  return <ProjectSection />;
+  return (
+    <>
+      <NavBar />
+      <ProjectSection />
+    </>
+  );
 }
 
 export default ProjectPage;
