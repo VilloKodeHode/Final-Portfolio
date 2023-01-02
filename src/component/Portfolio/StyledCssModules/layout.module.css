@@ -1,0 +1,11 @@
+.title {
+  font-weight: bolder;
+}
+
+.title2 {
+  font-weight: lighter;
+}
+
+.rounded {
+  border-radius: 50%;
+}

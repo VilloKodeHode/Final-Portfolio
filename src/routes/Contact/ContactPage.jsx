@@ -1,12 +1,9 @@
+import FooterSection from "../../component/Portfolio/FooterSection/FooterSection";
+
 function ContactPage() {
   return (
-    <div>
-      <h1>Contact Page</h1>
-      <div className="m-8 border-2 p-4">
-        <h2>Joakim Villo</h2>
-        <h2>Phone: 93285044</h2>
-        <h2>Email: Joakim@Villo.no</h2>
-      </div>
+    <div className="bg-purple-900 rounded-xl p-4 m-20">
+      <FooterSection />
     </div>
   );
 }

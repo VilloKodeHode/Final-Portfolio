@@ -1,4 +1,4 @@
-import FetchData from "../../component/FetchData";
+import FetchData from "../../component/PokeAPI/FetchData";
 import ConsumingContext from "../../component/ConsumingContext";
 import UseEffect from "../../component/UseEffect";
 
