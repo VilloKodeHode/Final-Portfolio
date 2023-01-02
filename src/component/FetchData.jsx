@@ -22,7 +22,7 @@ function FetchData() {
       <h1 className="m-8">PokeAPI</h1>
       <div className="grid gap-4 grid-cols-3 bg-slate-100 border-2 rounded p-8 border-slate-500">
         {data &&
-          data.results.map((pokemon, index) => (
+          data?.results.map((pokemon, index) => (
             <PokemonCard
               key={index}
               {...pokemon}

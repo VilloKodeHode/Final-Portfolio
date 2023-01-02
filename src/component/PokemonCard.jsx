@@ -9,7 +9,7 @@ function PokemonCard(props) {
       const response = await fetch(props.url);
       const data = await response.json();
       setPokemonDetails(data);
-      console.log(pokemonDetails);
+      // console.log(pokemonDetails);
     }
     getData();
   }, []);
@@ -19,7 +19,7 @@ function PokemonCard(props) {
       {props.name}
       {pokemonDetails && (
         <div className="bg-white p-4">
-          <a href={pokemonDetails.url}>
+          <a href={pokemonDetails?.url}>
             <img
               className="m-auto bg-black"
               src={pokemonDetails.sprites.front_default}
@@ -27,18 +27,18 @@ function PokemonCard(props) {
             />
           </a>
           <p className="mt-2 border-y-2 border-red-600">
-            # {pokemonDetails.id}
+            # {pokemonDetails?.id}
           </p>
           {/* <p>base experience: {pokemonDetails.base_experience}</p> */}
           <p></p>
           <p className="border-y-2  border-red-600">
             <p>Abilities:</p>
             <p className="w-fit m-auto">
-              {pokemonDetails.abilities
+              {pokemonDetails?.abilities
                 .map((ability) => ability.ability.name)
                 .join(", ")}
             </p>
-            <p className="w-fit m-auto">{pokemonDetails.species.url}</p>
+            <p className="w-fit m-auto">{pokemonDetails?.species.url}</p>
           </p>
         </div>
       )}

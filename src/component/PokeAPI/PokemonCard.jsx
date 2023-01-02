@@ -38,7 +38,7 @@ function PokemonCard(props) {
                 .map((ability) => ability.ability.name)
                 .join(", ")}
             </p>
-            <p className="w-fit m-auto">{pokemonDetails.species.url}</p>
+            {/* <p className="w-fit m-auto">{pokemonDetails.species.url}</p> */}
           </p>
         </div>
       )}
