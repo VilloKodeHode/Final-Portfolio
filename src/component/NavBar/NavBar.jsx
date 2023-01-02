@@ -23,6 +23,9 @@ function NavBar() {
         <Link className="px-4" to="/Projects">
           Projects
         </Link>
+        <Link className="px-4" to="/TestPage">
+          TestPage
+        </Link>
       </div>
     </nav>
   );
