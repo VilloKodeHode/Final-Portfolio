@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import "../App.css";
 
 //images
-import LPClippingMask from "../routes/LandingPageClipMask.png";
+import LPClippingMask from "./assets/LandingPageClipMask.png";
 
 function LandingPage() {
   return (
