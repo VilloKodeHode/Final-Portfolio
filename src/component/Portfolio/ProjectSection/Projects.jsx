@@ -1,4 +1,5 @@
 import Project from "./projectcard";
+import { ProjectRouted } from "./projectcard";
 
 function ProjectSection() {
   return (
@@ -36,8 +37,8 @@ function ProjectSection() {
           hrefCode="https://github.com/VilloKodeHode/CSS-art"
         />
         {/* Må ha "Link" på PokeAPI her */}
-        <Project
-          href="/PokeAPI"
+        <ProjectRouted
+          to="/PokeAPI"
           projectName="PokeAPI"
           src={"./src/assets/PokeAPI.png"}
           description="Den første API'en jeg har laget. 151 Pokemon vises"

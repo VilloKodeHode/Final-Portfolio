@@ -1,9 +1,13 @@
 import KnowledgeIcon from "./skillsicon.jsx";
 import { KnowledgeIconLinked } from "./skillsicon.jsx";
 import { MySkills } from "./skillsicon.jsx";
-import Project from "../ProjectSection/projectcard.jsx";
 import "./skills.css";
-import ProjectSection from "../ProjectSection/Projects.jsx";
+
+//images:
+import Git from "./assets/Git.png";
+import Photoshop from "./assets/Photoshop.png";
+import Tailwind from "./assets/Tailwind.png";
+import VSC from "./assets/VSC.png";
 
 function SkillsAndKnowledgeSection() {
   return (
@@ -32,14 +36,14 @@ function SkillsAndKnowledgeSection() {
             src="https://cdn-icons-png.flaticon.com/512/3334/3334886.png"
             alt="React"
           />
-          <KnowledgeIcon src="src/assets/VSC.png" alt="VSC" />
+          <KnowledgeIcon src={VSC} alt="VSC" />
           <KnowledgeIcon
             src="https://seeklogo.com/images/V/vite-logo-BFD4283991-seeklogo.com.png"
             alt="Vite"
           />
         </div>
         <div className="flex justify-center flex-wrap">
-          <KnowledgeIcon src="src/assets/Tailwind.png" alt="Tailwind" />
+          <KnowledgeIcon src={Tailwind} alt="Tailwind" />
           <KnowledgeIcon
             src="https://raw.githubusercontent.com/saadeghi/files/main/daisyui/logo.svg"
             alt="DaisyUI"
@@ -57,12 +61,12 @@ function SkillsAndKnowledgeSection() {
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Canva_icon_2021.svg/600px-Canva_icon_2021.svg.png?20220821125247"
             alt="Canva"
           />
-          <KnowledgeIcon src="./src/assets/Photoshop.png" alt="Photoshop" />
+          <KnowledgeIcon src={Photoshop} alt="Photoshop" />
         </div>
 
         {/* <h3 className="text-2xl font-bold">Repository</h3> */}
         <div className="flex justify-center flex-wrap">
-          <KnowledgeIcon src="./src/assets/Git.png" alt="Git" />
+          <KnowledgeIcon src={Git} alt="Git" />
           <KnowledgeIconLinked
             src="https://cdn-icons-png.flaticon.com/512/4494/4494749.png"
             alt="GitHub"

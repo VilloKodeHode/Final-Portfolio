@@ -3,6 +3,13 @@ import PitchWindow from "../Pitch/pitch";
 import { PitchText } from "../Pitch/pitch";
 import "../Pitch/pitch.css";
 
+//images:
+
+import StandardCV from "./assets/Standard CV space.pdf";
+import StandardCVPic from "./assets/Standard CV pic space.png";
+import FancyCV from "./assets/Fancy CV space.png";
+import JVLogo from "./assets/JVlogo.png";
+
 //styles:
 import "../../Portfolio/CvWithEffectsAndLink/CvEffectsAndLink.css";
 
@@ -22,19 +29,11 @@ function HeroSection() {
           </p>
         </article>
         <div className="flex m-auto justify-center h-fit">
-          <img className="h-60 rounded-full" src={"./src/assets/JVlogo.png"} />
+          <img className="h-60 rounded-full" src={JVLogo} />
         </div>
         <div className="wrapper cv-wrapper">
-          <Cv
-            href="./src/assets/Standard CV space.pdf"
-            src="./src/assets/Standard CV pic space.png"
-            className="cv standard"
-          />
-          <Cv
-            href="./src/assets/Fancy CV space.png"
-            src="./src/assets/Fancy CV space.png"
-            className="cv fancy"
-          />
+          <Cv href={StandardCV} src={StandardCVPic} className="cv standard" />
+          <Cv href={FancyCV} src={FancyCV} className="cv fancy" />
         </div>
         <div className="m-auto">
           <article className="m-auto">
