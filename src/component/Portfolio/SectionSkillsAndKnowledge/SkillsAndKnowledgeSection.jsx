@@ -32,14 +32,14 @@ function SkillsAndKnowledgeSection() {
             src="https://cdn-icons-png.flaticon.com/512/3334/3334886.png"
             alt="React"
           />
-          <KnowledgeIcon src="./src/assets/VSC.png" alt="VSC" />
+          <KnowledgeIcon src="src/assets/VSC.png" alt="VSC" />
           <KnowledgeIcon
             src="https://seeklogo.com/images/V/vite-logo-BFD4283991-seeklogo.com.png"
             alt="Vite"
           />
         </div>
         <div className="flex justify-center flex-wrap">
-          <KnowledgeIcon src="src\assets\Tailwind.png" alt="Tailwind" />
+          <KnowledgeIcon src="src/assets/Tailwind.png" alt="Tailwind" />
           <KnowledgeIcon
             src="https://raw.githubusercontent.com/saadeghi/files/main/daisyui/logo.svg"
             alt="DaisyUI"
