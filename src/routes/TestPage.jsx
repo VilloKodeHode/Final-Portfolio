@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 import "../App.css";
 
@@ -13,21 +14,21 @@ function TestPage() {
           <span className="text-indigo-500 text-opacity-90 menu menu-horizontal">
             <li>
               <Link
-                href="/About"
+                to="/About"
                 className="p-0 border border-blue-500 bg-sky-300 rounded-full"
               >
                 a
               </Link>
               <ul className="text-indigo-500">
                 <li className="absolute w-fit text-4xl bottom-16 right-24 backdrop-blur-sm">
-                  <video
-                    autoPlay={"true"}
+                  {/* <video
+                    autoPlay={true}
                     loop
                     muted
                     src="src\assets\code3.mp4"
                     className="absolute z-10 w-full h-full"
-                  ></video>
-                  <Link href="/About" className="backdrop-blur-md z-20 p-12">
+                  ></video> */}
+                  <Link to="/About" className="backdrop-blur-md z-20 p-12">
                     About
                   </Link>
                 </li>
@@ -38,22 +39,22 @@ function TestPage() {
           <span className="text-indigo-500 text-opacity-90 menu menu-horizontal">
             <li>
               <Link
-                href="/Qualifications"
+                to="/Qualifications"
                 className="p-0  border-blue-500 bg-sky-300 rounded-full"
               >
                 s
               </Link>
               <ul className="text-indigo-500">
                 <li className="absolute w-fit text-4xl bottom-6 left-16 backdrop-blur-sm">
-                  <video
-                    autoPlay={"true"}
+                  {/* <video
+                    autoPlay={true}
                     loop
                     muted
                     src="src\assets\code2.mp4"
                     className="z-10 absolute w-full h-full"
-                  ></video>
+                  ></video> */}
                   <Link
-                    href="/Qualifications"
+                    to="/Qualifications"
                     className="backdrop-blur-md z-20 p-12"
                   >
                     Skills
@@ -66,21 +67,21 @@ function TestPage() {
           <span className="text-indigo-500 text-opacity-90 menu menu-horizontal">
             <li>
               <Link
-                href="/Projects"
+                to="/Projects"
                 className="p-0 border-blue-500 bg-sky-300 rounded-full"
               >
                 p
               </Link>
               <ul className="text-indigo-500">
                 <li className="absolute w-fit text-4xl top-2 right-20 backdrop-blur-sm">
-                  <video
-                    autoPlay={"true"}
+                  {/* <video
+                    autoPlay={true}
                     loop
                     muted
                     src="src\assets\numbers.mp4"
                     className="absolute z-10 w-full"
-                  ></video>
-                  <Link href="/Projects" className="backdrop-blur-md z-20 p-12">
+                  ></video> */}
+                  <Link to="/Projects" className="backdrop-blur-md z-20 p-12">
                     Projects
                   </Link>
                 </li>
@@ -90,22 +91,22 @@ function TestPage() {
           ersonal tou
           <span className="text-indigo-500 text-opacity-90 menu menu-horizontal">
             <li>
-              <link
-                href="/Contact"
-                className="p-0  border-blue-500 bg-sky-300 rounded-full"
+              <Link
+                to="/Contact"
+                className="p-0 border-blue-500 bg-sky-300 rounded-full"
               >
                 c
-              </link>
+              </Link>
               <ul className="text-indigo-500">
                 <li className="absolute w-fit text-4xl top-2 left-6 backdrop-blur-sm">
-                  <video
-                    autoPlay={"true"}
+                  {/* <video
+                    autoPlay={true}
                     loop
                     muted
                     src="src\assets\code.mp4"
                     className="absolute z-10 w-full"
-                  ></video>
-                  <Link href="/About" className="backdrop-blur-xl z-20 p-12">
+                  ></video> */}
+                  <Link to="/About" className="backdrop-blur-xl z-20 p-12">
                     Contact
                   </Link>
                 </li>
@@ -136,7 +137,7 @@ function TestPage() {
           {/* <div className=" h-1/4 w-40 bg-indigo-800 absolute left-1/2 top-1/4 z-20"></div> */}
           {/* <div className="">
             <video
-              autoPlay={"true"}
+              autoPlay={true}
               loop
               muted
               src="src\assets\code.mp4"
@@ -145,7 +146,7 @@ function TestPage() {
           </div>
           <div className="">
             <video
-              autoPlay={"true"}
+              autoPlay={true}
               loop
               muted
               src="src\assets\code2.mp4"
@@ -154,7 +155,7 @@ function TestPage() {
           </div>
           <div className="">
             <video
-              autoPlay={"true"}
+              autoPlay={true}
               loop
               muted
               src="src\assets\numbers.mp4"
@@ -163,7 +164,7 @@ function TestPage() {
           </div>
           <div className="">
             <video
-              autoPlay={"true"}
+              autoPlay={true}
               loop
               muted
               src="src\assets\code3.mp4"
@@ -172,7 +173,7 @@ function TestPage() {
           </div>
           <div className="">
             <video
-              autoPlay={"true"}
+              autoPlay={true}
               loop
               muted
               src="src\assets\code4.mp4"
@@ -180,6 +181,7 @@ function TestPage() {
             ></video>
           </div> */}
         </div>
+        <Outlet />
       </div>
     </>
   );
