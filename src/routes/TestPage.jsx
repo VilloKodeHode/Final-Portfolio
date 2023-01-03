@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import "../App.css";
 
 function TestPage() {
@@ -10,12 +12,12 @@ function TestPage() {
           Code{" "}
           <span className="text-indigo-500 text-opacity-90 menu menu-horizontal">
             <li>
-              <a
+              <Link
                 href="/About"
                 className="p-0 border border-blue-500 bg-sky-300 rounded-full"
               >
                 a
-              </a>
+              </Link>
               <ul className="text-indigo-500">
                 <li className="absolute w-fit text-4xl bottom-16 right-24 backdrop-blur-sm">
                   <video
@@ -25,9 +27,9 @@ function TestPage() {
                     src="src\assets\code3.mp4"
                     className="absolute z-10 w-full h-full"
                   ></video>
-                  <a href="/About" className="backdrop-blur-md z-20 p-12">
+                  <Link href="/About" className="backdrop-blur-md z-20 p-12">
                     About
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </li>
@@ -35,12 +37,12 @@ function TestPage() {
           nd De
           <span className="text-indigo-500 text-opacity-90 menu menu-horizontal">
             <li>
-              <a
+              <Link
                 href="/Qualifications"
                 className="p-0  border-blue-500 bg-sky-300 rounded-full"
               >
                 s
-              </a>
+              </Link>
               <ul className="text-indigo-500">
                 <li className="absolute w-fit text-4xl bottom-6 left-16 backdrop-blur-sm">
                   <video
@@ -50,12 +52,12 @@ function TestPage() {
                     src="src\assets\code2.mp4"
                     className="z-10 absolute w-full h-full"
                   ></video>
-                  <a
+                  <Link
                     href="/Qualifications"
                     className="backdrop-blur-md z-20 p-12"
                   >
                     Skills
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </li>
@@ -63,12 +65,12 @@ function TestPage() {
           ign <br /> with a{" "}
           <span className="text-indigo-500 text-opacity-90 menu menu-horizontal">
             <li>
-              <a
+              <Link
                 href="/Projects"
                 className="p-0 border-blue-500 bg-sky-300 rounded-full"
               >
                 p
-              </a>
+              </Link>
               <ul className="text-indigo-500">
                 <li className="absolute w-fit text-4xl top-2 right-20 backdrop-blur-sm">
                   <video
@@ -78,9 +80,9 @@ function TestPage() {
                     src="src\assets\numbers.mp4"
                     className="absolute z-10 w-full"
                   ></video>
-                  <a href="/Projects" className="backdrop-blur-md z-20 p-12">
+                  <Link href="/Projects" className="backdrop-blur-md z-20 p-12">
                     Projects
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </li>
@@ -88,12 +90,12 @@ function TestPage() {
           ersonal tou
           <span className="text-indigo-500 text-opacity-90 menu menu-horizontal">
             <li>
-              <a
+              <link
                 href="/Contact"
                 className="p-0  border-blue-500 bg-sky-300 rounded-full"
               >
                 c
-              </a>
+              </link>
               <ul className="text-indigo-500">
                 <li className="absolute w-fit text-4xl top-2 left-6 backdrop-blur-sm">
                   <video
@@ -103,9 +105,9 @@ function TestPage() {
                     src="src\assets\code.mp4"
                     className="absolute z-10 w-full"
                   ></video>
-                  <a href="/About" className="backdrop-blur-xl z-20 p-12">
+                  <Link href="/About" className="backdrop-blur-xl z-20 p-12">
                     Contact
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </li>

@@ -72,17 +72,17 @@ function LandingPage() {
               Code{" "}
               <span className="text-blue-600 text-opacity-90 menu menu-horizontal">
                 <li>
-                  <a href="/About" className="p-0">
+                  <Link href="/About" className="p-0">
                     a
-                  </a>
+                  </Link>
                   <ul className="text-blue-500">
                     <li className="absolute w-fit bottom-0 left-0 backdrop-blur-sm rounded-full">
-                      <a
+                      <Link
                         href="/About"
                         className="backdrop-blur-md rounded-full"
                       >
                         About
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </li>
@@ -90,17 +90,17 @@ function LandingPage() {
               nd Design <br /> with a{" "}
               <span className="text-blue-600 text-opacity-90 menu menu-horizontal">
                 <li>
-                  <a href="/Projects" className="p-0">
+                  <Link href="/Projects" className="p-0">
                     p
-                  </a>
+                  </Link>
                   <ul className="text-blue-500">
                     <li className="absolute w-fit top-0 right-0 backdrop-blur-sm rounded-full">
-                      <a
+                      <Link
                         href="/Projects"
                         className="backdrop-blur-md rounded-full"
                       >
                         Projects
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </li>
@@ -108,9 +108,9 @@ function LandingPage() {
               er
               <span className="text-blue-600 text-opacity-90 menu menu-horizontal">
                 <li>
-                  <a href="/Qualifications" className="p-0">
+                  <Link href="/Qualifications" className="p-0">
                     s
-                  </a>
+                  </Link>
                   <ul className="text-blue-500">
                     <li className="absolute w-fit bottom-0 left-0 backdrop-blur-sm rounded-full">
                       <a
@@ -126,17 +126,17 @@ function LandingPage() {
               onal tou
               <span className="text-blue-600 text-opacity-90 menu menu-horizontal">
                 <li>
-                  <a href="/Contact" className="p-0">
+                  <Link href="/Contact" className="p-0">
                     c
-                  </a>
+                  </Link>
                   <ul className="text-blue-500">
                     <li className="absolute w-fit top-0 right-0 backdrop-blur-sm rounded-full">
-                      <a
+                      <Link
                         href="/Contact"
                         className="backdrop-blur-sm rounded-full"
                       >
                         Contact
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </li>
