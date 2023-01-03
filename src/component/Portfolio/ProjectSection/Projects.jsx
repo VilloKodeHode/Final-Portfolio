@@ -35,6 +35,7 @@ function ProjectSection() {
           description="Selvinitiert mini prosjekt. Prøvde å se mulighetene med css"
           hrefCode="https://github.com/VilloKodeHode/CSS-art"
         />
+        {/* Må ha "Link" på PokeAPI her */}
         <Project
           href="/PokeAPI"
           projectName="PokeAPI"
