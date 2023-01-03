@@ -10,9 +10,9 @@
 }
 
 .landingPage {
-  font-size: 30vh;
+  font-size: 20vw;
   /* font-size: 250px; */
-  grid-template-rows: 2fr 1fr 1fr;
+  grid-template-rows: 45vh 45vh;
   /* letter-spacing: 10px; */
   /* line-height: 100px; */
   color: white;
@@ -27,7 +27,7 @@
 }
 
 .landingPageSmaller {
-  font-size: 12vh;
+  font-size: 5vw;
   /* font-size: 100px; */
   line-height: 100px;
   font-weight: 700;

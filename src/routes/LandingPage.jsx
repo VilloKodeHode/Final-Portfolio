@@ -19,44 +19,46 @@ function LandingPage() {
   return (
     <>
       {/* Prøv å gridde? */}
-      <div className="">
-        {/* <img
+      <div className=" overflow-hidden">
+        <div className="absolute top-0 bottom-0 left-0 right-0 grid grid-cols-2 grid-rows-2 h-screen">
+          {/* <img
           className="h-40 rounded-full p-2 bg-orange-700 shadow-md shadow-slate-900 -rotate-45 absolute left-96 top-60"
           src="../src/assets/VilloDeveloper.png"
         /> */}
-        {/* bg-[url('https://previews.123rf.com/images/creativika/creativika1608/creativika160800056/60928128-diagonal-lined-seamless-pattern-repeating-texture-with-black-thin-parallel-straight-lines-on-white-b.jpg')] */}
-        {/* <img
+          {/* bg-[url('https://previews.123rf.com/images/creativika/creativika1608/creativika160800056/60928128-diagonal-lined-seamless-pattern-repeating-texture-with-black-thin-parallel-straight-lines-on-white-b.jpg')] */}
+          {/* <img
           src={LPClippingMask}
           className="responsive absolute top-0 left-0 z-50 h-full"
         /> */}
-        <video
-          autoPlay={true}
-          loop
-          muted
-          src={Code1Video}
-          className="absolute z-10 left-1/4 bottom-2/3 h-1/4 rounded-l-full"
-        ></video>
-        <video
-          autoPlay={true}
-          loop
-          muted
-          src={Code2Video}
-          className="absolute left-1/2 bottom-1/2 z-10 h-1/4 rounded-r-full"
-        ></video>
-        <video
-          autoPlay={true}
-          loop
-          muted
-          src={Code3Video}
-          className="absolute right-2/3 top-1/2 z-10 h-1/4 rounded-l-full"
-        ></video>
-        <video
-          autoPlay={true}
-          loop
-          muted
-          src={Code5Video}
-          className="absolute left-2/3 top-2/3 z-10 h-1/4 rounded-r-full"
-        ></video>
+          <video
+            autoPlay={true}
+            loop
+            muted
+            src={Code1Video}
+            className="rounded-l-full m-auto"
+          ></video>
+          <video
+            autoPlay={true}
+            loop
+            muted
+            src={Code2Video}
+            className="rounded-r-full m-auto"
+          ></video>
+          <video
+            autoPlay={true}
+            loop
+            muted
+            src={Code3Video}
+            className="rounded-l-full m-auto"
+          ></video>
+          <video
+            autoPlay={true}
+            loop
+            muted
+            src={Code5Video}
+            className=" rounded-r-full m-auto"
+          ></video>
+        </div>
         <div className=" top-0 left-0 flex flex-col w-full h-full z-50">
           <div className="landingPage z-50 grid">
             <div className="flex content-center justify-center flex-wrap z-50">
@@ -87,11 +89,8 @@ function LandingPage() {
                     a
                   </Link>
                   <ul className="text-blue-500">
-                    <li className="absolute w-fit bottom-24 -right-8 backdrop-blur-sm rounded-full">
-                      <Link
-                        to="/About"
-                        className="backdrop-blur-md rounded-full"
-                      >
+                    <li className="absolute w-fit bottom-16 -right-8">
+                      <Link to="/About" className="">
                         About
                       </Link>
                     </li>
@@ -105,11 +104,8 @@ function LandingPage() {
                     p
                   </Link>
                   <ul className="text-blue-500">
-                    <li className="absolute w-fit bottom-48 -left-20 backdrop-blur-sm rounded-full">
-                      <Link
-                        to="/Projects"
-                        className="backdrop-blur-md rounded-full"
-                      >
+                    <li className="absolute w-fit bottom-40 -left-20">
+                      <Link to="/Projects" className="">
                         Projects
                       </Link>
                     </li>
@@ -123,11 +119,8 @@ function LandingPage() {
                     s
                   </Link>
                   <ul className="text-blue-500">
-                    <li className="absolute w-fit bottom-48 -left-24 backdrop-blur-sm rounded-full">
-                      <a
-                        to="/Qualifications"
-                        className="backdrop-blur-md rounded-full"
-                      >
+                    <li className="absolute w-fit bottom-40 -left-24">
+                      <a to="/Qualifications" className="">
                         Skills
                       </a>
                     </li>
@@ -141,11 +134,8 @@ function LandingPage() {
                     c
                   </Link>
                   <ul className="text-blue-500">
-                    <li className="absolute w-fit bottom-48 right-16 backdrop-blur-sm rounded-full">
-                      <Link
-                        to="/Contact"
-                        className="backdrop-blur-sm rounded-full"
-                      >
+                    <li className="absolute w-fit bottom-40 right-16">
+                      <Link to="/Contact" className="">
                         Contact
                       </Link>
                     </li>
