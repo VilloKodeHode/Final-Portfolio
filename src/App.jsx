@@ -51,7 +51,8 @@ function App() {
   );
 }
 
-function Thing() {}
+function doesNothing() {}
+
 // const ColorMode = () => {
 //   const [ColorMode, setColorMode] = useState("dark");
 // };
