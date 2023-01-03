@@ -4,6 +4,10 @@ import ConsumingContext from "../component/ConsumingContext";
 import UseEffect from "../component/UseEffect";
 import { Link } from "react-router-dom";
 import "../App.css";
+
+//images
+import LPClippingMask from "../routes/LandingPageClipMask.png";
+
 function LandingPage() {
   return (
     <>
@@ -15,7 +19,7 @@ function LandingPage() {
         /> */}
         {/* bg-[url('https://previews.123rf.com/images/creativika/creativika1608/creativika160800056/60928128-diagonal-lined-seamless-pattern-repeating-texture-with-black-thin-parallel-straight-lines-on-white-b.jpg')] */}
         <img
-          src="src/assets/LandingPageClipMask.png"
+          src={LPClippingMask}
           className="responsive absolute top-0 left-0 z-50"
         />
         <video
