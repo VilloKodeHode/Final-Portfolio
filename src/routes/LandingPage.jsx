@@ -8,6 +8,13 @@ import "../App.css";
 //images
 import LPClippingMask from "./assets/LandingPageClipMask.png";
 
+//videos
+import Code1Video from "./assets/code1.mp4";
+import Code2Video from "./assets/code2.mp4";
+import Code3Video from "./assets/code3.mp4";
+import Code4Video from "./assets/code4.mp4";
+import Code5Video from "./assets/code5.mp4";
+
 function LandingPage() {
   return (
     <>
@@ -26,28 +33,28 @@ function LandingPage() {
           autoPlay={true}
           loop
           muted
-          src="src\assets\code.mp4"
+          src={Code1Video}
           className="absolute z-10 left-1/4 bottom-2/3 h-1/4 rounded-l-full"
         ></video>
         <video
           autoPlay={true}
           loop
           muted
-          src="src\assets\code2.mp4"
+          src={Code2Video}
           className="absolute left-1/2 bottom-1/2 z-10 h-1/4 rounded-r-full"
         ></video>
         <video
           autoPlay={true}
           loop
           muted
-          src="src\assets\numbers.mp4"
+          src={Code3Video}
           className="absolute right-2/3 top-1/2 z-10 h-1/4 rounded-l-full"
         ></video>
         <video
           autoPlay={true}
           loop
           muted
-          src="src\assets\code3.mp4"
+          src={Code5Video}
           className="absolute left-2/3 top-2/3 z-10 h-1/4 rounded-r-full"
         ></video>
         <div className=" top-0 left-0 flex flex-col w-full h-full z-50">
@@ -80,7 +87,7 @@ function LandingPage() {
                     a
                   </Link>
                   <ul className="text-blue-500">
-                    <li className="absolute w-fit bottom-24 right-30 backdrop-blur-sm rounded-full">
+                    <li className="absolute w-fit bottom-24 -right-8 backdrop-blur-sm rounded-full">
                       <Link
                         to="/About"
                         className="backdrop-blur-md rounded-full"
@@ -98,7 +105,7 @@ function LandingPage() {
                     p
                   </Link>
                   <ul className="text-blue-500">
-                    <li className="absolute w-fit bottom-48 left-20 backdrop-blur-sm rounded-full">
+                    <li className="absolute w-fit bottom-48 -left-20 backdrop-blur-sm rounded-full">
                       <Link
                         to="/Projects"
                         className="backdrop-blur-md rounded-full"
@@ -134,7 +141,7 @@ function LandingPage() {
                     c
                   </Link>
                   <ul className="text-blue-500">
-                    <li className="absolute w-fit bottom-48 right-32 backdrop-blur-sm rounded-full">
+                    <li className="absolute w-fit bottom-48 right-16 backdrop-blur-sm rounded-full">
                       <Link
                         to="/Contact"
                         className="backdrop-blur-sm rounded-full"
