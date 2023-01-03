@@ -7,7 +7,7 @@ import NavBar from "./component/NavBar/NavBar";
 import PokeAPI from "./routes/PokeAPI/PokeAPI";
 
 //Libraries
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 //Contexts
 // import ExampleContext from "./component/content/ExampleContext";

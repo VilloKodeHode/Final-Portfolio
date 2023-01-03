@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/VilloKodeHode/Final-Portfolio/tree/gh-pages/",
+  "homepage": "https://github.com/VilloKodeHode/Final-Portfolio/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
