@@ -116,17 +116,6 @@ function TestPage() {
       <div className=" bg-black">
         <div className=" absolute h-full w-full top-0 left-0 grid grid-cols-2 grid-rows-2 z-10 overflow-hidden">
           {/* Make individual clipping masks! */}
-          {/* <div className="absolute w-full h-36 top-32 bg-black z-50"></div>
-        <div className="absolute w-10 h-full left-0 bg-black z-50"></div>
-        <div className="absolute w-10 h-full right-0 bg-black z-50"></div>
-        <div className="absolute w-32 h-full right-1/2 bg-black z-50"></div>
-        <div className="absolute w-40 h-1/4 bottom-0 right-1/2 bg-black z-50"></div>
-        <div className="absolute w-32 h-2/3 left-1/2 bottom-0 bg-black z-50"></div>
-        <div className="absolute w-full h-40 top-1/2 bg-black z-50"></div>
-        <div className="absolute w-full h-10 top-0 bg-black z-50"></div>
-        <div className="absolute w-full h-10 bottom-0 bg-black z-50"></div>
-        <div className="absolute w-full h-10 bottom-16 bg-black z-50"></div>
-        <div className="absolute w-1/2 h-6 top-3/4 bg-black z-50"></div> */}
 
           {/* <div className=" h-10 w-full bg-black absolute z-20"></div> */}
           {/* <div className=" h-10 w-full bg-black absolute bottom-0 z-20"></div> */}
