@@ -20,6 +20,7 @@ function SkillsAndKnowledgeSection() {
             src="https://cdn-icons-png.flaticon.com/512/136/136528.png"
             alt="HyperText Markup Language"
           />
+
           <KnowledgeIcon
             src="https://cdn-icons-png.flaticon.com/512/136/136527.png"
             alt="Cascading StyleSheets"
@@ -28,6 +29,24 @@ function SkillsAndKnowledgeSection() {
             src="https://cdn-icons-png.flaticon.com/512/136/136530.png"
             alt="JavaScript"
           />
+        </div>
+
+        <div>
+          <div className="indicator">
+            <span className="indicator-item badge badge-primary">novice</span>
+            <KnowledgeIcon
+              src="https://cdn-icons-png.flaticon.com/512/2306/2306154.png"
+              alt="PHP"
+            />
+          </div>
+
+          <div className="indicator">
+            <span className="indicator-item badge badge-primary">novice</span>
+            <KnowledgeIcon
+              src="https://cdn-icons-png.flaticon.com/512/5815/5815421.png"
+              alt="Python"
+            />
+          </div>
         </div>
 
         {/* <h3 className="text-2xl font-bold">Tools</h3> */}

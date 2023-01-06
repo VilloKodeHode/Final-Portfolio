@@ -1,7 +1,7 @@
 export function KnowledgeIcon(props) {
   const { src, alt } = props;
   return (
-    <figure className="p-3 m-4">
+    <figure className="pl-3 pt-2 ml-4 mb-8">
       <img className="h-12" src={src} alt={alt} />
     </figure>
   );
@@ -16,7 +16,7 @@ export function KnowledgeIconLinked(props) {
       href={href}
       target="_blank"
     >
-      <figure className="p-3 m-4 border duration-500 ease-out rounded-full">
+      <figure className="p-3 ml-4 border duration-500 ease-out rounded-full">
         <img className="h-12" src={src} alt={alt} />
       </figure>
     </a>
