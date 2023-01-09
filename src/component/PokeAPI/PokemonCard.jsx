@@ -1,17 +1,31 @@
 import { useState, useEffect } from "react";
+import { Await } from "react-router-dom";
 
 function PokemonCard(props) {
   const [pokemonDetails, setPokemonDetails] = useState(null);
+  const [pokemonMoreDetails, setPokemonMoreDetails] = useState(null);
 
   useEffect(() => {
     //Do fetch logic here
-    async function getData() {
+    async function getDataDetails() {
       const response = await fetch(props.url);
       const data = await response.json();
       setPokemonDetails(data);
       console.log(pokemonDetails);
     }
-    getData();
+    getDataDetails();
+  }, []);
+
+  useEffect(() => {
+    async function getFlavorText() {
+      if (pokemonDetails) {
+        const response = await fetch(pokemonDetails?.species.url);
+        const data = await response.json();
+        setPokemonMoreDetails(data);
+        console.log(pokemonMoreDetails);
+      }
+    }
+    getFlavorText();
   }, []);
 
   return (
@@ -30,7 +44,6 @@ function PokemonCard(props) {
             # {pokemonDetails.id}
           </p>
           {/* <p>base experience: {pokemonDetails.base_experience}</p> */}
-          <p></p>
           <p className="border-y-2  border-red-600">
             <p>Abilities:</p>
             <p className="w-fit m-auto">
@@ -38,12 +51,16 @@ function PokemonCard(props) {
                 .map((ability) => ability.ability.name)
                 .join(", ")}
             </p>
-            {/* <p className="w-fit m-auto">{pokemonDetails.species.url}</p> */}
+            <p className="w-fit m-auto text-xs border">
+              {pokemonMoreDetails?.flavor_text_entries[0]?.flavor_text.replace(
+                "",
+                ""
+              )}
+            </p>
           </p>
         </div>
       )}
     </div>
   );
 }
-
 export default PokemonCard;
