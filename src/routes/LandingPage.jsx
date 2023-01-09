@@ -20,7 +20,7 @@ function LandingPage() {
     <>
       {/* Prøv å gridde? */}
       <div className=" overflow-hidden">
-        <div className="absolute top-0 bottom-0 left-0 right-0 grid grid-cols-2 grid-rows-2 h-screen">
+        <div className="absolute top-0 bottom-0 left-0 right-0 grid grid-cols-2 grid-rows-2 h-screen opacity-40">
           {/* <img
           className="h-40 rounded-full p-2 bg-orange-700 shadow-md shadow-slate-900 -rotate-45 absolute left-96 top-60"
           src="../src/assets/VilloDeveloper.png"
@@ -82,10 +82,13 @@ function LandingPage() {
             </div>
 
             <div className="landingPageSmaller">
-              Code{" "}
-              <span className="text-blue-600 text-opacity-90 menu menu-horizontal">
+              Code <div className="indicator"></div>
+              <span className="text-blue-500 text-opacity-90 menu menu-horizontal ">
+                <span className="absolute indicator-item badge badge-secondary animate-bounce">
+                  about
+                </span>
                 <li>
-                  <Link to="/About" className="p-0">
+                  <Link to="/About" className="p-0 ">
                     a
                   </Link>
                   <ul className="text-blue-500">
@@ -99,6 +102,9 @@ function LandingPage() {
               </span>
               nd Design <br /> with a{" "}
               <span className="text-blue-600 text-opacity-90 menu menu-horizontal">
+                <span className="absolute indicator-item badge badge-secondary animate-bounce">
+                  projects
+                </span>
                 <li>
                   <Link to="/Projects" className="p-0">
                     p
@@ -114,6 +120,9 @@ function LandingPage() {
               </span>
               er
               <span className="text-blue-600 text-opacity-90 menu menu-horizontal">
+                <span className="absolute indicator-item badge badge-secondary animate-bounce">
+                  skills
+                </span>
                 <li>
                   <Link to="/Qualifications" className="p-0">
                     s
@@ -129,6 +138,9 @@ function LandingPage() {
               </span>
               onal tou
               <span className="text-blue-600 text-opacity-90 menu menu-horizontal">
+                <span className="absolute indicator-item badge badge-secondary animate-bounce">
+                  contact
+                </span>
                 <li>
                   <Link to="/Contact" className="p-0">
                     c
