@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import PokemonCard from "./PokemonCard";
 
-const pokemonData = "https://pokeapi.co/api/v2/pokemon/?limit=151";
+export const pokemonData = "https://pokeapi.co/api/v2/pokemon/?limit=3";
 
 function FetchData() {
   const [data, setData] = useState(null);
@@ -16,6 +16,8 @@ function FetchData() {
     }
     getData();
   }, []);
+
+  console.log(data);
 
   return (
     <>
