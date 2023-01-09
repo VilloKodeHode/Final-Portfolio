@@ -1,66 +1,99 @@
+import { when } from "jquery";
 import { useState, useEffect } from "react";
-import { Await } from "react-router-dom";
 
 function PokemonCard(props) {
-  const [pokemonDetails, setPokemonDetails] = useState(null);
-  const [pokemonMoreDetails, setPokemonMoreDetails] = useState(null);
+  // useEffect(() => {
+  //   fetch(props.url)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setPokemonDetails(data);
+  //       console.log(pokemonDetails);
 
-  useEffect(() => {
-    //Do fetch logic here
-    async function getDataDetails() {
-      const response = await fetch(props.url);
-      const data = await response.json();
-      setPokemonDetails(data);
-      console.log(pokemonDetails);
-    }
-    getDataDetails();
-  }, []);
+  //       return fetch(pokemonDetails.species.url).then((response) =>
+  //         response.json()
+  //       );
+  //     })
+  //     .then((data) => {
+  //       setPokemonMoreDetails(data);
+  //       console.log(pokemonMoreDetails);
+  //     });
+  // }, []);
 
-  useEffect(() => {
-    async function getFlavorText() {
-      if (pokemonDetails) {
-        const response = await fetch(pokemonDetails?.species.url);
-        const data = await response.json();
-        setPokemonMoreDetails(data);
-        console.log(pokemonMoreDetails);
-      }
-    }
-    getFlavorText();
-  }, []);
+  // useEffect(() => {
+  //   Promise.all([
+  //     fetch(props.url).then((response) => response.json()),
+  //     fetch(pokemonDetails.species.url).then((response) => response.json()),
+  //   ]).then(([data1, data2]) => {
+  //     setPokemonDetails(data1);
+  //     console.log(pokemonDetails);
+  //     setPokemonMoreDetails(data2);
+  //     console.log(pokemonMoreDetails);
+  //   });
+  // }, []);
+
+  // useEffect(async () => {
+  //   const response = await fetch(props.url);
+  //   const data = await response.json();
+  //   setPokemonDetails(data);
+  //   console.log(pokemonDetails);
+
+  //   const response2 = await fetch(pokemonDetails.species.url);
+  //   const data2 = await response2.json();
+  //   setPokemonMoreDetails(data2);
+  //   console.log(pokemonMoreDetails);
+  // }, []);
+
+  // useEffect(() => {
+  //   async function getDataDetails() {
+  //     const response = await fetch(props.url);
+  //     const data = await response.json();
+  //     setPokemonDetails(data);
+  //     console.log(pokemonDetails);
+
+  //     async function getPokemonMoreDetails() {
+  //       const response = await fetch(pokemonDetails.species.url);
+  //       const data = await response.json();
+  //       setPokemonMoreDetails(data);
+  //     }
+  //     getPokemonMoreDetails();
+  //     console.log(pokemonMoreDetails);
+  //   }
+  //   getDataDetails();
+  // }, []);
 
   return (
     <div className="p-4 bg-yellow-400">
       {props.name}
-      {pokemonDetails && (
-        <div className="bg-white p-4">
-          <a href={pokemonDetails.url}>
-            <img
-              className="m-auto bg-black"
-              src={pokemonDetails.sprites.front_default}
-              alt=""
-            />
-          </a>
-          <p className="mt-2 border-y-2 border-red-600">
-            # {pokemonDetails.id}
+      <div className="bg-white p-4">
+        <a href={props.details.url}>
+          <img
+            className="m-auto bg-black"
+            src={props.details.sprites.front_default}
+            alt=""
+          />
+        </a>
+        <p className="mt-2 border-y-2 border-red-600"># {props.details.id}</p>
+        <div className="border-y-2  border-red-600">
+          <p>Abilities:</p>
+          <p className="w-fit m-auto">
+            {props.details.abilities
+              .map((ability) => ability.ability.name)
+              .join(", ")}
           </p>
-          {/* <p>base experience: {pokemonDetails.base_experience}</p> */}
-          <p className="border-y-2  border-red-600">
-            <p>Abilities:</p>
-            <p className="w-fit m-auto">
-              {pokemonDetails.abilities
-                .map((ability) => ability.ability.name)
-                .join(", ")}
-            </p>
-            <p className="w-fit m-auto text-xs border">
-              {pokemonMoreDetails?.flavor_text_entries[0]?.flavor_text.replace(
-                "",
-                ""
-              )}
-            </p>
+          <p className="w-fit m-auto text-xs border">
+            {props.moreDetails.flavor_text_entries[0].flavor_text.replace(
+              "",
+              ""
+            )}
+          </p>
+          <p>Type:</p>
+          <p>
+            {props.moreDetails.egg_groups.map((group) => group.name).join(", ")}
           </p>
         </div>
-      )}
+      </div>
     </div>
   );
 }
+
 export default PokemonCard;
