@@ -17,6 +17,8 @@ import PortfolioPage from "./routes/PorfolioPage/PortfolioPage";
 import Qualifications from "./routes/Qualifications/QualificationsPage";
 import ProjectPage from "./routes/Projects/ProjectPage";
 import TestPage from "./routes/TestPage";
+import TestPage2 from "./routes/TestPage2";
+import RenderParticles from "./component/Particles/Particles";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -32,6 +34,7 @@ function App() {
         <Route path="/PokeAPI" element={<PokeAPI />} />
         <Route path="/Portfolio" element={<PortfolioPage />} />
         <Route path="/TestPage" element={<TestPage />} />
+        <Route path="/TestPage2" element={<TestPage2 />} />
         <Route
           path="*"
           element={

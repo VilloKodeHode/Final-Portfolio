@@ -3,6 +3,7 @@ import ConsumingContext from "../component/ConsumingContext";
 // import FetchDadJoke from "../component/DadJokeAPI/FetchDadJoke";
 import UseEffect from "../component/UseEffect";
 import { Link } from "react-router-dom";
+
 import "../App.css";
 
 //images
@@ -14,11 +15,14 @@ import Code2Video from "./assets/code2.mp4";
 import Code3Video from "./assets/code3.mp4";
 import Code4Video from "./assets/code4.mp4";
 import Code5Video from "./assets/code5.mp4";
+import RenderParticles from "../component/Particles/Particles";
 
 function LandingPage() {
   return (
     <>
       {/* Prøv å gridde? */}
+      <RenderParticles />
+
       <div className=" overflow-hidden">
         <div className="absolute top-0 bottom-0 left-0 right-0 grid grid-cols-2 grid-rows-2 h-screen opacity-40">
           {/* <img
