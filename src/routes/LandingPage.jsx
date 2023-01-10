@@ -30,7 +30,7 @@ function LandingPage() {
           src={LPClippingMask}
           className="responsive absolute top-0 left-0 z-50 h-full"
         /> */}
-          <video
+          {/* <video
             autoPlay={true}
             loop
             muted
@@ -57,7 +57,7 @@ function LandingPage() {
             muted
             src={Code5Video}
             className=" rounded-r-full m-auto"
-          ></video>
+          ></video> */}
         </div>
         <div className=" top-0 left-0 flex flex-col w-full h-full z-50">
           <div className="landingPage z-50 grid">

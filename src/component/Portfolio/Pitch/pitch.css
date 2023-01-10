@@ -17,10 +17,10 @@ div.pitch {
   position: fixed;
   padding: 3em;
   /* height: 80%; */
-  top: 20%;
-  bottom: 20%;
-  left: 50%;
-  right: 10%;
+  top: 5%;
+  bottom: 5%;
+  left: 5%;
+  right: 5%;
   margin: auto;
   background-color: black;
   color: white;
@@ -31,8 +31,9 @@ div.pitch {
 }
 
 .pitch-text {
-  /* margin: auto;
-  width: 50%; */
+  display: grid;
+  height: 100%;
+  /* width: 50%; */
 }
 
 /* .pitch span {

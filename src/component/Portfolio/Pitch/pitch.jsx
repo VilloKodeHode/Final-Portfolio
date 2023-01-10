@@ -1,13 +1,5 @@
 import { useState } from "react";
-
-function Button(props) {
-  const { idAndClass, text, onClick } = props;
-  return (
-    <button className={idAndClass} id={idAndClass} onClick={onClick}>
-      {text}
-    </button>
-  );
-}
+import Button from "../../Buttons/Button";
 
 export function PitchText(props) {
   const { title, text } = props;
