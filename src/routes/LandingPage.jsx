@@ -18,6 +18,7 @@ import Code3Video from "./assets/code3.mp4";
 import Code4Video from "./assets/code4.mp4";
 import Code5Video from "./assets/code5.mp4";
 import RenderParticles from "../component/Particles/Particles";
+import HamburgerBar from "../component/NavBar/HamburgerBar";
 
 function LandingPage() {
   const [toggle, setToggle] = useState(false);
@@ -28,51 +29,7 @@ function LandingPage() {
 
       <div className="LP-responsive">
         <div className="absolute top-0 bottom-0 left-0 right-0 grid grid-cols-2 grid-rows-2 h-screen">
-          <div className="absolute right-4 top-4">
-            <div className="dropdown">
-              <label tabIndex={0} className="btn bg-red-600 btn-circle">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="white"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              </label>
-              <ul
-                tabIndex={0}
-                className="menu menu-normal dropdown-content text-white mt-0 p-2 -translate-x-20 shadow rounded-box w-fit"
-              >
-                <li>
-                  <Link className="px-4" to="/About">
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link className="px-4" to="/Qualifications">
-                    Skills
-                  </Link>
-                </li>
-                <li>
-                  <Link className="px-4" to="/Projects">
-                    Projects
-                  </Link>
-                </li>
-                <li>
-                  <Link className="px-4" to="/Contact">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <HamburgerBar />
 
           {/* <img
           className="h-40 rounded-full p-2 bg-orange-700 shadow-md shadow-slate-900 -rotate-45 absolute left-96 top-60"
@@ -135,25 +92,42 @@ function LandingPage() {
             </div>
 
             <div className="landingPageSmaller">
-              Code{" "}
+              <span className="text-blue-600 text-opacity-90 menu menu-horizontal">
+                {/* <span className="absolute indicator-item badge badge-secondary animate-bounce">
+                  contact
+                </span> */}
+                <li>
+                  <Link to="/Contact" className="p-0">
+                    K
+                  </Link>
+                  <ul className="text-blue-500">
+                    <li className="absolute w-fit bottom-16 left-0">
+                      <Link to="/Contact" className="">
+                        Kontakt
+                      </Link>
+                    </li>
+                  </ul>
+                </li>
+              </span>
+              ode{" "}
               <span className="text-blue-500 text-opacity-90 menu menu-horizontal ">
                 {/* <span className="absolute indicator-item badge bg-transparent border-none animate-bounce">
                   ⇓⇓⇓
                 </span> */}
                 <li>
                   <Link to="/About" className="p-0 stroke-yellow-400 stroke-2 ">
-                    a
+                    o
                   </Link>
                   <ul className="text-blue-500">
                     <li className="absolute w-fit bottom-16 -right-8">
                       <Link to="/About" className="">
-                        About
+                        Om
                       </Link>
                     </li>
                   </ul>
                 </li>
               </span>
-              nd Design <br /> with a{" "}
+              g Design <br /> med en{" "}
               <span className="text-blue-600 text-opacity-90 menu menu-horizontal">
                 {/* <span className="absolute indicator-item badge badge-secondary animate-bounce">
                   ⇓⇓⇓
@@ -165,7 +139,7 @@ function LandingPage() {
                   <ul className="text-blue-500">
                     <li className="absolute w-fit bottom-40 -left-20">
                       <Link to="/Projects" className="">
-                        Projects
+                        Prosjekter
                       </Link>
                     </li>
                   </ul>
@@ -189,25 +163,7 @@ function LandingPage() {
                   </ul>
                 </li>
               </span>
-              onal tou
-              <span className="text-blue-600 text-opacity-90 menu menu-horizontal">
-                {/* <span className="absolute indicator-item badge badge-secondary animate-bounce">
-                  contact
-                </span> */}
-                <li>
-                  <Link to="/Contact" className="p-0">
-                    c
-                  </Link>
-                  <ul className="text-blue-500">
-                    <li className="absolute w-fit bottom-40 right-16">
-                      <Link to="/Contact" className="">
-                        Contact
-                      </Link>
-                    </li>
-                  </ul>
-                </li>
-              </span>
-              h
+              onlig touch
             </div>
             {/* <div className="flex content-center justify-center flex-wrap">
             Develo
@@ -230,8 +186,8 @@ function LandingPage() {
             </span>
             er
           </div> */}
-            <p className="text-xs opacity-50">
-              Click the blue letters to navitage
+            <p className="text-sm opacity-80">
+              Klikk på de blå bokstavene for å navigere
             </p>
           </div>
         </div>

@@ -9,8 +9,8 @@ section.knowledge {
 }
 @media (min-width: 700px) {
   section.knowledge {
-    grid-template-areas: "myknowledge myskills";
-    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "myknowledge";
+    grid-template-columns: 1fr;
   }
 }
 

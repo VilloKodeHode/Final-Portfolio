@@ -4,8 +4,8 @@ import JVhode from "./assets/Joakim-head.png";
 function ContactSection() {
   return (
     <>
-      <div className="bg-red-900 rounded-xl p-4 m-20">
-        <footer className="footer p-8 bg-red-700 text-black">
+      <div className="bg-red-900 rounded-3xl p-1">
+        <footer className="footer rounded-t-3xl p-8 bg-red-700 text-black">
           <div>
             <span className="footer-title text-red-900 opacity-100">
               Contact information
@@ -56,7 +56,7 @@ function ContactSection() {
           </a>
         </div> */}
         </footer>
-        <footer className="footer px-10 py-4 border-t-2 bg-red-600 text-black border-red-800">
+        <footer className="footer px-10 py-4 rounded-b-3xl border-t-2 bg-red-600 text-black border-red-800">
           <div className="items-center grid-flow-col">
             <svg
               width="24"

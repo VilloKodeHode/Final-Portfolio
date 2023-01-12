@@ -13,11 +13,11 @@ import VSF from "./assets/VStrengthFormula.png";
 function ProjectSection() {
   return (
     <section className="flex flex-row flex-wrap justify-center" id="projects">
-      <h2 className=" mb-6 mt-24 text-white">Projects</h2>
+      <h2 className=" mb-6 mt-14 text-white">Prosjekter</h2>
       <div className="flex justify-center flex-wrap">
         <Project
           href="https://villokodehode.github.io/Job-simulator/"
-          projectName="Job simulator"
+          projectName="Jobb simulator"
           src={JobSimulator}
           description="Et prosjekt for å prøve ut det jeg har lært"
           hrefCode="https://villokodehode.github.io/Job-simulator/"
@@ -25,7 +25,7 @@ function ProjectSection() {
 
         <Project
           href="https://villokodehode.github.io/Christmas-Calender/"
-          projectName="Christmas Calender"
+          projectName="Julekalender"
           src={XMasCalendar}
           description="Et samarbeidsprosjekt hvor jeg har laget min egen variant"
           hrefCode="https://github.com/VilloKodeHode/Christmas-Calender"
@@ -40,7 +40,7 @@ function ProjectSection() {
 
         <Project
           href="https://villokodehode.github.io/CSS-art/"
-          projectName="CSS Art"
+          projectName="CSS kunst"
           src={CssArt}
           description="Selvinitiert mini prosjekt. Prøvde å se mulighetene med css"
           hrefCode="https://github.com/VilloKodeHode/CSS-art"
@@ -55,14 +55,14 @@ function ProjectSection() {
         />
         <Project
           href="https://villokodehode.github.io/strength-training-tips-app/"
-          projectName="Strength training tips"
+          projectName="Styrketrenings tips"
           src={STT}
           description="Første forsøk på tailwind med noe av min kunnskap om trening"
           hrefCode="https://github.com/VilloKodeHode/strength-training-tips-app"
         />
         <Project
           href="https://villokodehode.github.io/daisy-and-tailwind/"
-          projectName="V Strength Formula"
+          projectName="V Styrke Formula"
           src={VSF}
           description="Første forsøk på tailwind + daisyUI"
           hrefCode="https://github.com/VilloKodeHode/daisy-and-tailwind"

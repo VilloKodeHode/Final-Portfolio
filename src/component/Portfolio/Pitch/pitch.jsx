@@ -53,14 +53,20 @@ const PitchWindow = () => {
               bedre. Jeg håper å komme i et arbeidsmiljø som liker kode, design,
               team-arbeid, kompetanse-heving og kvalitet."
             />
+            {/* <PitchText
+              title="Jeg ønsker å jobbe med UI og UX:"
+              text="Dette er for meg veldig interessant og lærerikt å jobbe med. Jeg
+              gleder meg til å lære meg flere kode-språk for å kunne gjøre dette
+              bedre. Jeg håper å komme i et arbeidsmiljø som liker kode, design,
+              team-arbeid, kompetanse-heving og kvalitet."
+            /> */}
+            <PitchText
+              title="Jeg har lært både front-end og back-end:"
+              text="Etter å ha lært React, har jeg undersøkt mulighetene for back-end, spesielt routing og API-calls. Jeg har blitt dyktig i disse områdene."
+            />
             <PitchText
               title="Personlighet:"
-              text="Jeg er kreativ, utadvendt, har stå-på vilje og er en god
-              lag-spiller. I tillegg er jeg ekstremt motivert og har brukt
-              hundrevis av timer utenom mitt nåværende kurs på å lære meg
-              koding. På KodeHode-kurset sier mine medstudenter at jeg i tillegg
-              er kunnskapsrik, hjelpsom, lærevillig og gir alltid det lille
-              ekstra."
+              text="Jeg er kreativ, sosial, har en indre motivasjon til å lære og er en god lagspiller. Jeg har brukt hundrevis av timer utenom front-end-kurset for å lære så mye som mulig om koding. På kurset jeg har deltatt på, bekreftes dette av mine medstudenter som sier at jeg også er kunnskapsrik, hjelpsom, villig til å lære og alltid yter det lille ekstra."
             />
           </div>
         </div>

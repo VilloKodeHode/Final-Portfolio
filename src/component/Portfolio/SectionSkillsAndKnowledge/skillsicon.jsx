@@ -1,7 +1,7 @@
 export function KnowledgeIcon(props) {
   const { src, alt } = props;
   return (
-    <figure className="pl-3 pt-2 ml-4 mb-8">
+    <figure className="px-4 pt-4 ml-4 mb-8">
       <img className="h-12" src={src} alt={alt} />
     </figure>
   );

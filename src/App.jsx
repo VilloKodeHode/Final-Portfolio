@@ -19,6 +19,13 @@ import ProjectPage from "./routes/Projects/ProjectPage";
 import TestPage from "./routes/TestPage";
 import TestPage2 from "./routes/TestPage2";
 
+//Todo:
+//* ProjectsPage: On load: Projects are smaller, and on click they become larger, click again to "go to" (add also close btn?)
+//* SkillsAndKnowledgePage: On load: Knowledgesection is a button instead, click to reveal the content.
+//* LandingPage: Add a title for my profesion (ex. aspiring developer)
+//* make custom breadcrumbs for the different pages (sånn som hos Kenneth) instead of headers for each pages
+//* HeroPage: More buttons to reveal text or something?
+
 function App() {
   return (
     <Router>
