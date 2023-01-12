@@ -18,11 +18,8 @@ import Qualifications from "./routes/Qualifications/QualificationsPage";
 import ProjectPage from "./routes/Projects/ProjectPage";
 import TestPage from "./routes/TestPage";
 import TestPage2 from "./routes/TestPage2";
-import RenderParticles from "./component/Particles/Particles";
 
 function App() {
-  // const [count, setCount] = useState(0);
-
   return (
     <Router>
       <Routes>
@@ -58,8 +55,8 @@ function doesNothing() {}
 // };
 
 // <Button
-//   idAndClass="pitch-btn"
-//   text="Mer om meg"
+//   idAndClass=""
+//   text=""
 //   onClick={() => (setToggle("dark") ? setToggle("light") : setToggle("dark"))}
 // />;
 

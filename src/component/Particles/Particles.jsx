@@ -41,10 +41,10 @@ function RenderParticles() {
           },
           modes: {
             push: {
-              quantity: 4,
+              quantity: 8,
             },
             repulse: {
-              distance: 100,
+              distance: 80,
               duration: 0.2,
             },
           },
@@ -78,7 +78,7 @@ function RenderParticles() {
               enable: true,
               area: 500,
             },
-            value: 80,
+            value: 60,
           },
           opacity: {
             value: 0.5,

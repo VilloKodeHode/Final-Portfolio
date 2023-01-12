@@ -5,9 +5,7 @@ function ContactPage() {
   return (
     <>
       <NavBar />
-      <div className="bg-purple-900 rounded-xl p-4 m-20">
-        <ContactSection />
-      </div>
+      <ContactSection />
     </>
   );
 }

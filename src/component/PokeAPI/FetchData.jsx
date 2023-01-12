@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import PokemonCard from "./PokemonCard";
 
+//svg
+import loading from "./assets/Ripple-1.8s-200px.svg";
+
 export const pokemonData = "https://pokeapi.co/api/v2/pokemon/?limit=1000";
 
 function FetchData() {
@@ -46,8 +49,10 @@ function FetchData() {
     <div className="p-8 border-2 border-red-700 bg-red-500 rounded-3xl">
       <h1 className="m-8 text-black">PokeAPI</h1>
       <h3 className="m-4">Click names for more info on the PokeMon!</h3>
+      {!pokemonDetails && !pokemonMoreDetails && (
+        <img className="w-96" src={loading} />
+      )}
       <div className="grid gap-4 grid-cols-3 bg-red-500 border-2 rounded p-8 border-red-700">
-        {!pokemonDetails && !pokemonMoreDetails && <p>Loading...</p>}
         {pokemonDetails &&
           pokemonMoreDetails &&
           pokemonDetails.map((details, index) => (
