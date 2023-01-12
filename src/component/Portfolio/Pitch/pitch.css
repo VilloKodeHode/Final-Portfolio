@@ -15,17 +15,17 @@ div.pitch {
   z-index: 100;
   /* transition: cubic-bezier(0.075, 0.82, 0.165, 1); */
   position: fixed;
-  padding: 3em;
+  /* padding: 1em; */
   /* height: 80%; */
   top: 5%;
   bottom: 5%;
   left: 5%;
   right: 5%;
   margin: auto;
-  background-color: black;
-  color: white;
-  border-radius: 15px;
-  border: solid white 4px;
+  /* background-color: black; */
+  /* color: white; */
+  /* border-radius: 15px;
+  border: solid white 4px; */
   backdrop-filter: blur(2px);
   /* border: #070b5e7a 1px solid; */
 }

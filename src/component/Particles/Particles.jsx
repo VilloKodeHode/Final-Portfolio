@@ -23,7 +23,7 @@ function RenderParticles() {
       options={{
         background: {
           color: {
-            value: "#0000",
+            value: "#3B343D",
           },
         },
         fpsLimit: 120,
@@ -51,10 +51,14 @@ function RenderParticles() {
         },
         particles: {
           color: {
-            value: "#E60000",
+            value: "#1eb854",
           },
+          // #E60000: original red
+          // #86C435
+
+          // #91FF00,
           links: {
-            color: "#E60000",
+            color: "#d99330",
             distance: 150,
             enable: true,
             opacity: 0.5,

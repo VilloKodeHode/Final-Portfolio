@@ -4,13 +4,13 @@ function HamburgerBar() {
   return (
     <div className="absolute right-4 top-4">
       <div className="dropdown">
-        <label tabIndex={0} className="btn bg-red-600 btn-circle">
+        <label tabIndex={0} className="btn bg-accent">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5"
             fill="none"
             viewBox="0 0 24 24"
-            stroke="white"
+            stroke="#91FF00"
           >
             <path
               strokeLinecap="round"
@@ -22,8 +22,13 @@ function HamburgerBar() {
         </label>
         <ul
           tabIndex={0}
-          className="menu menu-normal dropdown-content text-white mt-0 p-2 -translate-x-20 shadow rounded-box w-fit"
+          className="menu menu-normal dropdown-content text-base-100 mt-0 p-2 -translate-x-20 shadow rounded-box w-fit backdrop-blur-sm"
         >
+          <li>
+            <Link className="px-4" to="/">
+              Hjem
+            </Link>
+          </li>
           <li>
             <Link className="px-4" to="/About">
               Om

@@ -2,6 +2,7 @@ import "./App.css";
 
 import NavBar from "./component/NavBar/NavBar";
 import PokeAPI from "./routes/PokeAPI/PokeAPI";
+import HamburgerBar from "./component/NavBar/HamburgerBar";
 
 //Libraries
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
@@ -29,6 +30,7 @@ import TestPage2 from "./routes/TestPage2";
 function App() {
   return (
     <Router>
+      <HamburgerBar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/About" element={<AboutPage />} />

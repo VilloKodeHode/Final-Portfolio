@@ -6,7 +6,7 @@ export function PitchText(props) {
   return (
     <>
       <p className="p-2">
-        <span className="text-blue-600">{title}</span>
+        <span className="text-accent">{title}</span>
         <br />
         {text}
       </p>
@@ -20,7 +20,7 @@ const PitchWindow = () => {
   return (
     <>
       <Button
-        idAndClass="pitch-btn"
+        idAndClass="pitch-btn bg-accent text-success"
         text="Mer om meg"
         onClick={() => setToggle(!toggle)}
       />
@@ -31,7 +31,7 @@ const PitchWindow = () => {
             text="❌"
             onClick={() => setToggle(!toggle)}
           />
-          <div className="pitch-text">
+          <div className="h-full grid bg-info p-12 rounded-md shadow-2xl">
             <PitchText
               title="Hva jeg liker med koding:"
               text="Nye kode utfordringer er noe jeg gleder meg til. Mulighetene som

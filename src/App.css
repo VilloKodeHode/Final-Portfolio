@@ -5,7 +5,7 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  margin: 0rem 2rem;
   text-align: center;
 }
 
@@ -13,7 +13,7 @@
 }
 
 .landingPage {
-  font-size: 20vw;
+  /* font-size: 20vw; */
   /* font-size: 250px; */
   grid-template-rows: 45vh 45vh;
   /* letter-spacing: 10px; */
@@ -30,7 +30,7 @@
 }
 
 .landingPageSmaller {
-  font-size: 5vw;
+  /* font-size: 5vw; */
   /* font-size: 100px; */
   line-height: 100px;
   font-weight: 700;
@@ -57,7 +57,7 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 } */
 
-@keyframes logo-spin {
+/* @keyframes logo-spin {
   from {
     transform: rotate(0deg);
   }
@@ -74,7 +74,7 @@
 
 .card {
   padding: 2em;
-}
+} */
 
 /* .read-the-docs {
   color: #888;

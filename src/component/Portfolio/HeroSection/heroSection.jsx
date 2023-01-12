@@ -16,10 +16,10 @@ import "../../Portfolio/CvWithEffectsAndLink/CvEffectsAndLink.css";
 function HeroSection() {
   return (
     <>
-      <header className="m-h-screen pt-18 grid grid-rows-2 grid-cols-2 text-slate-100">
+      <header className="h-screen bg-info px-8 grid grid-rows-2 grid-cols-2 text-secondary">
         <article className="m-auto">
           <h1 className="py-4" id="home">
-            <span className="text-blue-300 text-7xl">Joakim Villo</span>
+            <span className="text-accent text-7xl">Joakim Villo</span>
           </h1>
           <p>
             For tiden går jeg på kurs om Front-End-Development og bruker
