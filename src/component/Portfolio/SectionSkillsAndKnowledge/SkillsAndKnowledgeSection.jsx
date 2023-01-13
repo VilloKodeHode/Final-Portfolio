@@ -16,10 +16,15 @@ function SkillsAndKnowledgeSection() {
 
   return (
     <section className="knowledge" id="knowledge">
-      <div className="flex flex-col m-auto w-2/3">
-        <h2 className="mb-10 mt-14 knowledge-header">Knowledge</h2>
+      <div className="flex flex-col m-auto ">
+        <h2 className="mb-10 knowledge-header">Kunnskap</h2>
+        <Button
+          idAndClass="bg-accent btn p-4 rounded-2xl border-2 shadow-xl w-fit m-auto text-black"
+          text="Skills"
+          onClick={() => setToggle(!toggle)}
+        />
         {/* <h3 className="text-2xl font-bold">Code</h3> */}
-        <div className="flex justify-center flex-wrap">
+        <div className="flex justify-center flex-wrap gap-16">
           <KnowledgeIcon
             src="https://cdn-icons-png.flaticon.com/512/136/136528.png"
             alt="HyperText Markup Language"
@@ -36,21 +41,21 @@ function SkillsAndKnowledgeSection() {
           {/* </div> */}
 
           {/* <div> */}
-          <div className="indicator">
-            <span className="indicator-item badge badge-primary">novice</span>
-            <KnowledgeIcon
-              src="https://cdn-icons-png.flaticon.com/512/2306/2306154.png"
-              alt="PHP"
-            />
-          </div>
+          {/* <div className="indicator">
+            <span className="indicator-item badge badge-primary">novice</span> */}
+          <KnowledgeIcon
+            src="https://cdn-icons-png.flaticon.com/512/2306/2306154.png"
+            alt="PHP"
+          />
+          {/* </div> */}
 
-          <div className="indicator">
-            <span className="indicator-item badge badge-primary">novice</span>
-            <KnowledgeIcon
-              src="https://cdn-icons-png.flaticon.com/512/5815/5815421.png"
-              alt="Python"
-            />
-          </div>
+          {/* <div className="indicator">
+            <span className="indicator-item badge badge-primary">novice</span> */}
+          <KnowledgeIcon
+            src="https://cdn-icons-png.flaticon.com/512/5815/5815421.png"
+            alt="Python"
+          />
+          {/* </div> */}
           {/* </div> */}
 
           {/* <h3 className="text-2xl font-bold">Tools</h3> */}
@@ -68,10 +73,10 @@ function SkillsAndKnowledgeSection() {
 
           {/* <div className="flex justify-center flex-wrap"> */}
           <KnowledgeIcon src={Tailwind} alt="Tailwind" />
-          <KnowledgeIcon
+          {/* <KnowledgeIcon
             src="https://raw.githubusercontent.com/saadeghi/files/main/daisyui/logo.svg"
             alt="DaisyUI"
-          />
+          /> */}
           {/* </div> */}
 
           {/* <h3 className="text-2xl font-bold">Design</h3> */}
@@ -107,14 +112,8 @@ function SkillsAndKnowledgeSection() {
         </div>
       </div>
 
-      <Button
-        idAndClass="bg-white btn p-4 rounded-2xl border-2 shadow-xl text-black absolute right-1/3"
-        text="Skills"
-        onClick={() => setToggle(!toggle)}
-      />
-
       {toggle && (
-        <div className="bg-black shadow-2xl shadow-black rounded-lg p-8 fixed w-full h-2/3 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">
+        <div className="bg-base-100 shadow-2xl shadow-black rounded-tl-[200px] rounded-bl-xl p-8 overflow-y-scroll scrollbar scrollbar-thumb-base-300 scrollbar-track-transparent fixed w-2/3 h-3/4 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">
           <Button
             idAndClass="pitch-close-btn"
             text="❌"
@@ -122,8 +121,8 @@ function SkillsAndKnowledgeSection() {
           />
           <div className="flex flex-col justify-start">
             <h2 className="mb-10 myskills-header">My skills</h2>
+            {/* On load: Ha en knapp som viser innholdet istedet */}
             <div className="flex justify-center flex-wrap">
-              {/* On load: Ha en knapp som viser innholdet istedet */}
               <MySkills
                 title="Lede gruppe-prosjekter"
                 src="https://cdn-icons-png.flaticon.com/512/8101/8101423.png"
@@ -146,6 +145,32 @@ function SkillsAndKnowledgeSection() {
                 title="Lærevillig"
                 src="https://cdn-icons-png.flaticon.com/512/2490/2490396.png"
                 description="Jeg elsker å lære om nye måter å gjøre ting på"
+              />
+
+              <MySkills
+                title="Nysgjerrig"
+                src="https://cdn-icons-png.flaticon.com/512/8738/8738602.png"
+                description="Jeg liker å utforske muligheter og spør når jeg trenger hjelp"
+              />
+              <MySkills
+                title="Idèrik"
+                src="https://cdn-icons-png.flaticon.com/512/5863/5863097.png"
+                description="Jeg kommer lett på idèer for å utføre arbeid"
+              />
+              <MySkills
+                title="Initiativrik"
+                src="https://cdn-icons-png.flaticon.com/512/3514/3514735.png"
+                description="Jeg går raskt igang og gjør gjerne mye mer hvis det er tid"
+              />
+              <MySkills
+                title="Entusiastisk"
+                src="https://cdn-icons-png.flaticon.com/512/4214/4214085.png"
+                description="Det skal veldig lite til for at jeg blir ekstremt motivert"
+              />
+              <MySkills
+                title="Kreativ"
+                src="https://cdn-icons-png.flaticon.com/512/3940/3940179.png"
+                description="Kreativitet er en av mine sterkeste egenskaper"
               />
             </div>
           </div>
