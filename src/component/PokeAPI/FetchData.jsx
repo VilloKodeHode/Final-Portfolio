@@ -4,7 +4,7 @@ import PokemonCard from "./PokemonCard";
 //svg
 import loading from "./assets/Ripple-1.8s-200px.svg";
 
-export const pokemonData = "https://pokeapi.co/api/v2/pokemon/?limit=1000";
+export const pokemonData = "https://pokeapi.co/api/v2/pokemon/?limit=151";
 
 function FetchData() {
   const [data, setData] = useState(null);

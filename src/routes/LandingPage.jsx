@@ -19,6 +19,7 @@ import Code3Video from "./assets/code3.mp4";
 import Code4Video from "./assets/code4.mp4";
 import Code5Video from "./assets/code5.mp4";
 import RenderParticles from "../component/Particles/Particles";
+import RenderHexagons from "../component/Particles/Polygon";
 
 function LandingPage() {
   const [toggle, setToggle] = useState(false);
@@ -26,6 +27,7 @@ function LandingPage() {
     <>
       {/* Prøv å gridde? */}
       <RenderParticles />
+      {/* <RenderHexagons /> */}
 
       <div className="LP-responsive">
         <div className="absolute top-0 bottom-0 left-0 right-0 grid grid-cols-2 grid-rows-2 h-screen">
@@ -70,7 +72,7 @@ function LandingPage() {
         </div>
         <div className=" top-0 left-0 flex flex-col w-full h-full z-50">
           <div className="landingPage z-50">
-            <div className="flex justify-center lg:text-[400px] md:text-[300px] text-[200px] flex-wrap z-10 text-success">
+            <div className="flex justify-center lg:text-[400px] md:text-[300px] text-[200px] flex-wrap z-10 text-slate-900">
               {/* Jo
               <span className="text-orange-500 text-opacity-50 menu menu-horizontal">
               <li>
@@ -127,9 +129,9 @@ function LandingPage() {
                 </li>
               </span>
               g Design <br /> med en{" "}
-              <div className="text-lg absolute top-1/2 underline">
+              {/* <div className="text-lg absolute top-1/2 underline">
                 Aspirerende utvikler
-              </div>
+              </div> */}
               <span className="text-accent menu menu-horizontal">
                 {/* <span className="absolute indicator-item badge badge-secondary animate-bounce">
                   ⇓⇓⇓
@@ -189,7 +191,7 @@ function LandingPage() {
             er
           </div> */}
             <p className="text-sm opacity-80">
-              Klikk på de blå bokstavene for å navigere
+              Klikk på de grønne bokstavene for å navigere
             </p>
           </div>
         </div>

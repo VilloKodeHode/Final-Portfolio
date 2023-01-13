@@ -27,7 +27,17 @@ module.exports = {
     ],
   },
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        popUp: {
+          "0%": { scale: "0%", opacity: "0%" },
+          "100%": { scale: "100%", opacity: "100%" },
+        },
+      },
+      animation: {
+        ProjectPopUp: "popUp 0.3s linear",
+      },
+    },
   },
   plugins: [require("daisyui")],
 };

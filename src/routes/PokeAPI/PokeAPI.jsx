@@ -6,7 +6,7 @@ import NavBar from "../../component/NavBar/NavBar";
 function PokeAPI() {
   return (
     <>
-      <NavBar />
+      {/* <NavBar /> */}
       <div className="App mt-40">
         <FetchData />
       </div>
