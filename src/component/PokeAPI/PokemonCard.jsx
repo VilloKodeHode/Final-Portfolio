@@ -21,7 +21,7 @@ function PokemonCard(props) {
         </a>
         {toggle && (
           <>
-            <div className="bg-white border-4 border-red-700 shadow-2xl shadow-black rounded-lg p-8 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <div className="animate-ProjectPopUp bg-white border-4 border-red-700 shadow-2xl shadow-black rounded-lg p-8 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
               <Button
                 idAndClass="pitch-close-btn"
                 text="❌"

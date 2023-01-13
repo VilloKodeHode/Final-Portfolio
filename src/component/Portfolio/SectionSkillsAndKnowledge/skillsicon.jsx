@@ -1,8 +1,8 @@
 export function KnowledgeIcon(props) {
   const { src, alt } = props;
   return (
-    <figure className="px-4 pt-4 ml-4 mb-8">
-      <img className="h-12" src={src} alt={alt} />
+    <figure className="px-4 pt-4 m-8">
+      <img className="h-16" src={src} alt={alt} />
     </figure>
   );
 }
@@ -26,11 +26,14 @@ export function KnowledgeIconLinked(props) {
 export function MySkills(props) {
   const { title, src, description } = props;
   return (
-    <figure className="border w-52 p-2 m-10 rounded">
-      <h3>{title}</h3>
-      <img className="h-20 m-auto" src={src} />
-      <p className="text-xs py-2">{description}</p>
-    </figure>
+    <>
+      <figure className="w-52 p-2 my-4 mx-4 rounded border-t-4 border-b-4 bg-base-300 border-accent">
+        <h3>{title}</h3>
+
+        <img className="h-32 my-4 m-auto " src={src} />
+        <p className="text-xs py-2">{description}</p>
+      </figure>
+    </>
   );
 }
 
