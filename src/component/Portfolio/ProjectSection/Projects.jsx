@@ -9,6 +9,7 @@ import PokeAPI from "./assets/PokeAPI.png";
 import STT from "./assets/strength training tips.png";
 import ValhallaBeards from "./assets/Valhalla beards.png";
 import VSF from "./assets/VStrengthFormula.png";
+import RPS from "./assets/RPS.png";
 
 function ProjectSection() {
   return (
@@ -19,7 +20,7 @@ function ProjectSection() {
           href="https://villokodehode.github.io/Job-simulator/"
           projectName="Jobb simulator"
           src={JobSimulator}
-          description="Et prosjekt for å prøve ut det jeg har lært"
+          description="Mitt første JS prosjekt"
           hrefCode="https://villokodehode.github.io/Job-simulator/"
         />
 
@@ -45,12 +46,11 @@ function ProjectSection() {
           description="Selvinitiert mini prosjekt. Prøvde å se mulighetene med css"
           hrefCode="https://github.com/VilloKodeHode/CSS-art"
         />
-        {/* Må ha "Link" på PokeAPI her */}
         <ProjectRouted
           to="/PokeAPI"
           projectName="PokeAPI"
           src={PokeAPI}
-          description="Den første API'en jeg har laget. 151 Pokemon vises"
+          description="Den første API'en jeg har laget. Generasjon 1-3 Pokemon vises"
           hrefCode="https://github.com/VilloKodeHode/use-effect/tree/master/src/component/PokeAPI"
         />
         <Project
@@ -66,6 +66,13 @@ function ProjectSection() {
           src={VSF}
           description="Første forsøk på tailwind + daisyUI"
           hrefCode="https://github.com/VilloKodeHode/daisy-and-tailwind"
+        />
+        <ProjectRouted
+          to="/RockPaperScissors"
+          projectName="Rock, Paper, Scissors"
+          src={RPS}
+          description="Stein, saks papir spill"
+          hrefCode="https://github.com/VilloKodeHode/use-effect/tree/master/src/component/PokeAPI"
         />
       </div>
     </section>
