@@ -19,6 +19,8 @@ import Qualifications from "./routes/Qualifications/QualificationsPage";
 import ProjectPage from "./routes/Projects/ProjectPage";
 import TestPage from "./routes/TestPage";
 import TestPage2 from "./routes/TestPage2";
+import RockPaperScissor from "./component/RockPaperScissor/RockPaperScissorsPage";
+import RockPaperScissorsPage from "./routes/RockPaperScissors/RenderRockPaperScissorPage";
 
 //Todo:
 //* ProjectsPage: On load: Projects are smaller, and on click they become larger, click again to "go to" (add also close btn?)
@@ -41,6 +43,7 @@ function App() {
         <Route path="/Portfolio" element={<PortfolioPage />} />
         <Route path="/TestPage" element={<TestPage />} />
         <Route path="/TestPage2" element={<TestPage2 />} />
+        <Route path="/RockPaperScissors" element={<RockPaperScissorsPage />} />
         <Route
           path="*"
           element={
