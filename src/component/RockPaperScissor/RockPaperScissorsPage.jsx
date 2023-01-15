@@ -9,27 +9,50 @@ import TRIANGLE from "./assets/bg-triangle.svg";
 //style
 import "./RockPaperScissor.css";
 
-import GameButton, {
-  ComputerPick,
-  ComputeScore,
-  InactiveGameButton,
-  RandomRPS,
-} from "./RockPaperScissor";
+import PlayRound, { GameButton, InactiveGameButton } from "./RockPaperScissor";
 import Button from "../Buttons/Button";
+
+// export function GameButton(props) {
+//   const { color, src, id } = props;
+//   return (
+//     <div
+//       className={`border-b-8 bg-${color}-700 rounded-full border-${color}-700 z-40`}
+//     >
+//       <div
+//         id={id}
+//         className={`rounded-full p-12 bg-white shadow-inner border-[22px] border-${color}-500  shadow-${color}-800`}
+//       >
+//         <img className="h-16 w-16" src={src} />
+//       </div>
+//     </div>
+//   );
+// }
+
+// function InactiveGameButton(props) {
+//   const { color, src, id } = props;
+//   return (
+//     <div className="z-40">
+//       <div
+//         className={`m-auto border-b-8 w-fit h-fit bg-${color}-700 rounded-full border-${color}-700`}
+//       >
+//         <div
+//           id={id}
+//           className={`rounded-full p-16 bg-white shadow-inner border-[22px] border-${color}-500`}
+//         >
+//           <img className="h-20 w-20" src={src} />
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
 
 function RockPaperScissor() {
   const [paper, setPaper] = useState(false);
   const [scissors, setScissors] = useState(false);
   const [rock, setRock] = useState(false);
-  const [fight, setFight] = useState(false);
   const [computerPick, setComputerPick] = useState("");
   const [score, setScore] = useState(0);
-
-  const handleClick = (playerPick) => {
-    setComputerPick(RandomRPS());
-    setFight(true);
-    ComputeScore(computerPick, playerPick, setScore);
-  };
+  // const [result, setResult] = useState("");
 
   return (
     <>
@@ -56,10 +79,12 @@ function RockPaperScissor() {
                 <button
                   onClick={() => {
                     setPaper(true);
-                    setScissors(false);
-                    setRock(false);
-                    setFight(true);
-                    handleClick("rock");
+
+                    PlayRound(
+                      { setComputerPick, setScore },
+
+                      "paper"
+                    );
                   }}
                   className="rounded-full p-0 h-fit bg-blue-700 z-50 m-8"
                 >
@@ -70,7 +95,7 @@ function RockPaperScissor() {
 
           {paper && (
             <>
-              <div className="flex align-top z-40 text-white">
+              <div className="flex h-full align-top z-40 text-white">
                 <div>
                   <h1 className="m-8">You picked</h1>
                   <InactiveGameButton
@@ -80,18 +105,37 @@ function RockPaperScissor() {
                   />
                 </div>
 
-                <div className="z-40">
+                <div className="z-40 ">
                   <h1 className="m-8">House picked </h1>
-
-                  <ComputerPick computerPick={computerPick} />
+                  {computerPick === "rock" && (
+                    <InactiveGameButton
+                      id="RockButton"
+                      src={ROCK}
+                      color="red"
+                    />
+                  )}
+                  {computerPick === "paper" && (
+                    <InactiveGameButton
+                      id="PaperButton"
+                      src={PAPER}
+                      color="blue"
+                    />
+                  )}
+                  {computerPick === "scissors" && (
+                    <InactiveGameButton
+                      id="ScissorButton"
+                      src={SCISSORS}
+                      color="yellow"
+                    />
+                  )}
+                  {/* <PlayRound computerPick={computerPick} /> */}
                 </div>
               </div>
               <Button
-                idAndClass="p-1 m-2 absolute top-80 left-80 text-sm"
-                text="close"
+                idAndClass="p-1 m-2 absolute bottom-40 right-1/2 translate-x-1/2 text-sm z-50"
+                text="Play Again"
                 onClick={() => {
                   setPaper(false);
-                  setFight(false);
                 }}
               />
             </>
@@ -104,9 +148,8 @@ function RockPaperScissor() {
                 <button
                   onClick={() => {
                     setScissors(true);
-                    setPaper(false);
-                    setRock(false);
-                    handleClick("scissors");
+
+                    PlayRound({ setComputerPick, setScore }, "scissors");
                   }}
                   className="rounded-full p-0 h-fit bg-yellow-700 z-50 m-8"
                 >
@@ -121,24 +164,45 @@ function RockPaperScissor() {
 
           {scissors && (
             <>
-              <div>
-                <h1 className="m-8">You picked</h1>
-                <InactiveGameButton
-                  id="ScissorButton"
-                  src={SCISSORS}
-                  color="yellow"
-                />
-              </div>
-              <div className="z-40">
-                <h1 className="m-8">House picked </h1>
-                <ComputerPick computerPick={computerPick} />
+              <div className="flex h-full align-top z-40 text-white">
+                <div>
+                  <h1 className="m-8">You picked</h1>
+                  <InactiveGameButton
+                    id="ScissorButton"
+                    src={SCISSORS}
+                    color="yellow"
+                  />
+                </div>
+                <div className="z-40">
+                  <h1 className="m-8">House picked </h1>
+                  {computerPick === "rock" && (
+                    <InactiveGameButton
+                      id="RockButton"
+                      src={ROCK}
+                      color="red"
+                    />
+                  )}
+                  {computerPick === "paper" && (
+                    <InactiveGameButton
+                      id="PaperButton"
+                      src={PAPER}
+                      color="blue"
+                    />
+                  )}
+                  {computerPick === "scissors" && (
+                    <InactiveGameButton
+                      id="ScissorButton"
+                      src={SCISSORS}
+                      color="yellow"
+                    />
+                  )}
+                </div>
               </div>
               <Button
-                idAndClass="p-1 m-2 absolute top-80 left-80 text-sm"
-                text="close"
+                idAndClass="p-1 m-2 absolute bottom-40 right-1/2 translate-x-1/2 text-sm z-50"
+                text="Play Again"
                 onClick={() => {
                   setScissors(false);
-                  setFight(false);
                 }}
               />
             </>
@@ -151,9 +215,8 @@ function RockPaperScissor() {
                 <button
                   onClick={() => {
                     setRock(true);
-                    setPaper(false);
-                    setScissors(false);
-                    handleClick("rock");
+
+                    PlayRound({ setComputerPick, setScore }, "rock");
                   }}
                   className="rounded-full p-0 h-fit bg-red-700 z-50 m-8"
                 >
@@ -164,27 +227,48 @@ function RockPaperScissor() {
 
           {rock && (
             <>
-              <div>
-                <h1 className="m-8">You picked</h1>
-                <InactiveGameButton id="RockButton" src={ROCK} color="red" />
-              </div>
-              <div className="z-40">
-                <h1 className="m-8">House picked </h1>
+              <div className="flex h-full align-top z-40 text-white">
+                <div>
+                  <h1 className="m-8">You picked</h1>
+                  <InactiveGameButton id="RockButton" src={ROCK} color="red" />
+                </div>
+                <div className="z-40">
+                  <h1 className="m-8">House picked </h1>
 
-                <ComputerPick computerPick={computerPick} />
+                  {computerPick === "rock" && (
+                    <InactiveGameButton
+                      id="RockButton"
+                      src={ROCK}
+                      color="red"
+                    />
+                  )}
+                  {computerPick === "paper" && (
+                    <InactiveGameButton
+                      id="PaperButton"
+                      src={PAPER}
+                      color="blue"
+                    />
+                  )}
+                  {computerPick === "scissors" && (
+                    <InactiveGameButton
+                      id="ScissorButton"
+                      src={SCISSORS}
+                      color="yellow"
+                    />
+                  )}
+                </div>
               </div>
               <Button
-                idAndClass="p-1 m-2 absolute top-80 left-80 text-sm"
-                text="close"
+                idAndClass="p-1 m-2 absolute bottom-40 right-1/2 translate-x-1/2 text-sm z-50"
+                text="Play Again"
                 onClick={() => {
                   setRock(false);
-                  setFight(false);
                 }}
               />
             </>
           )}
 
-          {!fight && (
+          {paper || scissors || rock || (
             <div className="absolute top-1/2 -translate-y-8 z-10">
               <img src={TRIANGLE} />
             </div>
@@ -199,3 +283,57 @@ function RockPaperScissor() {
 }
 
 export default RockPaperScissor;
+
+// function ComputerPick({ setComputerPick }) {
+//   const randomNumber = Math.floor(Math.random() * 3 + 1);
+//   let computerPick;
+//   if (randomNumber === 1) {
+//     computerPick = "rock";
+//   } else if (randomNumber === 2) {
+//     computerPick = "paper";
+//   } else {
+//     computerPick = "scissors";
+//   }
+//   console.log(
+//     "computer picked from the ComputerPick function: " + computerPick
+//   );
+//   setComputerPick(computerPick);
+//   return (
+//     <>
+//       {computerPick === "rock" && (
+//         <InactiveGameButton id="RockButton" src={ROCK} color="red" />
+//       )}
+//       {computerPick === "paper" && (
+//         <InactiveGameButton id="PaperButton" src={PAPER} color="blue" />
+//       )}
+//       {computerPick === "scissors" && (
+//         <InactiveGameButton id="ScissorButton" src={SCISSORS} color="yellow" />
+//       )}
+//     </>
+//   );
+// }
+
+// function ComputeScore(computerPick, playerPick, setScore) {
+//   if (
+//     (playerPick === "rock" && computerPick === "scissors") ||
+//     (playerPick === "scissors" && computerPick === "paper") ||
+//     (playerPick === "paper" && computerPick === "rock")
+//   ) {
+//     setScore((prevScore) => prevScore + 1);
+//     console.log(
+//       "Results from ComputeScore: playerpick: " + playerPick,
+//       "computerpick: " + computerPick
+//     );
+//   } else if (
+//     (playerPick === "rock" && computerPick === "paper") ||
+//     (playerPick === "scissors" && computerPick === "rock") ||
+//     (playerPick === "paper" && computerPick === "scissors")
+//   ) {
+//     setScore((prevScore) => prevScore - 1);
+//     console.log(
+//       "Results from ComputeScore: playerpick: " + playerPick,
+//       "computerpick: " + computerPick
+//     );
+//   } else if (computerPick === playerPick) {
+//   }
+// }

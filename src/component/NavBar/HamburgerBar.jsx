@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function HamburgerBar() {
   return (
-    <div className="absolute right-4 top-4">
+    <div className="absolute right-4 top-4 z-50">
       <div className="dropdown">
         <label tabIndex={0} className="btn bg-accent">
           <svg
