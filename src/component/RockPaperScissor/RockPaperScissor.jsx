@@ -9,56 +9,6 @@ import TRIANGLE from "./assets/bg-triangle.svg";
 
 //style
 
-function PlayRound({ setComputerPick, setScore }, playerPick) {
-  const randomNumber = Math.floor(Math.random() * 3 + 1);
-  let computerPick;
-  if (randomNumber === 1) {
-    computerPick = "rock";
-  } else if (randomNumber === 2) {
-    computerPick = "paper";
-  } else {
-    computerPick = "scissors";
-  }
-  console.log(
-    "computer picked from the ComputerPick function: " + computerPick
-  );
-  setComputerPick(computerPick);
-  if (
-    (playerPick === "rock" && computerPick === "scissors") ||
-    (playerPick === "scissors" && computerPick === "paper") ||
-    (playerPick === "paper" && computerPick === "rock")
-  ) {
-    setScore((prevScore) => prevScore + 1);
-    result = "win";
-
-    console.log(
-      "Results from Playround function: playerpick: " + playerPick,
-      "computerpick: " + computerPick
-    );
-  } else if (
-    (playerPick === "rock" && computerPick === "paper") ||
-    (playerPick === "scissors" && computerPick === "rock") ||
-    (playerPick === "paper" && computerPick === "scissors")
-  ) {
-    result = "lose";
-
-    setScore((prevScore) => prevScore - 1);
-  } else {
-    result = "draw";
-  }
-
-  console.log(result);
-
-  return (
-    // result === "lose" &&
-    <>
-      {computerPick === "rock" && <RockButton />}
-      {computerPick === "paper" && <PaperButton />}
-      {computerPick === "scissors" && <ScissorButton />}
-    </>
-  );
-}
-
 export function GameButton(props) {
   const { color, src, id } = props;
   return (
@@ -90,6 +40,61 @@ export function InactiveGameButton(props) {
         </div>
       </div>
     </div>
+  );
+}
+
+function PlayRound({ setComputerPick, setScore }, playerPick) {
+  const randomNumber = Math.floor(Math.random() * 3 + 1);
+  let computerPick;
+  if (randomNumber === 1) {
+    computerPick = "rock";
+  } else if (randomNumber === 2) {
+    computerPick = "paper";
+  } else {
+    computerPick = "scissors";
+  }
+  console.log(
+    "computer picked from the ComputerPick function: " + computerPick
+  );
+  // let result = "";
+  setComputerPick(computerPick);
+  if (
+    (playerPick === "rock" && computerPick === "scissors") ||
+    (playerPick === "scissors" && computerPick === "paper") ||
+    (playerPick === "paper" && computerPick === "rock")
+  ) {
+    setScore((prevScore) => prevScore + 1);
+    // result = "win";
+
+    console.log(
+      "Results from Playround function: playerpick: " + playerPick,
+      "computerpick: " + computerPick
+    );
+  } else if (
+    (playerPick === "rock" && computerPick === "paper") ||
+    (playerPick === "scissors" && computerPick === "rock") ||
+    (playerPick === "paper" && computerPick === "scissors")
+  ) {
+    // result = "lose";
+
+    setScore((prevScore) => prevScore - 1);
+  }
+
+  // console.log(result);
+
+  return (
+    // result === "lose" &&
+    <>
+      {computerPick === "rock" && (
+        <GameButton color="red" id="RockButton" src={ROCK} />
+      )}
+      {computerPick === "paper" && (
+        <GameButton color="blue" id="PaperButton" src={PAPER} />
+      )}
+      {computerPick === "scissors" && (
+        <GameButton color="yellow" id="ScissorsButton" src={SCISSORS} />
+      )}
+    </>
   );
 }
 
