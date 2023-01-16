@@ -5,9 +5,20 @@ import React from "react";
 import PAPER from "./assets/icon-paper.svg";
 import SCISSORS from "./assets/icon-scissors.svg";
 import ROCK from "./assets/icon-rock.svg";
+import Button from "../Buttons/Button";
 // import TRIANGLE from "./assets/bg-triangle.svg";
 
 //style
+
+export function WinnerGlow() {
+  return (
+    <>
+      <div className="absolute h-[300px] w-[300px] bg-sky-900 bg-opacity-30 winner -z-10 rounded-full"></div>
+      <div className="absolute h-[400px] w-[400px] bg-sky-900 bg-opacity-20 winner -z-20 rounded-full"></div>
+      <div className="absolute h-[500px] w-[500px] bg-sky-900 bg-opacity-10 winner -z-30 rounded-full"></div>
+    </>
+  );
+}
 
 export function GameButton(props) {
   const { color, src, id } = props;
@@ -17,10 +28,14 @@ export function GameButton(props) {
     >
       <div
         id={id}
-        className={`rounded-full p-10 bg-white shadow-inner border-[22px] border-${color}-500  shadow-${color}-800`}
+        className={`rounded-full p-10 bg-white border-[22px] border-${color}-500  buttonshadow`}
       >
-        <div className="h-20 w-20 flex">
-          <img className="w-16 m-auto" src={src} />
+        {/* shadow-black shadow-inner */}
+        <div className="h-20 w-20 flex relative">
+          <img className="w-16 m-auto z-20" src={src} />
+          <div
+          // className={`absolute bg-green-100 top-1/2 translate-x-1/2 right-1/2 -translate-y-1/2 h-36 w-36 rounded-full`}
+          ></div>
         </div>
       </div>
     </div>
@@ -36,7 +51,7 @@ export function InactiveGameButton(props) {
       >
         <div
           id={id}
-          className={`rounded-full p-10 bg-white shadow-inner border-[22px] border-${color}-500  shadow-${color}-800`}
+          className={`rounded-full p-10 bg-white border-[22px] border-${color}-500  buttonshadow`}
         >
           <div className="h-20 w-20 flex">
             <img className="w-16 m-auto" src={src} />
@@ -84,7 +99,7 @@ function PlayRound({ setComputerPick, setScore, setResult }, playerPick) {
 
     setScore((prevScore) => prevScore - 1);
   } else {
-    result = "draw";
+    result = "Draw";
   }
   setResult(result);
 
@@ -129,6 +144,73 @@ function PlayRound({ setComputerPick, setScore, setResult }, playerPick) {
   //     )}
   //   </>
   // );
+}
+
+export function ResultandRestart({ result, setType }) {
+  return (
+    <div>
+      <h1>
+        {result === "win" || result === "lose" ? "You " : null}
+        {result}
+      </h1>
+      <Button
+        idAndClass="p-1 m-2 h-fit w-fit text-sm z-50"
+        text="Play Again"
+        onClick={() => {
+          setType(false);
+        }}
+      />
+    </div>
+  );
+}
+
+export function StartingScreen() {
+  return (
+    <div className="z-20 w-[800px] relative">
+      {paper || scissors || rock || (
+        <div className="z-20 w-[800px] relative">
+          <button
+            onClick={() => {
+              setPaper(true);
+
+              setResult(
+                PlayRound({ setComputerPick, setScore, setResult }, "paper")
+              );
+            }}
+            className="rounded-full p-0 h-fit bg-blue-700 z-50 m-16"
+          >
+            <GameButton id="PaperButton" src={PAPER} color="blue" />
+          </button>
+
+          <button
+            onClick={() => {
+              setScissors(true);
+
+              PlayRound({ setComputerPick, setScore, setResult }, "scissors");
+            }}
+            className="rounded-full p-0 h-fit bg-yellow-700 z-50 m-16"
+          >
+            <GameButton id="ScissorButton" src={SCISSORS} color="yellow" />
+          </button>
+
+          <button
+            onClick={() => {
+              setRock(true);
+
+              PlayRound({ setComputerPick, setScore, setResult }, "rock");
+            }}
+            className="rounded-full p-0 h-fit bg-red-700 z-50 m-8"
+          >
+            <GameButton id="RockButton" src={ROCK} color="red" />
+          </button>
+
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10">
+            <img src={TRIANGLE} />
+          </div>
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default PlayRound;
