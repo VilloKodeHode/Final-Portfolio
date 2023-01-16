@@ -5,7 +5,7 @@ import React from "react";
 import PAPER from "./assets/icon-paper.svg";
 import SCISSORS from "./assets/icon-scissors.svg";
 import ROCK from "./assets/icon-rock.svg";
-import TRIANGLE from "./assets/bg-triangle.svg";
+// import TRIANGLE from "./assets/bg-triangle.svg";
 
 //style
 
@@ -17,9 +17,11 @@ export function GameButton(props) {
     >
       <div
         id={id}
-        className={`rounded-full p-12 bg-white shadow-inner border-[22px] border-${color}-500  shadow-${color}-800`}
+        className={`rounded-full p-10 bg-white shadow-inner border-[22px] border-${color}-500  shadow-${color}-800`}
       >
-        <img className="h-16 w-16" src={src} />
+        <div className="h-20 w-20 flex">
+          <img className="w-16 m-auto" src={src} />
+        </div>
       </div>
     </div>
   );
@@ -34,16 +36,18 @@ export function InactiveGameButton(props) {
       >
         <div
           id={id}
-          className={`rounded-full p-16 bg-white shadow-inner border-[22px] border-${color}-500`}
+          className={`rounded-full p-10 bg-white shadow-inner border-[22px] border-${color}-500  shadow-${color}-800`}
         >
-          <img className="h-20 w-20" src={src} />
+          <div className="h-20 w-20 flex">
+            <img className="w-16 m-auto" src={src} />
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-function PlayRound({ setComputerPick, setScore }, playerPick) {
+function PlayRound({ setComputerPick, setScore, setResult }, playerPick) {
   const randomNumber = Math.floor(Math.random() * 3 + 1);
   let computerPick;
   if (randomNumber === 1) {
@@ -56,15 +60,16 @@ function PlayRound({ setComputerPick, setScore }, playerPick) {
   console.log(
     "computer picked from the ComputerPick function: " + computerPick
   );
-  // let result = "";
   setComputerPick(computerPick);
+  let result;
+
   if (
     (playerPick === "rock" && computerPick === "scissors") ||
     (playerPick === "scissors" && computerPick === "paper") ||
     (playerPick === "paper" && computerPick === "rock")
   ) {
     setScore((prevScore) => prevScore + 1);
-    // result = "win";
+    result = "win";
 
     console.log(
       "Results from Playround function: playerpick: " + playerPick,
@@ -75,27 +80,55 @@ function PlayRound({ setComputerPick, setScore }, playerPick) {
     (playerPick === "scissors" && computerPick === "rock") ||
     (playerPick === "paper" && computerPick === "scissors")
   ) {
-    // result = "lose";
+    result = "lose";
 
     setScore((prevScore) => prevScore - 1);
+  } else {
+    result = "draw";
   }
+  setResult(result);
 
-  // console.log(result);
+  console.log(result);
 
-  return (
-    // result === "lose" &&
-    <>
-      {computerPick === "rock" && (
-        <GameButton color="red" id="RockButton" src={ROCK} />
-      )}
-      {computerPick === "paper" && (
-        <GameButton color="blue" id="PaperButton" src={PAPER} />
-      )}
-      {computerPick === "scissors" && (
-        <GameButton color="yellow" id="ScissorsButton" src={SCISSORS} />
-      )}
-    </>
-  );
+  return result;
+
+  // (
+  //   <>
+  //     {result === "lose" && (
+  //       <>
+  //         {computerPick === "rock" && (
+  //           <div className="border-8 border-black m-2">
+  //             <GameButton color="red" id="RockButton" src={ROCK} />
+  //           </div>
+  //         )}
+
+  //         {computerPick === "paper" && (
+  //           <div className="border-8 border-black m-2">
+  //             <GameButton color="blue" id="PaperButton" src={PAPER} />
+  //           </div>
+  //         )}
+  //         {computerPick === "scissors" && (
+  //           <div className="border-8 border-black m-2">
+  //             <GameButton color="yellow" id="ScissorsButton" src={SCISSORS} />
+  //           </div>
+  //         )}
+  //       </>
+  //     )}
+  //     {result === "win" && (
+  //       <>
+  //         {computerPick === "rock" && (
+  //           <GameButton color="red" id="RockButton" src={ROCK} />
+  //         )}
+  //         {computerPick === "paper" && (
+  //           <GameButton color="blue" id="PaperButton" src={PAPER} />
+  //         )}
+  //         {computerPick === "scissors" && (
+  //           <GameButton color="yellow" id="ScissorsButton" src={SCISSORS} />
+  //         )}
+  //       </>
+  //     )}
+  //   </>
+  // );
 }
 
 export default PlayRound;
