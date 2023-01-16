@@ -29,6 +29,7 @@ function RockPaperScissor() {
   const [result, setResult] = useState("");
   const [toggle, setToggle] = useState(false);
 
+  //* It seems like this useEffect is not updating often enough
   useEffect(() => {
     console.log("Result is: " + result);
   }, [result]);
@@ -127,7 +128,7 @@ function RockPaperScissor() {
                     ) : null}
                     {computerPick === "rock" && (
                       <>
-                        <div className="rounded-full w-fit m-auto relative">
+                        <div className="rounded-full w-fit m-auto relative z-40">
                           <WinnerGlow />
                           <InactiveGameButton
                             id="PaperButton"
@@ -203,7 +204,7 @@ function RockPaperScissor() {
 
                     {computerPick === "paper" && (
                       <>
-                        <div className="rounded-full w-fit m-auto relative">
+                        <div className="rounded-full w-fit m-auto relative z-40">
                           <WinnerGlow />
                           <InactiveGameButton
                             id="ScissorButton"
@@ -282,7 +283,7 @@ function RockPaperScissor() {
                       />
                     ) : null}
                     {computerPick === "paper" && (
-                      <div className="rounded-full w-fit m-auto relative">
+                      <div className="rounded-full w-fit m-auto relative z-40">
                         <WinnerGlow />
                         <InactiveGameButton
                           id="RockButton"
