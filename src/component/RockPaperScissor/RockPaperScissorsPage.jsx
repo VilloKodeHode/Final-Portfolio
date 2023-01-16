@@ -5,6 +5,8 @@ import PAPER from "./assets/icon-paper.svg";
 import SCISSORS from "./assets/icon-scissors.svg";
 import ROCK from "./assets/icon-rock.svg";
 import TRIANGLE from "./assets/bg-triangle.svg";
+import RULES from "./assets/image-rules.svg";
+import CLOSE from "./assets/icon-close.svg";
 
 //style
 import "./RockPaperScissor.css";
@@ -12,47 +14,14 @@ import "./RockPaperScissor.css";
 import PlayRound, { GameButton, InactiveGameButton } from "./RockPaperScissor";
 import Button from "../Buttons/Button";
 
-// export function GameButton(props) {
-//   const { color, src, id } = props;
-//   return (
-//     <div
-//       className={`border-b-8 bg-${color}-700 rounded-full border-${color}-700 z-40`}
-//     >
-//       <div
-//         id={id}
-//         className={`rounded-full p-12 bg-white shadow-inner border-[22px] border-${color}-500  shadow-${color}-800`}
-//       >
-//         <img className="h-16 w-16" src={src} />
-//       </div>
-//     </div>
-//   );
-// }
-
-// function InactiveGameButton(props) {
-//   const { color, src, id } = props;
-//   return (
-//     <div className="z-40">
-//       <div
-//         className={`m-auto border-b-8 w-fit h-fit bg-${color}-700 rounded-full border-${color}-700`}
-//       >
-//         <div
-//           id={id}
-//           className={`rounded-full p-16 bg-white shadow-inner border-[22px] border-${color}-500`}
-//         >
-//           <img className="h-20 w-20" src={src} />
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
 function RockPaperScissor() {
   const [paper, setPaper] = useState(false);
   const [scissors, setScissors] = useState(false);
   const [rock, setRock] = useState(false);
   const [computerPick, setComputerPick] = useState("");
   const [score, setScore] = useState(0);
-  // const [result, setResult] = useState("");
+  const [result, setResult] = useState("");
+  const [toggle, setToggle] = useState(false);
 
   return (
     <>
@@ -80,11 +49,25 @@ function RockPaperScissor() {
                   onClick={() => {
                     setPaper(true);
 
-                    PlayRound(
-                      { setComputerPick, setScore },
-
-                      "paper"
+                    setResult(
+                      PlayRound(
+                        { setComputerPick, setScore, setResult },
+                        "paper"
+                      ),
+                      console.log(
+                        "Result is: " +
+                          PlayRound(
+                            { setComputerPick, setScore, setResult },
+                            "paper"
+                          )
+                      )
                     );
+
+                    // PlayRound(
+                    //   { setComputerPick, setScore, setResult },
+                    //   "paper"
+                    // );
+                    // console.log("result is: " + result);
                   }}
                   className="rounded-full p-0 h-fit bg-blue-700 z-50 m-8"
                 >
@@ -128,7 +111,6 @@ function RockPaperScissor() {
                       color="yellow"
                     />
                   )}
-                  {/* <PlayRound computerPick={computerPick} /> */}
                 </div>
               </div>
               <Button
@@ -274,9 +256,26 @@ function RockPaperScissor() {
             </div>
           )}
         </div>
-        <div className="text-white absolute bottom-6 right-6 border rounded-lg px-6 py-1">
-          Rules
-        </div>
+        <button
+          className="bg-transparent text-white absolute right-6 bottom-6 px-6 btn p-2 rounded-xl border-2 shadow-xl"
+          onClick={() => setToggle(!toggle)}
+        >
+          RULES
+        </button>
+        {toggle && (
+          <>
+            <div className="absolute grid grid-row-2 left-1/2 bottom-1/2 translate-y-1/2 -translate-x-1/2 z-50 bg-gray-100 w-1/2 h-1/2 m-auto rounded-xl">
+              <h1 className="text-left text-2xl p-4 z-50 text-black">RULES</h1>
+              <button
+                className="absolute bg-transparent right-3 top-3 p-2 z-50"
+                onClick={() => setToggle(!toggle)}
+              >
+                <img src={CLOSE} />
+              </button>
+              <img className="m-auto" src={RULES} />
+            </div>
+          </>
+        )}
       </div>
     </>
   );
