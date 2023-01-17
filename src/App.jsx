@@ -19,7 +19,6 @@ import Qualifications from "./routes/Qualifications/QualificationsPage";
 import ProjectPage from "./routes/Projects/ProjectPage";
 import TestPage from "./routes/TestPage";
 import TestPage2 from "./routes/TestPage2";
-import RockPaperScissor from "./component/RockPaperScissor/RockPaperScissorsPage";
 import RockPaperScissorsPage from "./routes/RockPaperScissors/RenderRockPaperScissorPage";
 
 //Todo:

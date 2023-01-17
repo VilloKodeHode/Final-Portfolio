@@ -40,12 +40,25 @@ module.exports = {
       }),
       keyframes: {
         popUp: {
-          "0%": { scale: "0%", opacity: "0%" },
-          "100%": { scale: "100%", opacity: "100%" },
+          "0%": { transform: "scale(0)", opacity: "0%" },
+          "100%": { transform: "scale(1)", opacity: "100%" },
+        },
+        glow: {
+          "0%": { opacity: "30%" },
+          "100%": { opacity: "100%" },
+        },
+        keyframes: {
+          slideIn: {
+            "0%": { transform: "scale(0)", right: "0" },
+            "100%": { transform: "scale(1)", right: "50%" },
+          },
         },
       },
       animation: {
-        ProjectPopUp: "popUp 0.3s linear",
+        ProjectPopUp: "popUp ease 0.3s linear",
+        RPSPopUp: "popUp 0.1s ease-in",
+        glow: "glow 1s ease-in-out infinite alternate",
+        rulesSlideIn: "slideIn 1s ease-in-out linear",
       },
     },
   },
