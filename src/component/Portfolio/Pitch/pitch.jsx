@@ -6,7 +6,7 @@ export function PitchText(props) {
   return (
     <>
       <p className="p-2">
-        <span className="text-accent">{title}</span>
+        <span className="text-water-300 text-xl underline">{title}</span>
         <br />
         {text}
       </p>
@@ -25,7 +25,7 @@ const PitchWindow = () => {
         onClick={() => setToggle(!toggle)}
       />
       {toggle && (
-        <div class="pitch">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50">
           <Button
             idAndClass="pitch-close-btn"
             text="❌"
@@ -53,16 +53,9 @@ const PitchWindow = () => {
               bedre. Jeg håper å komme i et arbeidsmiljø som liker kode, design,
               team-arbeid, kompetanse-heving og kvalitet."
             />
-            {/* <PitchText
-              title="Jeg ønsker å jobbe med UI og UX:"
-              text="Dette er for meg veldig interessant og lærerikt å jobbe med. Jeg
-              gleder meg til å lære meg flere kode-språk for å kunne gjøre dette
-              bedre. Jeg håper å komme i et arbeidsmiljø som liker kode, design,
-              team-arbeid, kompetanse-heving og kvalitet."
-            /> */}
             <PitchText
-              title="Jeg har lært både front-end og back-end:"
-              text="Etter å ha lært React, har jeg undersøkt mulighetene for back-end, spesielt routing og API-calls. Jeg har blitt dyktig i disse områdene."
+              title="Jeg har spesialisert meg på React"
+              text="Etter å ha lært react har jeg hovedsakelig fokusert på å lære det best mulig."
             />
             <PitchText
               title="Personlighet:"

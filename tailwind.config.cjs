@@ -5,23 +5,23 @@ module.exports = {
     themes: [
       {
         mytheme: {
-          primary: "#0B0A07",
+          primary: "#C9FEF5",
 
-          secondary: "#FFFAFF",
+          secondary: "#C9FEF5",
 
-          accent: "#1eb854",
+          accent: "#C9FEF5",
 
-          neutral: "#1fd65f",
+          neutral: "#22555C",
 
-          "base-100": "#d99330",
+          "base-100": "#87BDC2",
 
-          info: "#3b343d",
+          info: "#22555C",
 
-          success: "#91FF00",
+          success: "#22555C",
 
-          warning: "#F8B359",
+          warning: "#22555C",
 
-          error: "#F25464",
+          error: "#22555C",
         },
       },
     ],
@@ -38,14 +38,55 @@ module.exports = {
         "gradient-radial-to-bl":
           "radial-gradient(90% 115% at 100% 0%, var(--tw-gradient-stops))",
       }),
+      fontFamily: { Roboto: ["Roboto", "sans-serif"] },
+      colors: {
+        dawn: {
+          100: "#EF752E",
+          200: "#E23A29",
+          300: "#8D0C0F",
+        },
+        water: {
+          100: "#C9FEF5",
+          200: "#A8DEDC",
+          300: "#87BDC2",
+          400: "#0099B4",
+          500: "#026A88",
+          600: "#033B5C",
+        },
+        earth: {
+          100: "#52606F",
+          200: "#3E3E50",
+          300: "#6F5955",
+          400: "#323041",
+        },
+        fairy: {
+          100: "#207E78",
+          200: "#58847D",
+          300: "#22555C",
+          400: "#274746",
+        },
+      },
       keyframes: {
         popUp: {
-          "0%": { scale: "0%", opacity: "0%" },
-          "100%": { scale: "100%", opacity: "100%" },
+          "0%": { transform: "scale(0)", opacity: "0%" },
+          "100%": { transform: "scale(1)", opacity: "100%" },
+        },
+        glow: {
+          "0%": { opacity: "30%" },
+          "100%": { opacity: "100%" },
+        },
+        slideIn: {
+          "0%": { transform: "scale(0)", right: "0" },
+          "100%": { transform: "scale(1)", right: "50%" },
         },
       },
       animation: {
-        ProjectPopUp: "popUp 0.3s linear",
+        ProjectPopUp: "popUp ease 0.3s linear",
+        RPSPopUp: "popUp 0.1s ease-in",
+        glow: "glow 1s ease-in-out infinite alternate",
+        rulesSlideIn: "slideIn 1s ease-in-out linear",
+        RPSPopUpDelayed: "popUp 0.1s ease-in 1.0s backwards",
+        RPSPopUpMoreDelayed: "popUp 0.1s ease-in 2s backwards",
       },
     },
   },

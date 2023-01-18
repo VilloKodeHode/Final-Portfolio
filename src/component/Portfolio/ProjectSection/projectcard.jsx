@@ -10,17 +10,15 @@ function Project(props) {
   return (
     <>
       {!toggle && (
-        <div className="h-54 w-54 m-8 [&>*]:hover:scale-105">
-          <div className="duration-500 ease-out">
-            <img
-              className="h-36 w-36 mx-auto translate-y-1/2 rounded-xl"
-              src={src}
-            />
-            <Button
-              idAndClass="bg-transparent w-40 btn p-2 mb-1 rounded-xl border-accent border-2 shadow-xl text-base-100 -translate-y-1/2 bg-primary bg-opacity-70 backdrop-blur-sm"
-              text={projectName}
+        <div className="h-36 w-36 m-8 [&>*]:hover:scale-105">
+          <div className=" duration-500 ease-out w-fit h-36">
+            <img className="h-36 w-36 mx-auto rounded-xl" src={src} />
+            <button
+              className="bg-water-600 w-40 btn p-2 mb-1 rounded-xl border-accent border-2 shadow-xl text-water-100 bg-opacity-70 backdrop-blur-xs"
               onClick={() => setToggle(!toggle)}
-            />
+            >
+              {projectName}
+            </button>
           </div>
         </div>
       )}
@@ -63,16 +61,16 @@ export function ProjectRouted(props) {
   return (
     <>
       {!toggle && (
-        <div className="h-54 w-54 m-8 ">
-          <img
-            className="h-36 w-36 mx-auto translate-y-1/2 rounded-xl"
-            src={src}
-          />
-          <Button
-            idAndClass="bg-transparent w-40 btn p-2 mb-1 rounded-xl border-accent border-2 shadow-xl text-base-100 -translate-y-1/2 bg-primary bg-opacity-70 backdrop-blur-sm"
-            text={projectName}
-            onClick={() => setToggle(!toggle)}
-          />
+        <div className="h-36 w-36 m-8 [&>*]:hover:scale-105">
+          <div className="duration-500 ease-out w-fit h-0">
+            <img className="h-36 w-36 mx-auto rounded-xl" src={src} />
+            <button
+              className="bg-water-600 w-40 btn p-2 mb-1 rounded-xl border-accent border-2 shadow-xl text-water-100 bg-opacity-70 backdrop-blur-xs"
+              onClick={() => setToggle(!toggle)}
+            >
+              {projectName}
+            </button>
+          </div>
         </div>
       )}
       {toggle && (

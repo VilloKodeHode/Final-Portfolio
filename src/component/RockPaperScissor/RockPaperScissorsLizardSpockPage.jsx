@@ -23,7 +23,7 @@ import PlayRound, {
 } from "./RockPaperScissor";
 import Button from "../Buttons/Button";
 
-function RockPaperScissor() {
+function RockPaperScissorLizardSpock() {
   const [paper, setPaper] = useState(false);
   const [scissors, setScissors] = useState(false);
   const [rock, setRock] = useState(false);
@@ -32,19 +32,17 @@ function RockPaperScissor() {
   const [result, setResult] = useState("");
   const [toggle, setToggle] = useState(false);
   const [animationClass, setAnimationClass] = useState("");
-  const [round, setRound] = useState(0);
 
   useEffect(() => {
     console.log("Result is: " + result);
-    console.log("Round: " + round);
   }, [result]);
 
   useEffect(() => {
     setAnimationClass("animate-RPSPopUpDelayed");
     setTimeout(() => {
       setAnimationClass("");
-    }, 1500);
-  }, [round]);
+    }, 1200);
+  }, [computerPick]);
 
   return (
     <>
@@ -83,25 +81,23 @@ function RockPaperScissor() {
             setPaper={setPaper}
             setScissors={setScissors}
             setRock={setRock}
-            setRound={setRound}
             PlayRound={PlayRound}
           />
 
           {/* End of start */}
           <div className="animate-RPSPopUp">
+            {/* <div> */}
             {paper && (
               <>
                 <div className="flex h-full align-top z-40 text-white">
                   <div className="[&>*]:animate-RPSPopUp">
                     <h1 className="m-8 text-3xl">You picked</h1>
                     {computerPick === "paper" || computerPick === "scissors" ? (
-                      <>
-                        <InactiveGameButton
-                          id="PaperButton"
-                          src={PAPER}
-                          color="blue"
-                        />
-                      </>
+                      <InactiveGameButton
+                        id="PaperButton"
+                        src={PAPER}
+                        color="blue"
+                      />
                     ) : null}
                     {computerPick === "rock" && (
                       <>
@@ -168,7 +164,6 @@ function RockPaperScissor() {
                         color="yellow"
                       />
                     ) : null}
-
                     {computerPick === "paper" && (
                       <>
                         <div className="rounded-full w-fit m-auto relative z-40">
@@ -223,10 +218,9 @@ function RockPaperScissor() {
 
             {rock && (
               <>
-                <div className="flex h-full align-top z-40 text-white">
+                <div className="grid grid-col-3 grid-flow-col h-fit w-fit align-top z-40 text-white">
                   <div className="[&>*]:animate-RPSPopUp">
                     <h1 className="m-8 text-3xl">You picked</h1>
-
                     {computerPick === "rock" || computerPick === "paper" ? (
                       <InactiveGameButton
                         id="RockButton"
@@ -235,16 +229,14 @@ function RockPaperScissor() {
                       />
                     ) : null}
                     {computerPick === "scissors" && (
-                      <>
-                        <div className="rounded-full w-fit m-auto relative z-40">
-                          <WinnerGlow />
-                          <InactiveGameButton
-                            id="RockButton"
-                            src={ROCK}
-                            color="red"
-                          />
-                        </div>
-                      </>
+                      <div className="rounded-full w-fit m-auto relative z-40">
+                        <WinnerGlow />
+                        <InactiveGameButton
+                          id="RockButton"
+                          src={ROCK}
+                          color="red"
+                        />
+                      </div>
                     )}
                   </div>
 
@@ -313,18 +305,9 @@ function RockPaperScissor() {
             </>
           )}
         </div>
-      </div>
-    </>
-  );
-}
 
-export default RockPaperScissor;
-
-{
-  /* try to make this work: */
-}
-{
-  /* <div className="absolute bottom-0 right-0">
+        {/* try to make this work: */}
+        {/* <div className="absolute bottom-0 right-0">
           <button
             className="bg-transparent text-white px-6 btn p-2 rounded-xl border-2 shadow-xl"
             onClick={() => setToggle(!toggle)}
@@ -343,5 +326,10 @@ export default RockPaperScissor;
               <img className="m-auto" src={RULES} />
             </div>
           )}
-        </div> */
+        </div> */}
+      </div>
+    </>
+  );
 }
+
+export default RockPaperScissorLizardSpock;

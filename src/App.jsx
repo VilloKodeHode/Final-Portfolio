@@ -11,7 +11,8 @@ import { HashRouter as Router, Routes, Route } from "react-router-dom";
 // import ExampleContext from "./component/content/ExampleContext";
 
 //Routes
-import LandingPage from "./routes/LandingPage";
+
+import RenderLandingPage from "./routes/LandingPage";
 import AboutPage from "./routes/About/About";
 import ContactPage from "./routes/Contact/ContactPage";
 import PortfolioPage from "./routes/PorfolioPage/PortfolioPage";
@@ -19,7 +20,6 @@ import Qualifications from "./routes/Qualifications/QualificationsPage";
 import ProjectPage from "./routes/Projects/ProjectPage";
 import TestPage from "./routes/TestPage";
 import TestPage2 from "./routes/TestPage2";
-import RockPaperScissor from "./component/RockPaperScissor/RockPaperScissorsPage";
 import RockPaperScissorsPage from "./routes/RockPaperScissors/RenderRockPaperScissorPage";
 
 //Todo:
@@ -34,7 +34,7 @@ function App() {
     <Router>
       <HamburgerBar />
       <Routes>
-        <Route path="/" element={<LandingPage />} />
+        <Route path="/" element={<RenderLandingPage />} />
         <Route path="/About" element={<AboutPage />} />
         <Route path="/Qualifications" element={<Qualifications />} />
         <Route path="/Projects" element={<ProjectPage />} />

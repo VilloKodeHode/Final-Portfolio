@@ -1,11 +1,12 @@
 import HeroSection from "../../component/Portfolio/HeroSection/heroSection";
-import NavBar from "../../component/NavBar/NavBar";
 import HamburgerBar from "../../component/NavBar/HamburgerBar";
+import { RenderLessParticles } from "../../component/Particles/Particles";
 
 function AboutPage() {
   return (
     <>
       <HamburgerBar />
+      <RenderLessParticles />
       <HeroSection />
     </>
   );
