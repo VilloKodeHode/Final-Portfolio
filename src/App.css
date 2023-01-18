@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,16 +12,32 @@
 }
 
 .LandingPageBG {
-  background-image: url("./routes/assets/landscape5_2.png");
+  background-image: url("./component/LandingPage/assets/LandingPage.png");
   background-size: 100% 100%;
   background-position: center;
-  opacity: 1;
+  opacity: 0.5;
+}
+
+.HeroBG {
+  background-image: url("./component/Portfolio/HeroSection/assets/HeroBG.png");
+  background-size: 100% 100%;
+  background-position: center;
+  opacity: 0.5;
+}
+
+.QualificationsBG {
+  background-image: url("./component/Portfolio/SectionSkillsAndKnowledge/assets/QualificationsBG.png");
+  background-size: 100% 100%;
+  background-position: center;
+  opacity: 0.5;
 }
 
 .landingPage {
+  -webkit-text-stroke: #274746;
+  -webkit-text-stroke-width: 1px;
   /* font-size: 20vw; */
   /* font-size: 250px; */
-  grid-template-rows: 45vh 45vh;
+  grid-template-rows: 50vh 50vh;
   /* letter-spacing: 10px; */
   /* line-height: 100px; */
   color: #e5dada;
@@ -32,6 +50,10 @@
 }
 
 .landingPageSmaller {
-  line-height: 100px;
   font-weight: 700;
+}
+
+.stroked {
+  -webkit-text-stroke: #87bdc2;
+  -webkit-text-stroke-width: 1px;
 }

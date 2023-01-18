@@ -9,6 +9,7 @@ import StandardCV from "./assets/Standard CV space.pdf";
 import StandardCVPic from "./assets/Standard CV pic space.png";
 import FancyCV from "./assets/Fancy CV space.png";
 import JVLogo from "./assets/JVlogo.png";
+import JOAKIM from "./assets/Joakim-bilde-transperant-cartoony2.png";
 
 //styles:
 import "../../Portfolio/CvWithEffectsAndLink/CvEffectsAndLink.css";
@@ -16,7 +17,7 @@ import "../../Portfolio/CvWithEffectsAndLink/CvEffectsAndLink.css";
 function HeroSection() {
   return (
     <>
-      <header className="h-screen bg-info px-8 grid grid-rows-2 grid-cols-2 text-secondary">
+      <header className="absolute top-0 left-0 h-screen px-8 grid grid-rows-2 grid-cols-2 text-secondary z-20 xl:mx-24 md:mx-12 sm:mx-4 ">
         <article className="m-auto">
           <h1 className="py-4" id="home">
             <span className="text-accent text-7xl">Joakim Villo</span>
@@ -29,7 +30,10 @@ function HeroSection() {
           </p>
         </article>
         <div className="flex m-auto justify-center h-fit">
-          <img className="h-60 rounded-full" src={JVLogo} />
+          <img
+            className="h-80 border-b-8 border-earth-400 rounded-full"
+            src={JOAKIM}
+          />
         </div>
         <div className="wrapper cv-wrapper">
           <Cv href={StandardCV} src={StandardCVPic} className="cv standard" />
@@ -58,6 +62,7 @@ function HeroSection() {
           <PitchWindow />
         </div>
       </header>
+      <div className="absolute top-0 bottom-0 left-0 right-0 h-screen HeroBG z-10"></div>
     </>
   );
 }

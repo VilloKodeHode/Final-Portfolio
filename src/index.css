@@ -16,13 +16,15 @@
   scroll-behavior: smooth;
 }
 
-a {
+a .landingPage {
   font-weight: 500;
   /* color: #ff8864; */
   text-decoration: inherit;
+  /* -webkit-text-stroke: #274746;
+  -webkit-text-stroke-width: 1px; */
 }
 a:hover {
-  color: #87a0f1;
+  background-color: #00000000;
 }
 
 body {
@@ -32,7 +34,7 @@ body {
   justify-content: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #542c9e;
+  /* background-color: #033b5c; */
   /* background-color: #3b343d; */
   /* background-image: url("./routes/assets/RedAndBlueLandscapeBackground.png"); */
 }
@@ -49,12 +51,12 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  /* background-color: #1a1a1a; */
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #000000;
+  border-color: #c9fef5;
 }
 button:focus,
 button:focus-visible {
@@ -67,7 +69,7 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #0c643b;
+    color: #c9fef5;
     /* font-weight: 900; */
   }
   button {

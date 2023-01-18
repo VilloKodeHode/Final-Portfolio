@@ -14,14 +14,10 @@ div.pitch {
   /* display: none; */
   z-index: 100;
   /* transition: cubic-bezier(0.075, 0.82, 0.165, 1); */
-  position: fixed;
+
   /* padding: 1em; */
   /* height: 80%; */
-  top: 5%;
-  bottom: 5%;
-  left: 5%;
-  right: 5%;
-  margin: auto;
+
   /* background-color: black; */
   /* color: white; */
   /* border-radius: 15px;
