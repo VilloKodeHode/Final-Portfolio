@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 //images
 import PAPER from "./assets/icon-paper.svg";
@@ -48,14 +49,19 @@ function RockPaperScissor() {
 
   return (
     <>
-      <button className="absolute top-2 left-2 p-2 m-2 bg-white text-black h-fit w-fit text-xs z-50 opacity-50">
+      <Link
+        className="absolute top-2 left-2 p-2 m-2 bg-white text-black h-fit w-fit rounded-xl text-xs z-50 opacity-50"
+        to="/RockPaperScissorsLizardSpock"
+      >
+        {/* <button className="absolute top-2 left-2 p-2 m-2 bg-white text-black h-fit w-fit text-xs z-50 opacity-50"> */}
         <img className="h-12" src={SHELDON} />
-      </button>
+        {/* </button> */}
+      </Link>
       <div
         id="RPS"
         className="select-none absolute top-0 left-0 w-screen h-screen text-white"
       >
-        <div className="flex justify-between w-1/2 m-auto border-2 rounded-2xl p-4">
+        <div className="flex justify-between xl:w-1/2 sm:w-2/3 m-auto border-2 rounded-2xl p-4">
           <div className="font-extrabold leading-7 text-start text-white text-4xl">
             <img src={LOGO} />
           </div>

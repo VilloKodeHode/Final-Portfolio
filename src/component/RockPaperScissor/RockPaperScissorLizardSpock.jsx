@@ -5,8 +5,9 @@ import React from "react";
 import PAPER from "./assets/icon-paper.svg";
 import SCISSORS from "./assets/icon-scissors.svg";
 import ROCK from "./assets/icon-rock.svg";
-import Button from "../Buttons/Button";
-import TRIANGLE from "./assets/bg-triangle.svg";
+import LIZARD from "./assets/icon-lizard.svg";
+import SPOCK from "./assets/icon-spock.svg";
+import PENTAGON from "./assets/bg-pentagon.svg";
 
 //style
 
@@ -71,14 +72,18 @@ export function EmptyGameButton() {
 }
 
 function PlayRound({ setComputerPick, setScore, setResult }, playerPick) {
-  const randomNumber = Math.floor(Math.random() * 3 + 1);
+  const randomNumber = Math.floor(Math.random() * 5 + 1);
   let computerPick;
   if (randomNumber === 1) {
     computerPick = "rock";
   } else if (randomNumber === 2) {
     computerPick = "paper";
-  } else {
+  } else if (randomNumber === 3) {
     computerPick = "scissors";
+  } else if (randomNumber === 4) {
+    computerPick = "lizard";
+  } else {
+    computerPick = "spock";
   }
   console.log(
     "computer picked from the ComputerPick function: " + computerPick
@@ -88,9 +93,16 @@ function PlayRound({ setComputerPick, setScore, setResult }, playerPick) {
   let result;
 
   if (
-    (playerPick === "rock" && computerPick === "scissors") ||
-    (playerPick === "scissors" && computerPick === "paper") ||
-    (playerPick === "paper" && computerPick === "rock")
+    (playerPick === "rock" &&
+      (computerPick === "scissors" || computerPick === "lizard")) ||
+    (playerPick === "scissors" &&
+      (computerPick === "paper" || computerPick === "spock")) ||
+    (playerPick === "paper" &&
+      (computerPick === "rock" || computerPick === "spock")) ||
+    (playerPick === "lizard" &&
+      (computerPick === "spock" || computerPick === "paper")) ||
+    (playerPick === "spock" &&
+      (computerPick === "scissors" || computerPick === "rock"))
   ) {
     setTimeout(() => {
       setScore((prevScore) => prevScore + 1), 500;
@@ -102,9 +114,16 @@ function PlayRound({ setComputerPick, setScore, setResult }, playerPick) {
       "computerpick: " + computerPick
     );
   } else if (
-    (playerPick === "rock" && computerPick === "paper") ||
-    (playerPick === "scissors" && computerPick === "rock") ||
-    (playerPick === "paper" && computerPick === "scissors")
+    (playerPick === "rock" &&
+      (computerPick === "paper" || computerPick === "spock")) ||
+    (playerPick === "scissors" &&
+      (computerPick === "rock" || computerPick === "spock")) ||
+    (playerPick === "paper" &&
+      (computerPick === "scissors" || computerPick === "lizard")) ||
+    (playerPick === "lizard" &&
+      (computerPick === "rock" || computerPick === "scissors")) ||
+    (playerPick === "spock" &&
+      (computerPick === "paper" || computerPick === "lizard"))
   ) {
     result = "LOSE";
 
@@ -117,47 +136,7 @@ function PlayRound({ setComputerPick, setScore, setResult }, playerPick) {
 
   setResult(result);
 
-  // console.log("result is:" + result);
-
   return result;
-
-  // (
-  //   <>
-  //     {result === "lose" && (
-  //       <>
-  //         {computerPick === "rock" && (
-  //           <div className="border-8 border-black m-2">
-  //             <GameButton color="red" id="RockButton" src={ROCK} />
-  //           </div>
-  //         )}
-
-  //         {computerPick === "paper" && (
-  //           <div className="border-8 border-black m-2">
-  //             <GameButton color="blue" id="PaperButton" src={PAPER} />
-  //           </div>
-  //         )}
-  //         {computerPick === "scissors" && (
-  //           <div className="border-8 border-black m-2">
-  //             <GameButton color="yellow" id="ScissorsButton" src={SCISSORS} />
-  //           </div>
-  //         )}
-  //       </>
-  //     )}
-  //     {result === "win" && (
-  //       <>
-  //         {computerPick === "rock" && (
-  //           <GameButton color="red" id="RockButton" src={ROCK} />
-  //         )}
-  //         {computerPick === "paper" && (
-  //           <GameButton color="blue" id="PaperButton" src={PAPER} />
-  //         )}
-  //         {computerPick === "scissors" && (
-  //           <GameButton color="yellow" id="ScissorsButton" src={SCISSORS} />
-  //         )}
-  //       </>
-  //     )}
-  //   </>
-  // );
 }
 
 export function ResultandRestart({ result, setType }) {
@@ -184,21 +163,28 @@ export function StartingScreen(props) {
     paper,
     scissors,
     rock,
+    lizard,
+    spock,
     setComputerPick,
     setScore,
     setResult,
     setPaper,
     setScissors,
     setRock,
+    setLizard,
+    setSpock,
     round,
     setRound,
     PlayRound,
   } = props;
   return (
     <>
-      {paper || scissors || rock || (
-        <div className="z-20 md:w-[800px] w-full h-full relative">
-          <div className="absolute">
+      {paper || scissors || rock || lizard || spock || (
+        <div className="z-20 md:w-[800px] w-full h-full relative m-auto">
+          <div className="absolute h-full w-full">
+            <div className="absolute left-1/2 -translate-x-1/2 top-[15%] m-auto -z-10">
+              <img src={PENTAGON} className="h-96" />
+            </div>
             <button
               onClick={() => {
                 setPaper(true);
@@ -211,7 +197,7 @@ export function StartingScreen(props) {
                 );
                 setRound((round) => round + 1);
               }}
-              className="rounded-full p-0 h-fit bg-blue-700 z-50 mr-14"
+              className="rounded-full absolute top-[20%] right-[20%] translate-x-1/2 p-0 h-fit bg-blue-700 z-50 mr-14"
             >
               <GameButton id="PaperButton" src={PAPER} color="blue" />
             </button>
@@ -228,7 +214,7 @@ export function StartingScreen(props) {
                 );
                 setRound((round) => round + 1);
               }}
-              className="rounded-full p-0 h-fit bg-yellow-700 z-50 ml-14"
+              className="rounded-full absolute top-[-5%] right-1/2 translate-x-1/2 p-0 h-fit bg-yellow-700 z-50 ml-14"
             >
               <GameButton id="ScissorButton" src={SCISSORS} color="yellow" />
             </button>
@@ -245,14 +231,44 @@ export function StartingScreen(props) {
                 );
                 setRound((round) => round + 1);
               }}
-              className="rounded-full p-0 h-fit bg-red-700 z-50 m-28 mb-0"
+              className="rounded-full absolute top-[40%] left-[25%] translate-x-1/2 p-0 h-fit bg-red-700 z-50 m-28 mb-0"
             >
               <GameButton id="RockButton" src={ROCK} color="red" />
             </button>
 
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10">
-              <img src={TRIANGLE} />
-            </div>
+            <button
+              onClick={() => {
+                setLizard(true);
+
+                setResult(
+                  PlayRound(
+                    { setComputerPick, setScore, setResult, setRound, round },
+                    "lizard"
+                  )
+                );
+                setRound((round) => round + 1);
+              }}
+              className="rounded-full absolute top-[40%] right-[40%] p-0 h-fit bg-purple-700 z-50 m-28 mb-0"
+            >
+              <GameButton id="LizardButton" src={LIZARD} color="purple" />
+            </button>
+
+            <button
+              onClick={() => {
+                setSpock(true);
+
+                setResult(
+                  PlayRound(
+                    { setComputerPick, setScore, setResult, setRound, round },
+                    "spock"
+                  )
+                );
+                setRound((round) => round + 1);
+              }}
+              className="rounded-full absolute top-[1%] right-[47%] p-0 h-fit bg-sky-700 z-50 m-28 mb-0"
+            >
+              <GameButton id="SpockButton" src={SPOCK} color="sky" />
+            </button>
           </div>
         </div>
       )}
