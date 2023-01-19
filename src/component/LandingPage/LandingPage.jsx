@@ -22,12 +22,14 @@ function LandingPage() {
             Villo
           </div>
 
-          <div className="landingPageSmaller leading-snug w-2/3 text-fairy-200 lg:text-[60px] md:text-[50px] text-[40px] absolute top-44 left-1/2 -translate-x-1/2 z-20">
-            <span className="menu menu-horizontal ">
-              <li>
-                <Link to="/Contact" className="p-0 text-fairy-100 stroked">
-                  K
-                </Link>
+          {/* Add a startscreen navigation in the center of the screen */}
+
+          <div className="landingPageSmaller leading-snug w-2/3 text-fairy-200 lg:text-[60px] md:text-[50px] text-[40px] absolute top-60 left-1/2 -translate-x-1/2 z-20">
+            {/* <span className="menu menu-horizontal "> */}
+            {/* <li>
+                <Link to="/Contact" className="p-0 text-fairy-100 stroked"> */}
+            K
+            {/* </Link>
                 <ul className="text-earth-300">
                   <li className="absolute w-fit bottom-16 left-0">
                     <Link to="/Contact" className="stroked">
@@ -36,13 +38,13 @@ function LandingPage() {
                   </li>
                 </ul>
               </li>
-            </span>
+            </span> */}
             ode{" "}
-            <span className="menu menu-horizontal ">
+            {/* <span className="menu menu-horizontal ">
               <li>
-                <Link to="/About" className="p-0 text-fairy-100 stroked">
-                  o
-                </Link>
+                <Link to="/About" className="p-0 text-fairy-100 stroked"> */}
+            o
+            {/* </Link>
                 <ul className="text-earth-300">
                   <li className="absolute w-fit bottom-16 -right-8">
                     <Link to="/About" className="stroked">
@@ -51,16 +53,16 @@ function LandingPage() {
                   </li>
                 </ul>
               </li>
-            </span>
+            </span> */}
             g Design <br /> med en{" "}
             {/* <div className="text-lg absolute top-1/2 underline">
                 Aspirerende utvikler
               </div> */}
-            <span className="menu menu-horizontal">
+            {/* <span className="menu menu-horizontal">
               <li>
-                <Link to="/Projects" className="p-0 text-fairy-100 stroked">
-                  p
-                </Link>
+                <Link to="/Projects" className="p-0 text-fairy-100 stroked"> */}
+            p
+            {/* </Link>
                 <ul className="text-earth-300">
                   <li className="absolute w-fit bottom-40 -left-20">
                     <Link to="/Projects" className="stroked">
@@ -69,16 +71,16 @@ function LandingPage() {
                   </li>
                 </ul>
               </li>
-            </span>
+            </span> */}
             er
-            <span className="text-opacity-90 menu menu-horizontal">
+            {/* <span className="text-opacity-90 menu menu-horizontal">
               <li>
                 <Link
                   to="/Qualifications"
                   className="p-0 text-fairy-100 stroked"
-                >
-                  s
-                </Link>
+                > */}
+            s
+            {/* </Link>
                 <ul className="text-earth-300">
                   <li className="absolute w-fit bottom-40 -left-24">
                     <a to="/Qualifications" className="stroked">
@@ -87,13 +89,13 @@ function LandingPage() {
                   </li>
                 </ul>
               </li>
-            </span>
+            </span> */}
             onlig touch
           </div>
 
-          <p className="text-xl text-earth-400 opacity-90">
+          {/* <p className="text-xl text-earth-400 opacity-90">
             Klikk på bokstavene <br /> for å navigere
-          </p>
+          </p> */}
         </div>
       </div>
 

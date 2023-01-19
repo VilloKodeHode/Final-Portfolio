@@ -9,7 +9,18 @@ import LIZARD from "./assets/icon-lizard.svg";
 import SPOCK from "./assets/icon-spock.svg";
 import PENTAGON from "./assets/bg-pentagon.svg";
 
-//style
+//Buttons:
+import ScissorsGameButton, {
+  LizardGameButton,
+  LizardSmallGameButton,
+  PaperGameButton,
+  PaperSmallGameButton,
+  RockGameButton,
+  RockSmallGameButton,
+  ScissorsSmallGameButton,
+  SpockGameButton,
+  SpockSmallGameButton,
+} from "./RPSLSButtons";
 
 export function WinnerGlow() {
   return (
@@ -85,9 +96,7 @@ function PlayRound({ setComputerPick, setScore, setResult }, playerPick) {
   } else {
     computerPick = "spock";
   }
-  console.log(
-    "computer picked from the ComputerPick function: " + computerPick
-  );
+  console.log("computer picked: " + computerPick);
 
   setComputerPick(computerPick);
   let result;
@@ -96,7 +105,7 @@ function PlayRound({ setComputerPick, setScore, setResult }, playerPick) {
     (playerPick === "rock" &&
       (computerPick === "scissors" || computerPick === "lizard")) ||
     (playerPick === "scissors" &&
-      (computerPick === "paper" || computerPick === "spock")) ||
+      (computerPick === "paper" || computerPick === "lizard")) ||
     (playerPick === "paper" &&
       (computerPick === "rock" || computerPick === "spock")) ||
     (playerPick === "lizard" &&
@@ -180,95 +189,97 @@ export function StartingScreen(props) {
   return (
     <>
       {paper || scissors || rock || lizard || spock || (
-        <div className="z-20 md:w-[800px] w-full h-full relative m-auto">
+        <div className="md:w-[800px] w-full h-full relative m-auto">
           <div className="absolute h-full w-full">
-            <div className="absolute left-1/2 -translate-x-1/2 top-[15%] m-auto -z-10">
-              <img src={PENTAGON} className="h-96" />
+            <div className="absolute left-1/2 -translate-x-1/2 top-[15%] m-auto z-50">
+              <img src={PENTAGON} className="z-50 h-96" />
             </div>
-            <button
-              onClick={() => {
-                setPaper(true);
+            <div className="">
+              <button
+                onClick={() => {
+                  setPaper(true);
 
-                setResult(
-                  PlayRound(
-                    { setComputerPick, setScore, setResult, setRound, round },
-                    "paper"
-                  )
-                );
-                setRound((round) => round + 1);
-              }}
-              className="rounded-full absolute top-[20%] right-[20%] translate-x-1/2 p-0 h-fit bg-blue-700 z-50 mr-14"
-            >
-              <GameButton id="PaperButton" src={PAPER} color="blue" />
-            </button>
+                  setResult(
+                    PlayRound(
+                      { setComputerPick, setScore, setResult, setRound, round },
+                      "paper"
+                    )
+                  );
+                  setRound((round) => round + 1);
+                }}
+                className="rounded-full absolute top-[21%] right-[19%] translate-x-1/2 p-0 h-fit bg-blue-700 z-50 mr-14"
+              >
+                <PaperSmallGameButton />
+              </button>
 
-            <button
-              onClick={() => {
-                setScissors(true);
+              <button
+                onClick={() => {
+                  setScissors(true);
 
-                setResult(
-                  PlayRound(
-                    { setComputerPick, setScore, setResult, setRound, round },
-                    "scissors"
-                  )
-                );
-                setRound((round) => round + 1);
-              }}
-              className="rounded-full absolute top-[-5%] right-1/2 translate-x-1/2 p-0 h-fit bg-yellow-700 z-50 ml-14"
-            >
-              <GameButton id="ScissorButton" src={SCISSORS} color="yellow" />
-            </button>
+                  setResult(
+                    PlayRound(
+                      { setComputerPick, setScore, setResult, setRound, round },
+                      "scissors"
+                    )
+                  );
+                  setRound((round) => round + 1);
+                }}
+                className="rounded-full absolute top-0 right-1/2 translate-x-1/2 p-0 h-fit bg-yellow-700 z-50 ml-14"
+              >
+                <ScissorsSmallGameButton />
+              </button>
 
-            <button
-              onClick={() => {
-                setRock(true);
+              <button
+                onClick={() => {
+                  setRock(true);
 
-                setResult(
-                  PlayRound(
-                    { setComputerPick, setScore, setResult, setRound, round },
-                    "rock"
-                  )
-                );
-                setRound((round) => round + 1);
-              }}
-              className="rounded-full absolute top-[40%] left-[25%] translate-x-1/2 p-0 h-fit bg-red-700 z-50 m-28 mb-0"
-            >
-              <GameButton id="RockButton" src={ROCK} color="red" />
-            </button>
+                  setResult(
+                    PlayRound(
+                      { setComputerPick, setScore, setResult, setRound, round },
+                      "rock"
+                    )
+                  );
+                  setRound((round) => round + 1);
+                }}
+                className="rounded-full absolute top-[38.5%] left-[25%] translate-x-1/2 p-0 h-fit bg-red-700 z-50 m-28 mb-0"
+              >
+                <RockSmallGameButton />
+              </button>
 
-            <button
-              onClick={() => {
-                setLizard(true);
+              <button
+                onClick={() => {
+                  setLizard(true);
 
-                setResult(
-                  PlayRound(
-                    { setComputerPick, setScore, setResult, setRound, round },
-                    "lizard"
-                  )
-                );
-                setRound((round) => round + 1);
-              }}
-              className="rounded-full absolute top-[40%] right-[40%] p-0 h-fit bg-purple-700 z-50 m-28 mb-0"
-            >
-              <GameButton id="LizardButton" src={LIZARD} color="purple" />
-            </button>
+                  setResult(
+                    PlayRound(
+                      { setComputerPick, setScore, setResult, setRound, round },
+                      "lizard"
+                    )
+                  );
+                  setRound((round) => round + 1);
+                }}
+                className="rounded-full absolute top-[38.5%] right-[39%] p-0 h-fit bg-purple-700 z-50 m-28 mb-0"
+              >
+                <LizardSmallGameButton />
+              </button>
 
-            <button
-              onClick={() => {
-                setSpock(true);
+              <button
+                onClick={() => {
+                  setSpock(true);
 
-                setResult(
-                  PlayRound(
-                    { setComputerPick, setScore, setResult, setRound, round },
-                    "spock"
-                  )
-                );
-                setRound((round) => round + 1);
-              }}
-              className="rounded-full absolute top-[1%] right-[47%] p-0 h-fit bg-sky-700 z-50 m-28 mb-0"
-            >
-              <GameButton id="SpockButton" src={SPOCK} color="sky" />
-            </button>
+                  setResult(
+                    PlayRound(
+                      { setComputerPick, setScore, setResult, setRound, round },
+                      "spock"
+                    )
+                  );
+                  setRound((round) => round + 1);
+                }}
+                className="rounded-full absolute top-[4%] right-[47%] p-0 h-fit bg-teal-700 z-50 m-28 mb-0"
+              >
+                <SpockSmallGameButton />
+              </button>
+            </div>
           </div>
         </div>
       )}

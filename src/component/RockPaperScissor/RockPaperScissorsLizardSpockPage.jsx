@@ -6,7 +6,9 @@ import SCISSORS from "./assets/icon-scissors.svg";
 import ROCK from "./assets/icon-rock.svg";
 import TRIANGLE from "./assets/bg-triangle.svg";
 import RULES from "./assets/image-rules.svg";
+import RULESBONUS from "./assets/image-rules-bonus.svg";
 import CLOSE from "./assets/icon-close.svg";
+import LOGO from "./assets/logo.svg";
 import LOGOBONUS from "./assets/logo-bonus.svg";
 import SHELDON from "./assets/Sheldon.png";
 import LIZARD from "./assets/icon-lizard.svg";
@@ -23,7 +25,15 @@ import PlayRound, {
   StartingScreen,
   WinnerGlow,
 } from "./RockPaperScissorLizardSpock";
-import Button from "../Buttons/Button";
+
+//buttons:
+import ScissorsGameButton, {
+  LizardGameButton,
+  PaperGameButton,
+  RockGameButton,
+  SpockGameButton,
+} from "./RPSLSButtons";
+import { Link } from "react-router-dom";
 
 function RockPaperScissorLizardSpock() {
   const [paper, setPaper] = useState(false);
@@ -52,9 +62,12 @@ function RockPaperScissorLizardSpock() {
 
   return (
     <>
-      <button className="absolute top-2 left-2 p-2 m-2 bg-white text-black h-fit w-fit text-xs z-50 opacity-50">
-        <img className="h-12" src={SHELDON} />
-      </button>
+      <Link
+        className="absolute top-2 left-2 p-2 m-2 bg-water-200 h-fit w-fit rounded-xl z-50 opacity-80"
+        to="/RockPaperScissors"
+      >
+        <img className="h-12" src={LOGO} />
+      </Link>
       <div
         id="RPS"
         className="select-none absolute top-0 left-0 w-screen h-screen text-white"
@@ -76,7 +89,7 @@ function RockPaperScissorLizardSpock() {
 
         {/* Start screen buttons: */}
 
-        <div className="h-full w-full [&>*]:animate-RPSPopUp">
+        <div className="flex flex-wrap w-full h-full justify-center m-auto [&>*]:animate-RPSPopUp">
           <StartingScreen
             paper={paper}
             scissors={scissors}
@@ -101,80 +114,54 @@ function RockPaperScissorLizardSpock() {
               <>
                 <div className="flex h-full align-top z-40 text-white">
                   <div className="[&>*]:animate-RPSPopUp">
-                    <h1 className="m-8 text-3xl">You picked</h1>
+                    <h1 className="m-4 text-3xl">You picked</h1>
                     {computerPick === "paper" ||
                     computerPick === "scissors" ||
                     computerPick === "lizard" ? (
-                      <>
-                        <InactiveGameButton
-                          id="PaperButton"
-                          src={PAPER}
-                          color="blue"
-                        />
-                      </>
+                      <PaperGameButton />
                     ) : null}
                     {computerPick === "rock" || computerPick === "spock" ? (
-                      <>
-                        <div className="rounded-full w-fit m-auto relative z-40">
-                          <WinnerGlow />
-                          <InactiveGameButton
-                            id="PaperButton"
-                            src={PAPER}
-                            color="blue"
-                          />
-                        </div>
-                      </>
+                      <div className="rounded-full w-fit m-auto relative z-40">
+                        <WinnerGlow />
+                        <PaperGameButton />
+                      </div>
                     ) : null}
                   </div>
 
                   <ResultandRestart setType={setPaper} result={result} />
 
                   <div className="z-40">
-                    <h1 className="m-8 text-3xl">House picked </h1>
+                    <h1 className="m-4 text-3xl">House picked </h1>
                     <div className="relative">
                       <EmptyGameButton />
                       <div className="[&>*]:animate-RPSPopUpDelayed">
                         {computerPick === "rock" && (
-                          <InactiveGameButton
-                            id="RockButton"
-                            src={ROCK}
-                            color="red"
-                          />
+                          <div className="rounded-full w-fit m-auto relative">
+                            <RockGameButton />
+                          </div>
                         )}
 
                         {computerPick === "paper" && (
-                          <InactiveGameButton
-                            id="PaperButton"
-                            src={PAPER}
-                            color="blue"
-                          />
+                          <div className="rounded-full w-fit m-auto relative">
+                            <PaperGameButton />
+                          </div>
                         )}
                         {computerPick === "scissors" && (
                           <div className="rounded-full w-fit m-auto relative">
                             <WinnerGlow />
-                            <InactiveGameButton
-                              id="ScissorButton"
-                              src={SCISSORS}
-                              color="yellow"
-                            />
+                            <ScissorsGameButton />
                           </div>
                         )}
                         {computerPick === "lizard" && (
                           <div className="rounded-full w-fit m-auto relative">
                             <WinnerGlow />
-                            <InactiveGameButton
-                              id="LizardButton"
-                              src={LIZARD}
-                              color="purple"
-                            />
+                            <LizardGameButton />
                           </div>
                         )}
                         {computerPick === "spock" && (
-                          <InactiveGameButton
-                            id="SpockButton"
-                            src={SPOCK}
-                            color="sky"
-                          />
+                          <div className="rounded-full w-fit m-auto relative">
+                            <SpockGameButton />
+                          </div>
                         )}
                       </div>
                     </div>
@@ -187,61 +174,56 @@ function RockPaperScissorLizardSpock() {
               <>
                 <div className="flex h-full align-top z-40 text-white">
                   <div className="[&>*]:animate-RPSPopUp">
-                    <h1 className="m-8 text-3xl">You picked</h1>
+                    <h1 className="m-4 text-3xl">You picked</h1>
 
                     {computerPick === "rock" ||
                     computerPick === "scissors" ||
                     computerPick === "spock" ? (
-                      <InactiveGameButton
-                        id="ScissorButton"
-                        src={SCISSORS}
-                        color="yellow"
-                      />
+                      <ScissorsGameButton />
                     ) : null}
 
-                    {computerPick === "paper" && (
+                    {computerPick === "paper" || computerPick === "lizard" ? (
                       <>
                         <div className="rounded-full w-fit m-auto relative z-40">
                           <WinnerGlow />
-                          <InactiveGameButton
-                            id="ScissorButton"
-                            src={SCISSORS}
-                            color="yellow"
-                          />
+                          <ScissorsGameButton />
                         </div>
                       </>
-                    )}
+                    ) : null}
                   </div>
 
                   <ResultandRestart setType={setScissors} result={result} />
 
                   <div className="z-40">
-                    <h1 className="m-8 text-3xl">House picked </h1>
+                    <h1 className="m-4 text-3xl">House picked </h1>
                     <div className="relative">
                       <EmptyGameButton />
                       <div className="[&>*]:animate-RPSPopUpDelayed">
                         {computerPick === "paper" && (
-                          <InactiveGameButton
-                            id="PaperButton"
-                            src={PAPER}
-                            color="blue"
-                          />
+                          <div className="rounded-full w-fit m-auto relative">
+                            <PaperGameButton />
+                          </div>
                         )}
                         {computerPick === "scissors" && (
-                          <InactiveGameButton
-                            id="ScissorButton"
-                            src={SCISSORS}
-                            color="yellow"
-                          />
+                          <div className="rounded-full w-fit m-auto relative">
+                            <ScissorsGameButton />
+                          </div>
                         )}
                         {computerPick === "rock" && (
                           <div className="rounded-full w-fit m-auto relative">
                             <WinnerGlow />
-                            <InactiveGameButton
-                              id="RockButton"
-                              src={ROCK}
-                              color="red"
-                            />
+                            <RockGameButton />
+                          </div>
+                        )}
+                        {computerPick === "lizard" && (
+                          <div className="rounded-full w-fit m-auto relative">
+                            <LizardGameButton />
+                          </div>
+                        )}
+                        {computerPick === "spock" && (
+                          <div className="rounded-full w-fit m-auto relative">
+                            <WinnerGlow />
+                            <SpockGameButton />
                           </div>
                         )}
                       </div>
@@ -255,36 +237,28 @@ function RockPaperScissorLizardSpock() {
               <>
                 <div className="flex h-full align-top z-40 text-white">
                   <div className="[&>*]:animate-RPSPopUp">
-                    <h1 className="m-8 text-3xl">You picked</h1>
-
-                    {computerPick === "rock" || computerPick === "paper" ? (
-                      <InactiveGameButton
-                        id="RockButton"
-                        src={ROCK}
-                        color="red"
-                      />
+                    <h1 className="m-4 text-3xl">You picked</h1>
+                    {computerPick === "rock" ||
+                    computerPick === "paper" ||
+                    computerPick === "spock" ? (
+                      <RockGameButton />
                     ) : null}
-                    {computerPick === "scissors" && (
-                      <>
-                        <div className="rounded-full w-fit m-auto relative z-40">
-                          <WinnerGlow />
-                          <InactiveGameButton
-                            id="RockButton"
-                            src={ROCK}
-                            color="red"
-                          />
-                        </div>
-                      </>
-                    )}
+                    {computerPick === "scissors" ||
+                    computerPick === "lizard" ? (
+                      <div className="rounded-full w-fit m-auto relative z-40">
+                        <WinnerGlow />
+                        <RockGameButton />
+                      </div>
+                    ) : null}
                   </div>
 
                   <ResultandRestart setType={setRock} result={result} />
 
-                  <div className="z-40">
-                    <h1 className="m-8 text-3xl">House picked </h1>
+                  <div className="z-40 w-fit">
+                    <h1 className="m-4 text-3xl">House picked </h1>
                     <div className="relative">
                       <EmptyGameButton />
-                      <div className="[&>*]:animate-RPSPopUpDelayed">
+                      <div className="[&>*]:animate-RPSPopUpDelayed w-fit">
                         {computerPick === "rock" && (
                           <InactiveGameButton
                             id="RockButton"
@@ -295,21 +269,152 @@ function RockPaperScissorLizardSpock() {
                         {computerPick === "paper" && (
                           <div className="rounded-full w-fit m-auto relative">
                             <WinnerGlow />
-                            <InactiveGameButton
-                              id="PaperButton"
-                              src={PAPER}
-                              color="blue"
-                            />
+                            <div className="rounded-full w-fit m-auto relative">
+                              <PaperGameButton />
+                            </div>
                           </div>
                         )}
                         {computerPick === "scissors" && (
-                          <>
-                            <InactiveGameButton
-                              id="ScissorButton"
-                              src={SCISSORS}
-                              color="yellow"
-                            />
-                          </>
+                          <div className="rounded-full w-fit m-auto relative">
+                            <ScissorsGameButton />
+                          </div>
+                        )}
+                        {computerPick === "lizard" && (
+                          <div className="rounded-full w-fit m-auto relative">
+                            <WinnerGlow />
+                            <LizardGameButton />
+                          </div>
+                        )}
+                        {computerPick === "spock" && (
+                          <div className="rounded-full w-fit m-auto relative">
+                            <SpockGameButton />
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </>
+            )}
+            {lizard && (
+              <>
+                <div className="flex h-full align-top z-40 text-white">
+                  <div className="[&>*]:animate-RPSPopUp">
+                    <h1 className="m-4 text-3xl">You picked</h1>
+
+                    {computerPick === "rock" ||
+                    computerPick === "scissors" ||
+                    computerPick === "lizard" ? (
+                      <LizardGameButton />
+                    ) : null}
+                    {computerPick === "spock" || computerPick === "paper" ? (
+                      <>
+                        <div className="rounded-full w-fit m-auto relative z-40">
+                          <WinnerGlow />
+                          <LizardGameButton />
+                        </div>
+                      </>
+                    ) : null}
+                  </div>
+
+                  <ResultandRestart setType={setLizard} result={result} />
+
+                  <div className="z-40">
+                    <h1 className="m-4 text-3xl">House picked </h1>
+                    <div className="relative">
+                      <EmptyGameButton />
+                      <div className="[&>*]:animate-RPSPopUpDelayed">
+                        {computerPick === "rock" && (
+                          <div className="rounded-full w-fit m-auto relative">
+                            <WinnerGlow />
+                            <RockGameButton />
+                          </div>
+                        )}
+                        {computerPick === "paper" && (
+                          <div className="rounded-full w-fit m-auto relative">
+                            <div className="rounded-full w-fit m-auto relative">
+                              <PaperGameButton />
+                            </div>
+                          </div>
+                        )}
+                        {computerPick === "scissors" && (
+                          <div className="rounded-full w-fit m-auto relative">
+                            <WinnerGlow />
+                            <ScissorsGameButton />
+                          </div>
+                        )}
+                        {computerPick === "lizard" && (
+                          <div className="rounded-full w-fit m-auto relative">
+                            <LizardGameButton />
+                          </div>
+                        )}
+                        {computerPick === "spock" && (
+                          <div className="rounded-full w-fit m-auto relative">
+                            <SpockGameButton />
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </>
+            )}
+            {spock && (
+              <>
+                <div className="flex h-full align-top z-40 text-white">
+                  <div className="[&>*]:animate-RPSPopUp">
+                    <h1 className="m-4 text-3xl">You picked</h1>
+
+                    {computerPick === "lizard" ||
+                    computerPick === "paper" ||
+                    computerPick === "spock" ? (
+                      <SpockGameButton />
+                    ) : null}
+                    {computerPick === "scissors" || computerPick === "rock" ? (
+                      <>
+                        <div className="rounded-full w-fit m-auto relative z-40">
+                          <WinnerGlow />
+                          <SpockGameButton />
+                        </div>
+                      </>
+                    ) : null}
+                  </div>
+
+                  <ResultandRestart setType={setSpock} result={result} />
+
+                  <div className="z-40">
+                    <h1 className="m-4 text-3xl">House picked </h1>
+                    <div className="relative">
+                      <EmptyGameButton />
+                      <div className="[&>*]:animate-RPSPopUpDelayed">
+                        {computerPick === "rock" && (
+                          <div className="rounded-full w-fit m-auto relative">
+                            <RockGameButton />
+                          </div>
+                        )}
+                        {computerPick === "paper" && (
+                          <div className="rounded-full w-fit m-auto relative">
+                            <div className="rounded-full w-fit m-auto relative">
+                              <WinnerGlow />
+                              <PaperGameButton />
+                            </div>
+                          </div>
+                        )}
+                        {computerPick === "scissors" && (
+                          <div className="rounded-full w-fit m-auto relative">
+                            <ScissorsGameButton />
+                          </div>
+                        )}
+                        {computerPick === "lizard" && (
+                          <div className="rounded-full w-fit m-auto relative">
+                            <WinnerGlow />
+                            <LizardGameButton />
+                          </div>
+                        )}
+                        {computerPick === "spock" && (
+                          <div className="rounded-full w-fit m-auto relative">
+                            <SpockGameButton />
+                          </div>
                         )}
                       </div>
                     </div>
@@ -328,17 +433,20 @@ function RockPaperScissorLizardSpock() {
           </button>
           {toggle && (
             <>
-              <div className="absolute grid grid-row-2 left-1/2 bottom-1/2 translate-y-1/2 -translate-x-1/2 z-50 bg-gray-100 sm:w-1/2 xl:w-1/4 h-1/2 m-auto rounded-xl animate-rulesSlideIn">
-                <h1 className="text-left text-2xl p-4 z-50 text-black">
-                  RULES
-                </h1>
-                <button
-                  className="absolute bg-transparent right-3 top-3 p-2 z-50"
-                  onClick={() => setToggle(!toggle)}
-                >
-                  <img src={CLOSE} />
-                </button>
-                <img className="m-auto" src={RULES} />
+              {/* Add modal from daisyUI */}
+              <div className="">
+                <div className="absolute left-1/2 bottom-1/2 translate-y-1/2 -translate-x-1/2 z-50 bg-gray-100 sm:w-1/2 xl:w-1/4 h-1/2 m-auto rounded-xl animate-rulesSlideIn">
+                  <h1 className="text-left text-2xl p-4 z-50 text-black">
+                    RULES
+                  </h1>
+                  <button
+                    className="absolute bg-transparent right-3 top-3 p-2 z-50"
+                    onClick={() => setToggle(!toggle)}
+                  >
+                    <img src={CLOSE} />
+                  </button>
+                  <img className="m-auto" src={RULESBONUS} />
+                </div>
               </div>
             </>
           )}

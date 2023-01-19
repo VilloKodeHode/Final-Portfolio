@@ -50,12 +50,10 @@ function RockPaperScissor() {
   return (
     <>
       <Link
-        className="absolute top-2 left-2 p-2 m-2 bg-white text-black h-fit w-fit rounded-xl text-xs z-50 opacity-50"
+        className="absolute top-2 left-2 p-2 m-2 bg-water-200 h-fit w-fit rounded-xl z-50 opacity-50"
         to="/RockPaperScissorsLizardSpock"
       >
-        {/* <button className="absolute top-2 left-2 p-2 m-2 bg-white text-black h-fit w-fit text-xs z-50 opacity-50"> */}
         <img className="h-12" src={SHELDON} />
-        {/* </button> */}
       </Link>
       <div
         id="RPS"
