@@ -1,15 +1,16 @@
 import Project from "./projectcard";
 import { ProjectRouted } from "./projectcard";
+import { useState } from "react";
 
 //images
 import XMasCalendar from "./assets/Christmas calendar.png";
 import CssArt from "./assets/Css art.png";
 import JobSimulator from "./assets/Job Simulator.png";
 import PokeAPI from "./assets/PokeAPI.png";
-import STT from "./assets/strength training tips.png";
+import STYRKETRENINGSTIPS from "./assets/strength training tips.png";
 import ValhallaBeards from "./assets/Valhalla beards.png";
 import VSF from "./assets/VStrengthFormula.png";
-import RPS from "./assets/RPS.png";
+import ROCKPAPERSCISSORS from "./assets/RPS.png";
 
 //css
 import "./assets/Projects.css";
@@ -22,10 +23,10 @@ function ProjectSection() {
 
       <div className="w-full absolute top-16 left-1/2 -translate-x-1/2 z-20">
         <section
-          className="flex flex-row flex-wrap justify-center mx-24 xl:mx-80 z-20"
+          className="flex flex-row flex-wrap justify-center  xl:mx-48 mx-12 z-20"
           id="projects"
         >
-          <h2 className=" mb-2 text-white font-Roboto">Prosjekter</h2>
+          <h2 className="mb-2 text-white font-Roboto">Prosjekter</h2>
           <div className="flex justify-center flex-wrap">
             <Project
               href="https://villokodehode.github.io/Job-simulator/"
@@ -66,8 +67,8 @@ function ProjectSection() {
             />
             <Project
               href="https://villokodehode.github.io/strength-training-tips-app/"
-              projectName="Styrketrenings tips"
-              src={STT}
+              projectName="Styrke-trenings tips"
+              src={STYRKETRENINGSTIPS}
               description="Første forsøk på tailwind med noe av min kunnskap om trening"
               hrefCode="https://github.com/VilloKodeHode/strength-training-tips-app"
             />
@@ -81,7 +82,7 @@ function ProjectSection() {
             <ProjectRouted
               to="/RockPaperScissors"
               projectName="Rock, Paper, Scissors"
-              src={RPS}
+              src={ROCKPAPERSCISSORS}
               description="Stein, saks papir spill"
               hrefCode="https://github.com/VilloKodeHode/use-effect/tree/master/src/component/PokeAPI"
             />
