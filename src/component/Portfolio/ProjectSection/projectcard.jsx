@@ -14,18 +14,18 @@ function Project(props) {
       <div className="h-fit w-fit m-4 [&>*]:hover:scale-105">
         <div className=" duration-500 ease-out w-fit h-fit">
           <img
-            className="h-24 sm:h-36 lg:h-56 w-24 sm:w-36 lg:w-56 mx-auto rounded-xl"
+            className="h-32 sm:h-36 lg:h-46 xl:h-56 w-32 sm:w-36 lg:w-46 xl:w-56 rounded-xl"
             src={src}
           />
           <button
-            className="bg-water-600 md:text-m text-xs md:w-[80%] w-28 btn p-2 mb-1 rounded-xl border-water-100 border-2 shadow-xl text-water-100 bg-opacity-70 backdrop-blur-xs"
+            className="bg-water-600 xl:text-xs text-[10px] md:w-[90%] w-28 btn p-2 rounded-xl border-water-100 border-2 shadow-sm shadow-water-100 text-water-100 bg-opacity-70 backdrop-blur-xs"
             onClick={() => setToggle(!toggle)}
           >
             {projectName}
           </button>
         </div>
       </div>
-      {/* )} */}
+
       {toggle && (
         <>
           <div className="absolute -top-1/2 translate-y-1/2 left-1/2 -translate-x-1/2 w-[95%] h-[100%] bg-earth-200 mt-8 bg-opacity-70 backdrop-blur-sm rounded-3xl"></div>
@@ -70,14 +70,14 @@ export function ProjectRouted(props) {
   const [toggle, setToggle] = useState(false);
   return (
     <>
-      <div className="h-fit w-fit m-4 [&>*]:hover:scale-105">
+      <div className="flex justify-center h-fit w-fit m-4 [&>*]:hover:scale-105">
         <div className=" duration-500 ease-out w-fit h-fit">
           <img
-            className="h-24 sm:h-36 lg:h-56 w-24 sm:w-36 lg:w-56 mx-auto rounded-xl"
+            className="h-32 sm:h-36 lg:h-46 xl:h-56 w-32 sm:w-36 lg:w-46 xl:w-56 rounded-xl"
             src={src}
           />
           <button
-            className="bg-water-600 md:text-m text-xs md:w-[80%] w-28 btn p-2 mb-1 rounded-xl border-water-100 border-2 shadow-xl text-water-100 bg-opacity-70 backdrop-blur-xs"
+            className="bg-water-600 xl:text-xs text-[10px] md:w-[90%] w-28 btn p-2 rounded-xl border-water-100 border-2 shadow-sm shadow-water-100 text-water-100 bg-opacity-70 backdrop-blur-xs"
             onClick={() => setToggle(!toggle)}
           >
             {projectName}

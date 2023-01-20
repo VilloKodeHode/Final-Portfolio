@@ -25,16 +25,14 @@ function SkillsAndKnowledgeSection() {
         <div className="flex flex-col  h-fit">
           {/* border-2 border-fairy-400 bg-fairy-300 bg-opacity-90 rounded-3xl */}
           <div className="w-full flex justify-center">
-            <h2 className=" knowledge-header p-4 border-2 border-fairy-400 bg-fairy-100 text-earth-400 -translate-y-8 w-fit rounded-xl">
-              Kunnskap
-            </h2>
+            <h2 className="mb-8 text-white text-5xl font-Roboto">Kunnskap</h2>
           </div>
           <Button
-            idAndClass="bg-accent btn p-4 rounded-2xl border-2 shadow-xl w-fit m-auto text-black"
+            idAndClass="bg-accent btn p-4 mb-8 rounded-2xl border-2 shadow-xl w-fit m-auto text-black"
             text="Skills"
             onClick={() => setToggle(!toggle)}
           />
-          {/* <h3 className="text-2xl font-bold">Code</h3> */}
+
           <div className="flex justify-center flex-wrap xl:gap-16 md:gap-12 sm:gap-8 gap-4">
             <KnowledgeIcon
               src="https://cdn-icons-png.flaticon.com/512/136/136528.png"
@@ -49,19 +47,12 @@ function SkillsAndKnowledgeSection() {
               src="https://cdn-icons-png.flaticon.com/512/136/136530.png"
               alt="JavaScript"
             />
-            {/* </div> */}
 
-            {/* <div> */}
-            {/* <div className="indicator">
-            <span className="indicator-item badge badge-primary">novice</span> */}
             <KnowledgeIcon
               src="https://cdn-icons-png.flaticon.com/512/2306/2306154.png"
               alt="PHP"
             />
-            {/* </div> */}
 
-            {/* <div className="indicator">
-            <span className="indicator-item badge badge-primary">novice</span> */}
             <KnowledgeIcon
               src="https://cdn-icons-png.flaticon.com/512/5815/5815421.png"
               alt="Python"
@@ -99,7 +90,7 @@ function SkillsAndKnowledgeSection() {
         </div>
 
         {toggle && (
-          <div className="bg-base-100 shadow-2xl shadow-black rounded-l-xl p-8 overflow-y-scroll scrollbar scrollbar-thumb-base-300 scrollbar-track-transparent fixed md:w-[95%] w-full  md:h-[90%] h-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">
+          <div className="bg-earth-100 bg-opacity-90 shadow-2xl shadow-black rounded-l-xl p-8 overflow-y-scroll scrollbar scrollbar-thumb-base-300 scrollbar-track-transparent fixed md:w-[95%] w-full h-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">
             <button
               className="absolute top-4 right-8 bg-transparent p-0"
               onClick={() => setToggle(!toggle)}

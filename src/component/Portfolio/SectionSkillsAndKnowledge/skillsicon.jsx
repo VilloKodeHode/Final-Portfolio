@@ -1,11 +1,16 @@
 export function KnowledgeIcon(props) {
   const { src, alt } = props;
   return (
-    <div className="mask mask-hexagon bg-water-500 relative h-40 w-40 bg-opacity-70">
-      <figure className="p-4 m-8 bg-earth-400 rounded-xl shadow-xl mask mask-hexagon-2">
-        <img className="h-16" src={src} alt={alt} />
-      </figure>
-    </div>
+    <>
+      <div className="relative">
+        <figure className="p-4 m-4 z-50">
+          <img className="xl:h-16 h-10" src={src} alt={alt} />
+        </figure>
+
+        <div className="mask mask-diamond bg-water-500 xl:h-36 h-24 xl:w-36 w-24 bg-opacity-70 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 -z-10"></div>
+        <div className="bg-water-600 rounded-xl shadow-xl mask mask-parallelogram xl:h-36 h-24 xl:w-36 w-24 bg-opacity-70 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 -z-20"></div>
+      </div>
+    </>
   );
 }
 
