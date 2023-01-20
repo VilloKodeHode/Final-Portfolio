@@ -7,6 +7,10 @@ import SCISSORS from "./assets/icon-scissors.svg";
 import ROCK from "./assets/icon-rock.svg";
 import Button from "../Buttons/Button";
 import TRIANGLE from "./assets/bg-triangle.svg";
+import ScissorsGameButton, {
+  PaperGameButton,
+  RockGameButton,
+} from "./RPSLSButtons";
 
 //style
 
@@ -117,47 +121,7 @@ function PlayRound({ setComputerPick, setScore, setResult }, playerPick) {
 
   setResult(result);
 
-  // console.log("result is:" + result);
-
   return result;
-
-  // (
-  //   <>
-  //     {result === "lose" && (
-  //       <>
-  //         {computerPick === "rock" && (
-  //           <div className="border-8 border-black m-2">
-  //             <GameButton color="red" id="RockButton" src={ROCK} />
-  //           </div>
-  //         )}
-
-  //         {computerPick === "paper" && (
-  //           <div className="border-8 border-black m-2">
-  //             <GameButton color="blue" id="PaperButton" src={PAPER} />
-  //           </div>
-  //         )}
-  //         {computerPick === "scissors" && (
-  //           <div className="border-8 border-black m-2">
-  //             <GameButton color="yellow" id="ScissorsButton" src={SCISSORS} />
-  //           </div>
-  //         )}
-  //       </>
-  //     )}
-  //     {result === "win" && (
-  //       <>
-  //         {computerPick === "rock" && (
-  //           <GameButton color="red" id="RockButton" src={ROCK} />
-  //         )}
-  //         {computerPick === "paper" && (
-  //           <GameButton color="blue" id="PaperButton" src={PAPER} />
-  //         )}
-  //         {computerPick === "scissors" && (
-  //           <GameButton color="yellow" id="ScissorsButton" src={SCISSORS} />
-  //         )}
-  //       </>
-  //     )}
-  //   </>
-  // );
 }
 
 export function ResultandRestart({ result, setType }) {
@@ -213,7 +177,8 @@ export function StartingScreen(props) {
               }}
               className="rounded-full p-0 h-fit bg-blue-700 z-50 mr-14"
             >
-              <GameButton id="PaperButton" src={PAPER} color="blue" />
+              {/* <GameButton id="PaperButton" src={PAPER} color="blue" /> */}
+              <PaperGameButton />
             </button>
 
             <button
@@ -230,7 +195,8 @@ export function StartingScreen(props) {
               }}
               className="rounded-full p-0 h-fit bg-yellow-700 z-50 ml-14"
             >
-              <GameButton id="ScissorButton" src={SCISSORS} color="yellow" />
+              {/* <GameButton id="ScissorButton" src={SCISSORS} color="yellow" /> */}
+              <ScissorsGameButton />
             </button>
 
             <button
@@ -247,7 +213,8 @@ export function StartingScreen(props) {
               }}
               className="rounded-full p-0 h-fit bg-red-700 z-50 m-28 mb-0"
             >
-              <GameButton id="RockButton" src={ROCK} color="red" />
+              {/* <GameButton id="RockButton" src={ROCK} color="red" /> */}
+              <RockGameButton />
             </button>
 
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10">
@@ -261,140 +228,3 @@ export function StartingScreen(props) {
 }
 
 export default PlayRound;
-
-// export function HouseChoice() {
-//   return (
-//     <div className="z-40">
-//       <h1>House picked something</h1>
-//       <div className="m-auto border-b-8 w-fit h-fit bg-blue-700 rounded-full border-blue-700">
-//         <div
-//           id="PaperButton"
-//           className="rounded-full p-16 bg-white shadow-inner border-[22px] border-blue-500  shadow-blue-800"
-//         >
-//           <img className="h-20 w-20" src={PAPER} />
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export function RandomRPS() {
-//   const randomNumber = Math.floor(Math.random() * 3 + 1);
-//   console.log(randomNumber);
-//   if (randomNumber === 1) {
-//     return "rock";
-//   } else if (randomNumber === 2) {
-//     return "paper";
-//   } else {
-//     return "scissors";
-//   }
-// }
-
-// export function ComputerPick({ computerPick }) {
-//   return (
-//     <>
-//       {computerPick === "rock" && (
-//         <InactiveGameButton id="RockButton" src={ROCK} color="red" />
-//       )}
-//       {computerPick === "paper" && (
-//         <InactiveGameButton id="PaperButton" src={PAPER} color="blue" />
-//       )}
-//       {computerPick === "scissors" && (
-//         <InactiveGameButton id="ScissorButton" src={SCISSORS} color="yellow" />
-//       )}
-//     </>
-//   );
-// }
-
-// export function ComputeScore(computerPick, playerPick, setScore) {
-//   if (computerPick === playerPick) {
-//     // do nothing
-//   } else if (
-//     (playerPick === "rock" && computerPick === "scissors") ||
-//     (playerPick === "scissors" && computerPick === "paper") ||
-//     (playerPick === "paper" && computerPick === "rock")
-//   ) {
-//     setScore((prevScore) => prevScore + 1);
-//   } else {
-//     setScore((prevScore) => prevScore - 1);
-//   }
-// }
-
-// export function CalculateAndRenderComputerPick({ computerPick }) {
-//   const randomNumber = Math.floor(Math.random() * 3 + 1);
-//   console.log(randomNumber);
-//   if (randomNumber === 1) {
-//     return (
-//       <>
-//         {computerPick === "rock" && (
-//           <InactiveGameButton id="RockButton" src={ROCK} color="red" />
-//         )}
-//       </>
-//     );
-//   } else if (randomNumber === 2) {
-//     return (
-//       <>
-//         {computerPick === "paper" && (
-//           <InactiveGameButton id="PaperButton" src={PAPER} color="blue" />
-//         )}
-//       </>
-//     );
-//   } else {
-//     return (
-//       <>
-//         {computerPick === "scissors" && (
-//           <InactiveGameButton
-//             id="ScissorButton"
-//             src={SCISSORS}
-//             color="yellow"
-//           />
-//         )}
-//       </>
-//     );
-//   }
-// }
-
-// export function PaperButton() {
-//   <div className="z-40">
-//     <div
-//       className={`m-auto border-b-8 w-fit h-fit bg-blue-700 rounded-full border-blue-700`}
-//     >
-//       <div
-//         id="PaperButton"
-//         className={`rounded-full p-16 bg-white shadow-inner border-[22px] border-blue-500`}
-//       >
-//         <img className="h-20 w-20" src={PAPER} />
-//       </div>
-//     </div>
-//   </div>;
-// }
-
-// export function ScissorButton() {
-//   <div className="z-40">
-//     <div
-//       className={`m-auto border-b-8 w-fit h-fit bg-yellow-700 rounded-full border-yellow-700`}
-//     >
-//       <div
-//         id="ScissorButton"
-//         className={`rounded-full p-16 bg-white shadow-inner border-[22px] border-yellow-500`}
-//       >
-//         <img className="h-20 w-20" src={SCISSORS} />
-//       </div>
-//     </div>
-//   </div>;
-// }
-
-// export function RockButton() {
-//   <div className="z-40">
-//     <div
-//       className={`m-auto border-b-8 w-fit h-fit bg-red-700 rounded-full border-red-700`}
-//     >
-//       <div
-//         id="RockButton"
-//         className={`rounded-full p-16 bg-white shadow-inner border-[22px] border-red-500`}
-//       >
-//         <img className="h-20 w-20" src={ROCK} />
-//       </div>
-//     </div>
-//   </div>;
-// }
