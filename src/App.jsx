@@ -1,4 +1,5 @@
 import "./App.css";
+import React, { createContext, useState } from "react";
 
 import NavBar from "./component/NavBar/NavBar";
 import PokeAPI from "./routes/PokeAPI/PokeAPI";
@@ -22,6 +23,8 @@ import TestPage from "./routes/TestPage";
 import TestPage2 from "./routes/TestPage2";
 import RockPaperScissorsPage from "./routes/RockPaperScissors/RenderRockPaperScissorPage";
 import RockPaperScissorLizardSpock from "./component/RockPaperScissor/RockPaperScissorsLizardSpockPage";
+import ThemeSwitch from "./component/ThemeSwitch/ThemeSwitch";
+import ThemeContext from "./component/ThemeSwitch/ThemeContext";
 
 //Todo:
 //* ProjectsPage: On load: Projects are smaller, and on click they become larger, click again to "go to" (add also close btn?)
@@ -31,51 +34,48 @@ import RockPaperScissorLizardSpock from "./component/RockPaperScissor/RockPaperS
 //* HeroPage: More buttons to reveal text or something?
 
 function App() {
+  const [selectedTheme, setSelectedTheme] = useState("Professional");
   return (
-    <Router>
-      <HamburgerBar />
-      <Routes>
-        <Route path="/" element={<RenderLandingPage />} />
-        <Route path="/About" element={<AboutPage />} />
-        <Route path="/Qualifications" element={<Qualifications />} />
-        <Route path="/Projects" element={<ProjectPage />} />
-        <Route path="/Contact" element={<ContactPage />} />
-        <Route path="/PokeAPI" element={<PokeAPI />} />
-        <Route path="/Portfolio" element={<PortfolioPage />} />
-        <Route path="/TestPage" element={<TestPage />} />
-        <Route path="/TestPage2" element={<TestPage2 />} />
-        <Route path="/RockPaperScissors" element={<RockPaperScissorsPage />} />
-        <Route
-          path="/RockPaperScissorsLizardSpock"
-          element={<RockPaperScissorLizardSpock />}
-        />
+    <ThemeContext.Provider value={{ selectedTheme, setSelectedTheme }}>
+      <Router>
+        <div className="absolute w-full top-4 right-6">
+          <HamburgerBar />
+          <ThemeSwitch />
+        </div>
+        <Routes>
+          <Route path="/" element={<RenderLandingPage />} />
+          <Route path="/About" element={<AboutPage />} />
+          <Route path="/Qualifications" element={<Qualifications />} />
+          <Route path="/Projects" element={<ProjectPage />} />
+          <Route path="/Contact" element={<ContactPage />} />
+          <Route path="/PokeAPI" element={<PokeAPI />} />
+          <Route path="/Portfolio" element={<PortfolioPage />} />
+          <Route path="/TestPage" element={<TestPage />} />
+          <Route path="/TestPage2" element={<TestPage2 />} />
+          <Route
+            path="/RockPaperScissors"
+            element={<RockPaperScissorsPage />}
+          />
+          <Route
+            path="/RockPaperScissorsLizardSpock"
+            element={<RockPaperScissorLizardSpock />}
+          />
 
-        <Route
-          path="*"
-          element={
-            <>
-              <NavBar />
-              <div className=" w-full h-full bg-black">
-                <img className="mt-20" src="https://http.cat/404" />
-              </div>
-            </>
-          }
-        />
-      </Routes>
-    </Router>
+          <Route
+            path="*"
+            element={
+              <>
+                <NavBar />
+                <div className=" w-full h-full bg-black">
+                  <img className="mt-20" src="https://http.cat/404" />
+                </div>
+              </>
+            }
+          />
+        </Routes>
+      </Router>
+    </ThemeContext.Provider>
   );
 }
-
-function doesNothing() {}
-
-// const ColorMode = () => {
-//   const [ColorMode, setColorMode] = useState("dark");
-// };
-
-// <Button
-//   idAndClass=""
-//   text=""
-//   onClick={() => (setToggle("dark") ? setToggle("light") : setToggle("dark"))}
-// />;
 
 export default App;

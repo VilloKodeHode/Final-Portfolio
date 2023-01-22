@@ -65,6 +65,14 @@ module.exports = {
           300: "#22555C",
           400: "#274746",
         },
+        superDry: {
+          primary: "#030104",
+          secondary: "#D3D3D3",
+          accent: "#FFA500",
+          bg: "#F5F5DC",
+          effect: "#4D5252",
+          accent2: "#35444F",
+        },
       },
       keyframes: {
         popUp: {

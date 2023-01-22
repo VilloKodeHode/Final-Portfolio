@@ -34,15 +34,17 @@
 
 .landingPage {
   display: grid;
-  -webkit-text-stroke: #274746;
-  -webkit-text-stroke-width: 1px;
-  /* font-size: 20vw; */
-  /* font-size: 250px; */
+
   grid-template-rows: 1fr 2fr 2fr;
-  /* letter-spacing: 10px; */
-  /* line-height: 100px; */
+
   color: #e5dada;
-  /* color: rgba(9, 106, 151, 0.315); */
+
+  font-weight: 700;
+}
+
+.landingPagePro {
+  display: grid;
+  grid-template-rows: 34vh 33vh 33vh;
   font-weight: 700;
 }
 

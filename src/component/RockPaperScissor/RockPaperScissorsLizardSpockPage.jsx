@@ -77,10 +77,10 @@ function RockPaperScissorLizardSpock() {
             <img src={LOGOBONUS} />
           </div>
 
-          <div className="h-full py-2 px-12 w-fit bg-white rounded-md">
-            <p className="text-blue-700">Score</p>
+          <div className="h-[114px] flex flex-col justify-center py-2 px-12 w-fit bg-white rounded-md">
+            <p className="text-blue-700 tracking-widest">SCORE</p>
             <h2
-              className={`font-extrabold text-5xl text-slate-400 ${animationClass}`}
+              className={`font-extrabold text-6xl text-slate-500 ${animationClass}`}
             >
               {score}
             </h2>

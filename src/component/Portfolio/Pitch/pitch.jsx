@@ -1,12 +1,22 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import ThemeContext from "../../ThemeSwitch/ThemeContext";
 import Button from "../../Buttons/Button";
 
 export function PitchText(props) {
+  const { selectedTheme } = useContext(ThemeContext);
   const { title, text } = props;
   return (
     <>
-      <p className="p-2">
-        <span className="text-water-300 text-xl underline">{title}</span>
+      <p className="md:p-4">
+        <span
+          className={`text-xl underline" ${
+            selectedTheme === "Tranquil"
+              ? " text-water-300"
+              : " text-superDry-primary"
+          }`}
+        >
+          {title}
+        </span>
         <br />
         {text}
       </p>
@@ -15,23 +25,35 @@ export function PitchText(props) {
 }
 
 const PitchWindow = () => {
+  const { selectedTheme } = useContext(ThemeContext);
   const [toggle, setToggle] = useState(false);
 
   return (
     <>
-      <Button
-        idAndClass="pitch-btn bg-water-100 text-fairy-300"
-        text="Hva motiverer meg?"
+      <button
+        className={`pitch-btn -skew-x-12  ${
+          selectedTheme === "Tranquil"
+            ? " bg-water-100 text-fairy-300"
+            : " bg-superDry-accent text-superDry-primary rounded-none"
+        }`}
         onClick={() => setToggle(!toggle)}
-      />
+      >
+        <div className="skew-x-12">Hva motiverer meg?</div>
+      </button>
       {toggle && (
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50">
+        <div class="absolute h-[90%] md:h-fit w-[90%] md:text-sm text-xs top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50">
           <Button
             idAndClass="pitch-close-btn"
             text="❌"
             onClick={() => setToggle(!toggle)}
           />
-          <div className="h-full grid bg-info p-12 rounded-md shadow-2xl">
+          <div
+            className={`h-full grid p-12 rounded-md shadow-2xl animate-RPSPopUp ${
+              selectedTheme === "Tranquil"
+                ? " bg-water-100 text-fairy-300"
+                : " bg-superDry-accent text-superDry-primary"
+            }`}
+          >
             <PitchText
               title="Hva jeg liker med koding:"
               text="Nye kode utfordringer er noe jeg gleder meg til. Mulighetene som
@@ -73,23 +95,35 @@ const PitchWindow = () => {
 };
 
 export const AboutWindow = () => {
+  const { selectedTheme } = useContext(ThemeContext);
   const [toggle, setToggle] = useState(false);
 
   return (
     <>
-      <Button
-        idAndClass="pitch-btn bg-water-100 text-fairy-300"
-        text="Om meg"
+      <button
+        className={`pitch-btn -skew-x-12 ${
+          selectedTheme === "Tranquil"
+            ? " bg-water-100 text-fairy-300"
+            : " bg-superDry-accent text-superDry-primary rounded-none"
+        }`}
         onClick={() => setToggle(!toggle)}
-      />
+      >
+        <div className="skew-x-12">Om meg</div>
+      </button>
       {toggle && (
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50">
+        <div class="absolute md:w-fit h-fit w-[90%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50">
           <Button
             idAndClass="pitch-close-btn"
             text="❌"
             onClick={() => setToggle(!toggle)}
           />
-          <div className="h-full m-auto grid bg-info p-12 rounded-md shadow-2xl">
+          <div
+            className={`h-full grid p-12 rounded-md shadow-2xl animate-RPSPopUp ${
+              selectedTheme === "Tranquil"
+                ? " bg-water-100 text-fairy-300"
+                : " bg-superDry-accent text-superDry-primary"
+            }`}
+          >
             <PitchText
               title="Jeg elsker å kode."
               text="Jeg koder masse på fritiden og synes det er kjempegøy å lære noe

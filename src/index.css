@@ -55,13 +55,13 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
+/* button:hover {
   border-color: #c9fef5;
-}
-button:focus,
+} */
+/* button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+  box-shadow: 50px 50px 5px 5px black;
+} */
 
 @media (prefers-color-scheme: light) {
   :root {
