@@ -23,10 +23,10 @@ function ProjectSection() {
 
       <div className="w-full absolute top-16 left-1/2 -translate-x-1/2 z-20">
         <section
-          className="flex flex-row flex-wrap justify-center  xl:mx-48 mx-12 z-20"
+          className="flex flex-row flex-wrap justify-center  sm:mx-[20%] mx-[10%] my-12 z-20"
           id="projects"
         >
-          <h2 className="mb-2 text-white font-Roboto">Prosjekter</h2>
+          <h2 className="mb-2 text-white text-5xl font-Roboto">Prosjekter</h2>
           <div className="flex justify-center flex-wrap">
             <Project
               href="https://villokodehode.github.io/Job-simulator/"

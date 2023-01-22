@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import PAPER from "./assets/icon-paper.svg";
 import SCISSORS from "./assets/icon-scissors.svg";
 import ROCK from "./assets/icon-rock.svg";
-import TRIANGLE from "./assets/bg-triangle.svg";
 import RULES from "./assets/image-rules.svg";
 import CLOSE from "./assets/icon-close.svg";
 import LOGO from "./assets/logo.svg";
@@ -16,13 +15,11 @@ import "./RockPaperScissor.css";
 
 import PlayRound, {
   EmptyGameButton,
-  GameButton,
   InactiveGameButton,
   ResultandRestart,
   StartingScreen,
   WinnerGlow,
 } from "./RockPaperScissor";
-import Button from "../Buttons/Button";
 
 function RockPaperScissor() {
   const [paper, setPaper] = useState(false);
@@ -64,10 +61,10 @@ function RockPaperScissor() {
             <img src={LOGO} />
           </div>
 
-          <div className="h-full py-2 px-12 w-fit bg-white rounded-md">
-            <p className="text-blue-700">Score</p>
+          <div className="h-[99px] flex flex-col justify-center py-2 px-12 w-fit bg-white rounded-md">
+            <p className="text-blue-700 tracking-widest">SCORE</p>
             <h2
-              className={`font-extrabold text-5xl text-slate-400 ${animationClass}`}
+              className={`font-extrabold text-6xl text-slate-500 ${animationClass}`}
             >
               {score}
             </h2>
@@ -302,17 +299,20 @@ function RockPaperScissor() {
           </button>
           {toggle && (
             <>
-              <div className="absolute grid grid-row-2 left-1/2 bottom-1/2 translate-y-1/2 -translate-x-1/2 z-50 bg-gray-100 sm:w-1/2 xl:w-1/4 h-1/2 m-auto rounded-xl animate-rulesSlideIn">
-                <h1 className="text-left text-2xl p-4 z-50 text-black">
-                  RULES
-                </h1>
-                <button
-                  className="absolute bg-transparent right-3 top-3 p-2 z-50"
-                  onClick={() => setToggle(!toggle)}
-                >
-                  <img src={CLOSE} />
-                </button>
-                <img className="m-auto" src={RULES} />
+              {/* Add modal from daisyUI */}
+              <div className="">
+                <div className="absolute left-1/2 bottom-1/2 translate-y-1/2 -translate-x-1/2 z-50 bg-gray-100 sm:w-1/2 xl:w-1/4 h-[40%] m-auto rounded-xl animate-rulesSlideIn">
+                  <h1 className="text-left text-2xl p-4 z-50 text-black">
+                    RULES
+                  </h1>
+                  <button
+                    className="absolute bg-transparent right-3 top-3 p-2 z-50"
+                    onClick={() => setToggle(!toggle)}
+                  >
+                    <img src={CLOSE} />
+                  </button>
+                  <img className=" m-auto" src={RULES} />
+                </div>
               </div>
             </>
           )}

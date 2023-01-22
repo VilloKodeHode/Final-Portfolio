@@ -1,4 +1,4 @@
-section h2:first-child {
+/* section h2:first-child {
   font-size: 3rem;
 }
 section.knowledge {
@@ -6,91 +6,33 @@ section.knowledge {
   grid-template-areas:
     "myknowledge"
     "myskills";
-}
-@media (min-width: 700px) {
+} */
+/* @media (min-width: 700px) {
   section.knowledge {
     grid-template-areas: "myknowledge";
     grid-template-columns: 1fr;
   }
-}
+} */
 
 /*////////////////////////*/
 /* * Knowledge section */
 /*////////////////////////*/
 
-section.knowledge {
-  /* align-items: center; */
-  /* padding: 8em 1em; */
-  /* margin-bottom: 15vw; */
-}
+/* section.knowledge {
+  align-items: center;
+  padding: 8em 1em;
+  margin-bottom: 15vw;
+} */
 
-.myknowledge {
+/* .myknowledge {
   grid-area: myknowledge;
   display: flex;
   flex-direction: column;
   align-content: right;
-}
-
-/* .knowledge figure.img_wrap {
-  transition: 0.5s ease-in-out;
-  display: flex;
-  justify-content: center;
-  border-radius: 30%;
 } */
 
-/* div.knowledge_wrapper {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-} */
-
-.knowledge figure {
-  /* margin: 1em; */
-}
-
-.knowledge figure.img_wrap img {
-  /* height: 50px; */
-  /* padding: 10px; */
-}
-
-.knowledge a {
-  /* height: 0; */
-}
-
-.hoverEffect:hover {
-  /* box-shadow: #00055e 10px 10px 10px;
-  transform: scale(1.5); */
-}
-
-.myskills {
+/* .myskills {
   grid-area: myskills;
   display: flex;
   flex-direction: column;
-}
-
-.myskills figure {
-  /* width: 14em; */
-  /* margin: 1vw; */
-  /* padding: 0.5vw 0; */
-  /* background-color: #9bb6ff56; */
-  /* border: 1px solid #9bb6ff; */
-  /* box-shadow: 0 0 20px #9bb6ff; */
-}
-
-.myskills img {
-  /* backdrop-filter: blur(2px); */
-  /* background-color: #dbd79c70; */
-  /* padding: 1em 1em 0 1em; */
-  /* height: 18em; */
-  /* width: 5em; */
-  /* margin-inline: 20px; */
-  /* border: 2px solid; */
-}
-.myskills figure p {
-  /* margin: 0 0 1em 0; */
-}
-
-.border {
-  /* border: #00055e33 solid 1px; */
-  /* box-shadow: #00055e 1px 1px; */
-}
+} */
