@@ -9,10 +9,10 @@ function Button(props) {
 
 //Needs to be updated if more themes are added
 export function SkewedButton(props) {
-  const { text, onClick } = props;
+  const { text, onClick, className } = props;
   return (
     <button
-      className={`-skew-x-12  ${
+      className={`-skew-x-12 ${className}  ${
         selectedTheme === "Tranquil"
           ? " bg-water-100 text-fairy-300"
           : " bg-superDry-accent text-superDry-primary rounded-none"

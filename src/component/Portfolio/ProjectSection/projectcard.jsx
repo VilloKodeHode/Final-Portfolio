@@ -28,8 +28,8 @@ function Project(props) {
 
       {toggle && (
         <>
-          <div className="absolute -top-1/2 translate-y-1/2 left-1/2 -translate-x-1/2 w-[95%] h-[100%] bg-earth-200 mt-8 bg-opacity-70 backdrop-blur-sm rounded-3xl"></div>
-          <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:h-full h-[500px] sm:w-3/4 md:w-1/2 xl:w-1/3 w-3/4 border-8 border-water-200 rounded-xl backdrop-blur-sm bg-water-400 bg-opacity-50 [&>*]:animate-ProjectPopUp">
+          <div className="absolute -top-1/2 translate-y-1/2 left-1/2 -translate-x-1/2 w-full h-full bg-earth-200 bg-opacity-70 backdrop-blur-sm rounded-3xl"></div>
+          <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-2/3 w-[400px] border-8 border-water-200 rounded-xl backdrop-blur-sm bg-water-400 bg-opacity-50 [&>*]:animate-ProjectPopUp">
             <div className="flex flex-col w-fit justify-center h-full m-auto">
               <button
                 className="p-1 tracking-widest mb-4 w-1/2 mx-auto bg-water-600 border-water-100 border-2 text-water-100 text-sm"
@@ -87,7 +87,7 @@ export function ProjectRouted(props) {
 
       {toggle && (
         <>
-          <div className="absolute -top-1/2 translate-y-1/2 left-1/2 -translate-x-1/2 w-[95%] h-[100%] bg-earth-200 mt-8 bg-opacity-70 backdrop-blur-sm rounded-3xl"></div>
+          <div className="absolute -top-1/2 translate-y-1/2 left-1/2 -translate-x-1/2 w-full h-full bg-earth-200 bg-opacity-70 backdrop-blur-sm rounded-3xl"></div>
           <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:h-full h-[500px] sm:w-3/4 md:w-1/2 xl:w-1/3 w-3/4 border-8 border-water-200 rounded-xl backdrop-blur-sm bg-water-400 bg-opacity-50 [&>*]:animate-ProjectPopUp">
             <div className="flex flex-col w-fit justify-center h-full m-auto">
               <button
