@@ -2,7 +2,6 @@ import "./App.css";
 import React, { createContext, useState } from "react";
 
 import NavBar from "./component/NavBar/NavBar";
-import PokeAPI from "./routes/PokeAPI/PokeAPI";
 import HamburgerBar from "./component/NavBar/HamburgerBar";
 
 //Libraries
@@ -21,8 +20,7 @@ import Qualifications from "./routes/Qualifications/QualificationsPage";
 import ProjectPage from "./routes/Projects/ProjectPage";
 import TestPage from "./routes/TestPage";
 import TestPage2 from "./routes/TestPage2";
-import RockPaperScissorsPage from "./routes/RockPaperScissors/RenderRockPaperScissorPage";
-import RockPaperScissorLizardSpock from "./component/RockPaperScissor/RockPaperScissorsLizardSpockPage";
+
 import ThemeSwitch from "./component/ThemeSwitch/ThemeSwitch";
 import ThemeContext from "./component/ThemeSwitch/ThemeContext";
 
@@ -48,18 +46,9 @@ function App() {
           <Route path="/Qualifications" element={<Qualifications />} />
           <Route path="/Projects" element={<ProjectPage />} />
           <Route path="/Contact" element={<ContactPage />} />
-          <Route path="/PokeAPI" element={<PokeAPI />} />
           <Route path="/Portfolio" element={<PortfolioPage />} />
           <Route path="/TestPage" element={<TestPage />} />
           <Route path="/TestPage2" element={<TestPage2 />} />
-          <Route
-            path="/RockPaperScissors"
-            element={<RockPaperScissorsPage />}
-          />
-          <Route
-            path="/RockPaperScissorsLizardSpock"
-            element={<RockPaperScissorLizardSpock />}
-          />
 
           <Route
             path="*"

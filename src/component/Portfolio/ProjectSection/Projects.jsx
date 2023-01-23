@@ -21,13 +21,16 @@ function ProjectSection() {
     <>
       <RenderLessParticles />
 
-      <div className="w-full absolute top-16 left-1/2 -translate-x-1/2 z-20">
+      <div className="w-screen h-screen absolute top-0 left-1/2 -translate-x-1/2 z-20">
         <section
-          className="flex flex-row flex-wrap justify-center  sm:mx-[20%] mx-[10%] my-12 z-20"
+          className="flex flex-row h-full flex-wrap justify-center content-center sm:mx-[10%] mx-[5%] z-20"
           id="projects"
         >
-          <h2 className="mb-2 text-white text-5xl font-Roboto">Prosjekter</h2>
-          <div className="flex justify-center flex-wrap">
+          {/* Lag component ut av denne for å bruke på de forskjellige sidene: */}
+          <div className="absolute top-4 left-2 text-black h-fit text-3xl font-Roboto bg-superDry-accent p-2 skew-x-12">
+            <h2 className="-skew-x-12">Prosjekter</h2>
+          </div>
+          <div className="flex justify-center m-auto content-center flex-wrap">
             <Project
               href="https://villokodehode.github.io/Job-simulator/"
               projectName="Jobb simulator"
@@ -51,19 +54,19 @@ function ProjectSection() {
               description="Figma prosjekt for en imaginær barbershop"
             />
 
-            {/* <Project
-              href="https://villokodehode.github.io/CSS-art/"
-              projectName="CSS kunst"
-              src={CssArt}
-              description="Selvinitiert mini prosjekt. Prøvde å se mulighetene med css"
-              hrefCode="https://github.com/VilloKodeHode/CSS-art"
-            /> */}
-            <ProjectRouted
+            {/* <ProjectRouted
               to="/PokeAPI"
               projectName="PokeAPI"
               src={PokeAPI}
               description="Den første API'en jeg har laget. Generasjon 1-3 Pokemon vises"
               hrefCode="https://github.com/VilloKodeHode/use-effect/tree/master/src/component/PokeAPI"
+            /> */}
+            <Project
+              href="https://villokodehode.github.io/PokeAPI/"
+              projectName="PokeAPI"
+              src={PokeAPI}
+              description="Den første API'en jeg har laget. Generasjon 1-3 Pokemon vises"
+              hrefCode="https://github.com/VilloKodeHode/PokeAPI"
             />
             <Project
               href="https://villokodehode.github.io/strength-training-tips-app/"
@@ -79,12 +82,19 @@ function ProjectSection() {
               description="Første forsøk på tailwind + daisyUI"
               hrefCode="https://github.com/VilloKodeHode/daisy-and-tailwind"
             /> */}
-            <ProjectRouted
+            {/* <ProjectRouted
               to="/RockPaperScissors"
               projectName="Rock, Paper, Scissors"
               src={ROCKPAPERSCISSORS}
               description="Stein, saks papir spill"
               hrefCode="https://github.com/VilloKodeHode/use-effect/tree/master/src/component/PokeAPI"
+            /> */}
+            <Project
+              href="https://villokodehode.github.io/Rock--Paper--Scissors--Lizard--Spock-game/#/"
+              projectName="Rock, Paper, Scissors"
+              src={ROCKPAPERSCISSORS}
+              description="Stein, saks papir +++...."
+              hrefCode="https://github.com/VilloKodeHode/Rock--Paper--Scissors--Lizard--Spock-game"
             />
           </div>
         </section>
