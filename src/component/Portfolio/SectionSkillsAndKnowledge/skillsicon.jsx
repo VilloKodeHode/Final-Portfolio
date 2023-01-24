@@ -3,8 +3,7 @@ import Git from "./assets/Git.png";
 import Photoshop from "./assets/Photoshop.png";
 import Tailwind from "./assets/Tailwind.png";
 import VSC from "./assets/VSC.png";
-import { useState } from "react";
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import ThemeContext from "../../ThemeSwitch/ThemeContext";
 
 export function KnowledgeIcon(props) {

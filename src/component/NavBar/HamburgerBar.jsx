@@ -12,7 +12,7 @@ function HamburgerBar() {
           className={` border-none -skew-x-[20deg] ${
             selectedTheme === "Tranquil"
               ? "btn bg-fairy-300"
-              : "btn bg-superDry-accent hover:bg-superDry-bg rounded-none"
+              : "btn bg-superDry-accent hover:bg-superDry-bg  rounded-none"
           }`}
         >
           <svg
@@ -35,11 +35,11 @@ function HamburgerBar() {
           className={`menu menu-normal dropdown-content ${
             selectedTheme === "Tranquil"
               ? " text-water-100"
-              : " text-superDry-accent"
+              : " text-superDry-primary bg-superDry-accent rounded-none"
           } mt-0 p-2 -translate-x-20 shadow rounded-box w-fit backdrop-blur-sm z-50`}
         >
           <li>
-            <Link className="px-4" to="/">
+            <Link className="px-4 " to="/">
               Hjem
             </Link>
           </li>

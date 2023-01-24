@@ -86,12 +86,13 @@ module.exports = {
           "100%": { opacity: "100%" },
         },
         slideIn: {
-          "0%": { transform: "scale(0)", right: "0" },
-          "100%": { transform: "scale(1)", right: "50%" },
+          "0%": { translate: "-100%" },
+          "100%": { translate: "0%" },
         },
       },
       animation: {
-        ProjectPopUp: "popUp ease 0.3s linear",
+        ProjectPopUp: "popUp ease-in 0.3s",
+        ProjectSlideIn: "slideIn ease 0.3s",
         RPSPopUp: "popUp 0.1s ease-in",
         glow: "glow 1s ease-in-out infinite alternate",
         rulesSlideIn: "slideIn 1s ease-in-out linear",
