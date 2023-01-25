@@ -19,80 +19,59 @@ function HeroSection() {
   const { selectedTheme } = useContext(ThemeContext);
   return (
     <>
+      {selectedTheme === "Tranquil" && <RenderLessParticles />}
+      <header className="absolute top-0 left-0 h-screen px-8 grid sm:grid-rows-2 grid-cols-1 mt-12 sm:mt-0 sm:grid-cols-2 text-secondary z-20 xl:mx-24 md:mx-12 sm:mx-4 ">
+        <article className="m-auto">
+          <h1 className="my-4" id="home">
+            <span
+              className={`text-water-100 font-Roboto text-7xl ${
+                selectedTheme === "Tranquil"
+                  ? " text-water-100"
+                  : " text-superDry-accent"
+              }`}
+            >
+              Joakim Villo
+            </span>
+          </h1>
+
+          <p
+            className={` md:w-2/3 mx-auto ${
+              selectedTheme === "Tranquil"
+                ? " text-water-200"
+                : " text-superDry-primary"
+            }`}
+          >
+            For tiden går jeg på kurs om Front-End-Development og bruker
+            endeløse timer på å lære så mye jeg kan om koding og design. Jeg
+            nyter hvert eneste sekund og blir bare mer og mer interessert i å
+            lære mer!
+          </p>
+        </article>
+        <div className="m-auto">
+          <img
+            className={`md:h-80 h-64 ${
+              selectedTheme === "Tranquil"
+                ? "border-earth-400 rounded-full"
+                : "border-superDry-effect mask mask-parallelogram-2"
+            }`}
+            src={JOAKIM}
+          />
+        </div>
+        <div className="wrapper cv-wrapper">
+          <Cv href={StandardCV} src={StandardCVPic} className="cv standard" />
+          <Cv href={FancyCV} src={FancyCV} className="cv fancy" />
+        </div>
+        <div className="md:w-2/3 mx-auto">
+          <AboutWindow />
+          <PitchWindow />
+        </div>
+      </header>
+
       {selectedTheme === "Tranquil" && (
-        <>
-          <RenderLessParticles />
-          <header className="absolute top-0 left-0 h-screen px-8 grid grid-rows-2 grid-cols-2 text-secondary z-20 xl:mx-24 md:mx-12 sm:mx-4 ">
-            <article className="m-auto">
-              <h1 className="my-4" id="home">
-                <span className="text-water-100 text-7xl">Joakim Villo</span>
-              </h1>
-              <p className="text-water-200 md:w-2/3 mx-auto">
-                For tiden går jeg på kurs om Front-End-Development og bruker
-                endeløse timer på å lære så mye jeg kan om koding og design. Jeg
-                nyter hvert eneste sekund og blir bare mer og mer interessert i
-                å lære mer!
-              </p>
-            </article>
-            <div className="m-auto">
-              <img
-                className="md:h-80 sm:h-64 h-44 border-b-8 border-earth-400 rounded-full"
-                src={JOAKIM}
-              />
-            </div>
-            <div className="wrapper cv-wrapper">
-              <Cv
-                href={StandardCV}
-                src={StandardCVPic}
-                className="cv standard"
-              />
-              <Cv href={FancyCV} src={FancyCV} className="cv fancy" />
-            </div>
-            <div className="md:w-2/3 mx-auto">
-              <AboutWindow />
-              <PitchWindow />
-            </div>
-          </header>
-          <div className="absolute top-0 bottom-0 left-0 right-0 h-screen HeroBG z-10"></div>
-        </>
+        <div className="absolute top-0 bottom-0 left-0 right-0 h-screen HeroBG"></div>
       )}
       {selectedTheme === "Professional" && (
-        <>
-          <header className="absolute top-0 left-0 h-screen px-8 grid grid-rows-2 grid-cols-2 text-secondary z-20 xl:mx-24 md:mx-12 sm:mx-4 ">
-            <article className="m-auto">
-              <h1 className="my-4" id="home">
-                <span className="text-superDry-accent text-7xl">
-                  Joakim Villo
-                </span>
-              </h1>
-              <p className="text-superDry-primary md:w-2/3 mx-auto">
-                For tiden går jeg på kurs om Front-End-Development og bruker
-                endeløse timer på å lære så mye jeg kan om koding og design. Jeg
-                nyter hvert eneste sekund og blir bare mer og mer interessert i
-                å lære mer!
-              </p>
-            </article>
-            <div className="m-auto">
-              <img
-                className="md:h-80 sm:h-64 h-44 border-b-8 border-superDry-effect mask mask-parallelogram-2"
-                src={JOAKIM}
-              />
-            </div>
-            <div className="wrapper cv-wrapper">
-              <Cv
-                href={StandardCV}
-                src={StandardCVPic}
-                className="cv standard"
-              />
-              <Cv href={FancyCV} src={FancyCV} className="cv fancy" />
-            </div>
-            <div className="md:w-2/3 mx-auto">
-              <AboutWindow />
-              <PitchWindow />
-            </div>
-          </header>
-          <div className="absolute top-0 left-0 h-screen w-screen bg-superDry-bg"></div>
-        </>
+        <div className="absolute top-0 bottom-0 left-0 right-0 h-screen bg-superDry-bg"></div>
       )}
     </>
   );

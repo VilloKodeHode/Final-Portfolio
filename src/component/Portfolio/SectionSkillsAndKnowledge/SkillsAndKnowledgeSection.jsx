@@ -6,7 +6,6 @@ import { MySkills } from "./skillsicon.jsx";
 import Button from "../../Buttons/Button.jsx";
 import { useState, useContext } from "react";
 import ThemeContext from "../../ThemeSwitch/ThemeContext.js";
-import "./skills.css";
 
 //images:
 
@@ -19,7 +18,7 @@ function SkillsAndKnowledgeSection() {
     <>
       <RenderLessParticles />
       <section
-        className="z-20 knowledge w-3/4 absolute top-16 left-1/2 -translate-x-1/2"
+        className="z-20 knowledge w-[90%] absolute top-16 left-1/2 -translate-x-1/2"
         id="knowledge"
       >
         <KnowledgeContent />

@@ -17,13 +17,13 @@ function Project(props) {
       <div className="h-fit w-fit m-4 [&>*]:hover:scale-105">
         <div className="duration-500 ease-out w-fit h-fit">
           <img
-            className={`h-32 sm:h-36 lg:h-46 xl:h-56 w-32 sm:w-36 lg:w-46 xl:w-56 ${
+            className={`h-24 sm:h-36 lg:h-46 xl:h-56 w-24 sm:w-36 lg:w-46 xl:w-56 ${
               selectedTheme === "Tranquil" ? " rounded-xl" : " "
             } `}
             src={src}
           />
           <button
-            className={` xl:text-xs text-[10px] md:w-[90%] w-28 ${
+            className={` xl:text-xs text-[10px] md:w-[90%] sm:36 w-24 ${
               selectedTheme === "Tranquil"
                 ? "bg-water-600 border-water-100 shadow-water-100 text-water-100 rounded-xl"
                 : "bg-superDry-accent border-superDry-accent2 shadow-superDry-accent2 text-superDry-accent2 hover:bg-superDry-secondary rounded-[0px]"

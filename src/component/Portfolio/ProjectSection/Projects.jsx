@@ -17,6 +17,7 @@ import ROCKPAPERSCISSORS from "./assets/RPS.png";
 import "./assets/Projects.css";
 import { RenderLessParticles } from "../../Particles/Particles";
 import { ProjectDrawer } from "./ProjectDrawer";
+import PageTitle from "../../base components/PageTitle";
 
 function ProjectSection() {
   const { selectedTheme } = useContext(ThemeContext);
@@ -30,9 +31,10 @@ function ProjectSection() {
           id="projects"
         >
           {/* Lag component ut av denne for å bruke på de forskjellige sidene: */}
-          <div className="absolute top-4 md:left-1/2 left-6 md:-translate-x-1/2 text-black h-fit text-3xl font-Roboto bg-superDry-accent p-2 skew-x-12">
+          {/* <div className="absolute top-4 left-6 text-black h-fit sm:text-3xl text-xl font-Roboto bg-superDry-accent p-2 skew-x-12">
             <h2 className="-skew-x-12">Prosjekter</h2>
-          </div>
+          </div> */}
+          <PageTitle title="Projects" />
           <div className="flex justify-center m-auto content-center flex-wrap">
             <Project
               href="https://villokodehode.github.io/Job-simulator/"
@@ -81,10 +83,10 @@ function ProjectSection() {
         </section>
       </div>
       {selectedTheme === "Tranquil" && (
-        <div className="absolute top-0 bottom-0 left-0 right-0 h-screen QualificationsBG"></div>
+        <div className="absolute top-0 bottom-0 left-0 right-0 h-full QualificationsBG"></div>
       )}
       {selectedTheme === "Professional" && (
-        <div className="absolute top-0 bottom-0 left-0 right-0 h-screen bg-superDry-bg"></div>
+        <div className="absolute top-0 bottom-0 left-0 right-0 h-full bg-superDry-bg"></div>
       )}
     </>
   );
