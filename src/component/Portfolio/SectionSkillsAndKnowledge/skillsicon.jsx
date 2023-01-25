@@ -16,17 +16,17 @@ export function KnowledgeIcon(props) {
           selectedTheme === "Tranquil"
             ? " tooltip-secondary bg-water-600"
             : " tooltip-primary bg-superDry-accent"
-        } tooltip tooltip-bottom h-fit shadow-lg skew-x-[10deg] odd:skew-y-[5deg] even:-skew-y-[5deg] hover:skew-x-[0deg] hover:odd:skew-y-[0deg] hover:even:-skew-y-[0deg] hover:z-50 transition  `}
+        } tooltip tooltip-bottom before:w-[120%] before:text-xs before:content-[attr(data-tip)] h-fit shadow-lg skew-x-[10deg] odd:skew-y-[5deg] even:-skew-y-[5deg] hover:skew-x-[0deg] hover:odd:skew-y-[0deg] hover:even:-skew-y-[0deg] hover:z-50 transition  `}
         data-tip={dataTip}
       >
-        <div
+        {/* <div
           className={`relative grid ${
             selectedTheme === "Tranquil"
               ? " tooltip-secondary bg-water-600"
               : " tooltip-primary bg-superDry-accent"
-          }  tooltip tooltip-bottom h-fit shadow-lg skew-x-[10deg] odd:skew-y-[5deg] even:-skew-y-[5deg] hover:skew-x-[0deg] hover:odd:skew-y-[0deg] hover:even:-skew-y-[0deg] hover:z-50 transition  `}
+          }  tooltip tooltip: h-fit shadow-lg skew-x-[10deg] odd:skew-y-[5deg] even:-skew-y-[5deg] hover:skew-x-[0deg] hover:odd:skew-y-[0deg] hover:even:-skew-y-[0deg] hover:z-50 transition  `}
           data-tip={dataTip}
-        ></div>
+        ></div> */}
         <figure className="xl:p-4 lg:p-3 sm:p-2 p-1 xl:m-4 lg:m-3 sm:m-2 m-1 z-50">
           <img
             className="xl:h-16 h-16 bg-black bg-opacity-10 shadow-inner p-2"
