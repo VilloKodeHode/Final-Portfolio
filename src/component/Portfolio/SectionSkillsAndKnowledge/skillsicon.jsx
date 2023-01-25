@@ -16,7 +16,7 @@ export function KnowledgeIcon(props) {
           selectedTheme === "Tranquil"
             ? " tooltip-secondary bg-water-600"
             : " tooltip-primary bg-superDry-accent"
-        } tooltip tooltip-bottom before:w-[120%] before:text-xs before:content-[attr(data-tip)] h-fit shadow-lg skew-x-[10deg] odd:skew-y-[5deg] even:-skew-y-[5deg] hover:skew-x-[0deg] hover:odd:skew-y-[0deg] hover:even:-skew-y-[0deg] hover:z-50 transition  `}
+        } tooltip tooltip-bottom before:w-[120%] before:shadow-md before:text-xs before:content-[attr(data-tip)] h-fit shadow-lg skew-x-[10deg] odd:skew-y-[5deg] even:-skew-y-[5deg] hover:skew-x-[0deg] hover:odd:skew-y-[0deg] hover:even:-skew-y-[0deg] hover:z-50 transition  `}
         data-tip={dataTip}
       >
         {/* <div
