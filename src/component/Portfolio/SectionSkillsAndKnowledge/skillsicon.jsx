@@ -1,8 +1,10 @@
-import Button from "../../Buttons/Button";
+//images:
 import Git from "./assets/Git.png";
 import Photoshop from "./assets/Photoshop.png";
 import Tailwind from "./assets/Tailwind.png";
 import VSC from "./assets/VSC.png";
+import SVELTE from "./assets/Svelte.svg";
+
 import { useState, useContext } from "react";
 import ThemeContext from "../../ThemeSwitch/ThemeContext";
 
@@ -175,6 +177,11 @@ export function KnowledgeContent() {
           src="https://cdn-icons-png.flaticon.com/512/4494/4494749.png"
           alt="GitHub"
           dataTip="All my code is on GitHub. I have used it alot, so I know how the works."
+        />
+        <KnowledgeIcon
+          src={SVELTE}
+          alt="Svelte"
+          dataTip="Starting out learning about it. So far it looks like a very good tool"
         />
       </div>
     </div>
