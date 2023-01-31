@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import ThemeContext from "../ThemeSwitch/ThemeContext";
 import { Link } from "react-router-dom";
+import anime from "animejs";
 
 import "../../../src/App.css";
 
@@ -89,6 +90,7 @@ function LandingPage() {
                 Kode og Design med en personlig touch
                 <NavDrawer />
               </div>
+              <div>something</div>
             </div>
           </div>
         </>
