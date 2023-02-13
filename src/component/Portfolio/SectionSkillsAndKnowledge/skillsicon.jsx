@@ -7,6 +7,7 @@ import SVELTE from "./assets/Svelte.svg";
 
 import { useState, useContext } from "react";
 import ThemeContext from "../../ThemeSwitch/ThemeContext";
+import PageTitle from "../../base components/PageTitle";
 
 export function KnowledgeIcon(props) {
   const { selectedTheme } = useContext(ThemeContext);
@@ -21,14 +22,6 @@ export function KnowledgeIcon(props) {
         } tooltip tooltip-bottom before:w-[120%] before:shadow-md before:text-xs before:content-[attr(data-tip)] h-fit shadow-lg skew-x-[10deg] odd:skew-y-[5deg] even:-skew-y-[5deg] hover:skew-x-[0deg] hover:odd:skew-y-[0deg] hover:even:-skew-y-[0deg] hover:z-50 transition  `}
         data-tip={dataTip}
       >
-        {/* <div
-          className={`relative grid ${
-            selectedTheme === "Tranquil"
-              ? " tooltip-secondary bg-water-600"
-              : " tooltip-primary bg-superDry-accent"
-          }  tooltip tooltip: h-fit shadow-lg skew-x-[10deg] odd:skew-y-[5deg] even:-skew-y-[5deg] hover:skew-x-[0deg] hover:odd:skew-y-[0deg] hover:even:-skew-y-[0deg] hover:z-50 transition  `}
-          data-tip={dataTip}
-        ></div> */}
         <figure className="xl:p-4 lg:p-3 sm:p-2 p-1 xl:m-4 lg:m-3 sm:m-2 m-1 z-50">
           <img
             className="xl:h-16 h-16 bg-black bg-opacity-10 shadow-inner p-2"
@@ -36,9 +29,6 @@ export function KnowledgeIcon(props) {
             alt={alt}
           />
         </figure>
-
-        {/* <div className="mask mask-diamond bg-water-500 xl:h-36 h-24 xl:w-36 w-24 bg-opacity-70 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 -z-10"></div> */}
-        {/* <div className="bg-water-600 rounded-xl shadow-xl mask mask-parallelogram xl:h-36 h-24 xl:w-36 w-24 bg-opacity-70 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 -z-20"></div> */}
       </div>
     </>
   );
@@ -84,21 +74,9 @@ export function MySkills(props) {
 }
 
 export function KnowledgeContent() {
-  const { selectedTheme } = useContext(ThemeContext);
   return (
-    <div className="flex flex-col  h-fit">
-      <div className="w-full flex justify-center">
-        <h2
-          className={`${
-            selectedTheme === "Tranquil"
-              ? " text-water-100"
-              : " text-superDry-accent"
-          } mb-8 text-water-100 text-5xl font-Roboto`}
-        >
-          Kunnskap
-        </h2>
-      </div>
-
+    <div className="flex flex-col justify-center items-center content-center h-screen">
+      <PageTitle title="Projects" />
       <div className="flex justify-center flex-wrap xl:gap-16 md:gap-12 sm:gap-8 ml:gap-4 gap-2">
         <KnowledgeIcon
           src="https://cdn-icons-png.flaticon.com/512/136/136528.png"
@@ -184,6 +162,7 @@ export function KnowledgeContent() {
           dataTip="Starting out learning about it. So far it looks like a very good tool"
         />
       </div>
+      <SkillsContent />
     </div>
   );
 }
@@ -210,7 +189,7 @@ export function SkillsContent() {
             selectedTheme === "Tranquil"
               ? " bg-earth-100 text-water-100 rounded-l-xl scrollbar-thumb-water-400"
               : " bg-superDry-accent text-superDry-primary scrollbar-thumb-superDry-accent2"
-          } bg-opacity-90 shadow-2xl shadow-black p-8 overflow-y-scroll scrollbar  scrollbar-track-transparent fixed md:w-[90%] w-[110%] xl:h-[150%] h-full md:top-2/3 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50`}
+          } bg-opacity-90 shadow-2xl shadow-black p-8 overflow-y-scroll scrollbar  scrollbar-track-transparent fixed md:w-[90%] h-3/4 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50`}
         >
           <button
             className="absolute top-4 right-8 bg-transparent p-0"

@@ -22,8 +22,6 @@ function SkillsAndKnowledgeSection() {
         id="knowledge"
       >
         <KnowledgeContent />
-
-        <SkillsContent />
       </section>
       {selectedTheme === "Tranquil" && (
         <div className="absolute top-0 bottom-0 left-0 right-0 h-screen QualificationsBG"></div>

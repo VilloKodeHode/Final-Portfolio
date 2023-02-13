@@ -1,6 +1,5 @@
 import { useState, useContext } from "react";
 import ThemeContext from "../../ThemeSwitch/ThemeContext";
-import Button from "../../Buttons/Button";
 
 export function PitchText(props) {
   const { selectedTheme } = useContext(ThemeContext);

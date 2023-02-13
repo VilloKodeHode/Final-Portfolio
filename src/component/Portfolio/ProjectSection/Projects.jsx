@@ -1,6 +1,5 @@
 import Project from "./projectcard";
-import { ProjectRouted } from "./projectcard";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import ThemeContext from "../../ThemeSwitch/ThemeContext.js";
 
 //images
@@ -11,11 +10,11 @@ import STYRKETRENINGSTIPS from "./assets/strength training tips.png";
 import ValhallaBeards from "./assets/Valhalla beards.png";
 import ROCKPAPERSCISSORS from "./assets/RPS.png";
 import ADVICEGENERATOR from "./assets/Advice generator.png";
+import MULTIPAGEFORM from "./assets/Multi page form.png";
 
 //css
 import "./assets/Projects.css";
 import { RenderLessParticles } from "../../Particles/Particles";
-import { ProjectDrawer } from "./ProjectDrawer";
 import PageTitle from "../../base components/PageTitle";
 
 function ProjectSection() {
@@ -24,15 +23,11 @@ function ProjectSection() {
     <>
       {selectedTheme === "Tranquil" && <RenderLessParticles />}
 
-      <div className="w-screen h-screen absolute top-0 left-1/2 -translate-x-1/2 z-20">
+      <div className="">
         <section
-          className="flex flex-row h-full flex-wrap justify-center content-center sm:mx-[10%] mx-[5%] z-20"
+          className="flex flex-row flex-wrap justify-center content-center sm:mx-[10%] mx-[5%] z-20"
           id="projects"
         >
-          {/* Lag component ut av denne for å bruke på de forskjellige sidene: */}
-          {/* <div className="absolute top-4 left-6 text-black h-fit sm:text-3xl text-xl font-Roboto bg-superDry-accent p-2 skew-x-12">
-            <h2 className="-skew-x-12">Prosjekter</h2>
-          </div> */}
           <PageTitle title="Projects" />
           <div className="flex justify-center m-auto content-center flex-wrap">
             <Project
@@ -41,6 +36,13 @@ function ProjectSection() {
               src={ROCKPAPERSCISSORS}
               description="Stein, saks papir +++...."
               hrefCode="https://github.com/VilloKodeHode/Rock--Paper--Scissors--Lizard--Spock-game"
+            />
+            <Project
+              href="https://villokodehode.github.io/multi-step-form/"
+              projectName="Multi step form"
+              src={MULTIPAGEFORM}
+              description="Bestillingsskjema med flere steg"
+              hrefCode="https://github.com/VilloKodeHode/multi-step-form"
             />
             <Project
               href="https://villokodehode.github.io/advice-generator/"
@@ -89,12 +91,6 @@ function ProjectSection() {
           </div>
         </section>
       </div>
-      {selectedTheme === "Tranquil" && (
-        <div className="absolute top-0 bottom-0 left-0 right-0 h-full QualificationsBG"></div>
-      )}
-      {selectedTheme === "Professional" && (
-        <div className="absolute top-0 bottom-0 left-0 right-0 h-full bg-superDry-bg"></div>
-      )}
     </>
   );
 }

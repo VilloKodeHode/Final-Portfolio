@@ -1,16 +1,13 @@
 import { Link } from "react-router-dom";
-import Button, { SkewedButton } from "../../Buttons/Button";
+import { SkewedButton } from "../../Buttons/Button";
 import { useState, useContext } from "react";
 
 import ThemeContext from "../../ThemeSwitch/ThemeContext";
-
-//ideas: Project is smaller on load, click to make larger and click again to access.
 
 function Project(props) {
   const { href, projectName, src, description, hrefCode } = props;
   const { selectedTheme } = useContext(ThemeContext);
   const [toggle, setToggle] = useState(false);
-  // const [modal, setModal] = useState(false);
   //* Bruk modal state for å sette bakgrunn når et av prosjektene blir trykt på.
   return (
     <>
@@ -48,11 +45,6 @@ function Project(props) {
               <div className="flex flex-col w-fit justify-center h-full m-auto">
                 <SkewedButton
                   text="Close"
-                  // onClick={() =>
-                  //   setTimeout(() => {
-                  //     setToggle(false);
-                  //   }, 2000)
-                  // }
                   onClick={() => setToggle(false)}
                   className="text-base font-semibold m-2 -translate-x-5"
                 />
@@ -90,43 +82,10 @@ function Project(props) {
                       className="text-base font-semibold m-0 translate-y-2 translate-x-3"
                     />
                   </a>
-                  {/* <div className="absolute right-1/3 top-1/2">
-                    <p>Text</p>
-                  </div> */}
                 </div>
               </div>
             </div>
           </div>
-          {/* <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-2/3 w-[400px] border-8 border-water-200 rounded-xl backdrop-blur-sm bg-water-400 bg-opacity-50 [&>*]:animate-ProjectPopUp">
-            <div className="flex flex-col w-fit justify-center h-full m-auto">
-              <button
-                className="p-1 tracking-widest mb-4 w-1/2 mx-auto bg-water-600 border-water-100 border-2 text-water-100 text-sm"
-                onClick={() => setToggle(!toggle)}
-              >
-                close
-              </button>
-              <div>
-                <a
-                  className="[&>*]:hover:shadow-2xl [&>*]:hover:scale-105"
-                  href={href}
-                  target="_blank"
-                >
-                  <figure className="rounded-3xl  text-fairy-400 duration-500 ease-out flex flex-col justify-start mx-2 bg-slate-200 w-64 h-80">
-                    <h3 className="text-2xl py-6">{projectName}</h3>
-                    <img className="h-36 w-36 mx-auto rounded-lg" src={src} />
-                    <div className="flex justify-center m-auto">
-                      <p className="p-2 text-md">{description}</p>
-                    </div>
-                  </figure>
-                </a>
-              </div>
-              <button className="p-1 tracking-widest mt-4 w-1/2 mx-auto bg-water-600 border-water-100 border-2 text-water-100 text-sm">
-                <a href={hrefCode} target="_blank">
-                  Kode
-                </a>
-              </button>
-            </div>
-          </div> */}
         </>
       )}
     </>

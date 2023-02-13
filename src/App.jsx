@@ -23,6 +23,7 @@ import TestPage2 from "./routes/TestPage2";
 
 import ThemeSwitch from "./component/ThemeSwitch/ThemeSwitch";
 import ThemeContext from "./component/ThemeSwitch/ThemeContext";
+import PageTitle from "./component/base components/PageTitle";
 
 //Todo:
 //* ProjectsPage: On load: Projects are smaller, and on click they become larger, click again to "go to" (add also close btn?)
@@ -36,7 +37,8 @@ function App() {
   return (
     <ThemeContext.Provider value={{ selectedTheme, setSelectedTheme }}>
       <Router>
-        <div className="absolute w-full top-4 right-6">
+        <div className="w-screen h-16">
+          <PageTitle />
           <HamburgerBar />
           <ThemeSwitch />
         </div>

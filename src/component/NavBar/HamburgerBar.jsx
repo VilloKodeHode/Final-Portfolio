@@ -36,7 +36,7 @@ function HamburgerBar() {
             selectedTheme === "Tranquil"
               ? " text-water-100"
               : " text-superDry-primary bg-superDry-accent rounded-none"
-          } mt-0 p-2 -translate-x-20 shadow rounded-box w-fit backdrop-blur-sm z-50`}
+          } mt-0 p-2 -translate-x-[77px] border-superDry-primary shadow rounded-box w-fit backdrop-blur-sm z-50`}
         >
           <li>
             <Link className="px-4 " to="/">

@@ -5,7 +5,7 @@ import THEMESWITCH from "./assets/Icon-themeswitch.png";
 const ThemeSwitch = () => {
   const { selectedTheme, setSelectedTheme } = useContext(ThemeContext);
   return (
-    <div className="absolute top-0 right-16 z-50 w-20 -skew-x-[20deg]">
+    <div className="absolute top-0 right-16 z-40 w-20 -skew-x-[20deg]">
       <div className="absolute top-1 left-2 h-8 ">
         {selectedTheme === "Tranquil" ? (
           <svg
@@ -27,7 +27,7 @@ const ThemeSwitch = () => {
       </div>
 
       <select
-        className={`select select-bordered border-none w-full max-w-xs   ${
+        className={`select select-bordered border-none w-full   ${
           selectedTheme === "Tranquil"
             ? " bg-fairy-300"
             : "bg-superDry-accent rounded-none"
@@ -38,7 +38,6 @@ const ThemeSwitch = () => {
           console.log(selectedTheme);
         }}
       >
-        <option disabled>Choose theme</option>
         <option>Professional</option>
         <option>Tranquil</option>
       </select>

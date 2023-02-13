@@ -10,21 +10,6 @@ import "../../../src/App.css";
 import RenderParticles from "../Particles/Particles";
 import NavDrawer from "../NavBar/NavDrawer";
 
-// {
-//   selectedTheme === "Professional" && (
-//     <div>
-//       <h1>Professional theme</h1>
-//     </div>
-//   );
-// }
-// {
-//   selectedTheme === "Tranquil" && (
-//     <div>
-//       <h1>Tranquil theme</h1>
-//     </div>
-//   );
-// }
-
 function LandingPage() {
   const { selectedTheme } = useContext(ThemeContext);
   return (
@@ -79,7 +64,7 @@ function LandingPage() {
       )}
       {selectedTheme === "Professional" && (
         <>
-          <div className="absolute top-0 left-0 h-screen w-screen bg-superDry-bg">
+          <div className=" bg-superDry-bg">
             <div className="landingPagePro z-50 font-Roboto tracking-widest select-none">
               <div className="flex justify-start">
                 <div className=" lg:text-[250px] text-[200px] m-auto text-superDry-primary">
@@ -90,7 +75,6 @@ function LandingPage() {
                 Kode og Design med en personlig touch
                 <NavDrawer />
               </div>
-              <div>something</div>
             </div>
           </div>
         </>
